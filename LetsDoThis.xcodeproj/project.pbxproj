@@ -18,6 +18,10 @@
 		96205E0520588D1100AA9996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96205E0320588D1100AA9996 /* LaunchScreen.storyboard */; };
 		96205E1020588D1100AA9996 /* LetsDoThisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E0F20588D1100AA9996 /* LetsDoThisTests.swift */; };
 		96205E1B20588D1100AA9996 /* LetsDoThisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E1A20588D1100AA9996 /* LetsDoThisUITests.swift */; };
+		96205E292058A56A00AA9996 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E282058A56A00AA9996 /* Login.swift */; };
+		96205E2A2058A63600AA9996 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2B2058A63600AA9996 /* Quick.framework */; };
+		96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2D2058A64600AA9996 /* Nimble.framework */; };
+		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		96205E1620588D1100AA9996 /* LetsDoThisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetsDoThisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E1A20588D1100AA9996 /* LetsDoThisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsDoThisUITests.swift; sourceTree = "<group>"; };
 		96205E1C20588D1100AA9996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96205E282058A56A00AA9996 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		96205E2B2058A63600AA9996 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96205E2D2058A64600AA9996 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E67DE9C19837F3B47137CDE0 /* Pods-LetsDoThis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */,
+				96205E2A2058A63600AA9996 /* Quick.framework in Frameworks */,
 				857C433AB3F595648DB6DB36 /* Pods_LetsDoThisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +104,8 @@
 		4424A013C73063A203AAC7D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96205E2D2058A64600AA9996 /* Nimble.framework */,
+				96205E2B2058A63600AA9996 /* Quick.framework */,
 				B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */,
 				70ECA5BF7863FEA69CBE2209 /* Pods_LetsDoThisTests.framework */,
 				8346540E63892C9C219F44B6 /* Pods_LetsDoThisUITests.framework */,
@@ -126,6 +138,8 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				96205E2F2058AF7200AA9996 /* DTOs */,
+				96205E2E2058AF6000AA9996 /* NetworkLayer */,
 				96205DF720588D1100AA9996 /* AppDelegate.swift */,
 				96205DF920588D1100AA9996 /* ViewController.swift */,
 				96205DFB20588D1100AA9996 /* Main.storyboard */,
@@ -142,6 +156,7 @@
 			children = (
 				96205E0F20588D1100AA9996 /* LetsDoThisTests.swift */,
 				96205E1120588D1100AA9996 /* Info.plist */,
+				96205E282058A56A00AA9996 /* Login.swift */,
 			);
 			path = LetsDoThisTests;
 			sourceTree = "<group>";
@@ -153,6 +168,21 @@
 				96205E1C20588D1100AA9996 /* Info.plist */,
 			);
 			path = LetsDoThisUITests;
+			sourceTree = "<group>";
+		};
+		96205E2E2058AF6000AA9996 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				96205E302058AF9600AA9996 /* LoginManager.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		96205E2F2058AF7200AA9996 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		BDF8A9995BED67AF385F6044 /* Pods */ = {
@@ -366,10 +396,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -382,9 +416,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisTests/Pods-LetsDoThisTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -437,9 +476,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -471,6 +515,7 @@
 				96205DFA20588D1100AA9996 /* ViewController.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
+				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96205E1020588D1100AA9996 /* LetsDoThisTests.swift in Sources */,
+				96205E292058A56A00AA9996 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

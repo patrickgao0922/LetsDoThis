@@ -10,6 +10,8 @@ target 'LetsDoThis' do
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
   pod 'Alamofire', '~> 4.7'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
 
   target 'LetsDoThisTests' do
     inherit! :search_paths
