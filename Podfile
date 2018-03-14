@@ -12,6 +12,7 @@ target 'LetsDoThis' do
   pod 'Alamofire', '~> 4.7'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'SwiftyJSON'
 
   target 'LetsDoThisTests' do
     inherit! :search_paths
