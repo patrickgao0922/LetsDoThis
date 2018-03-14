@@ -14,11 +14,15 @@ target 'LetsDoThis' do
   target 'LetsDoThisTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'LetsDoThisUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
 end
