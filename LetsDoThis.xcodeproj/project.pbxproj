@@ -23,6 +23,7 @@
 		96205E2A2058A63600AA9996 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2B2058A63600AA9996 /* Quick.framework */; };
 		96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2D2058A64600AA9996 /* Nimble.framework */; };
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
+		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		96205E2B2058A63600AA9996 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E2D2058A64600AA9996 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				96B9BA02205A165F007A1027 /* Dependency */,
 				96205E2F2058AF7200AA9996 /* DTOs */,
 				96205E2E2058AF6000AA9996 /* NetworkLayer */,
 				96205DF720588D1100AA9996 /* AppDelegate.swift */,
@@ -195,6 +198,14 @@
 			children = (
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		96B9BA02205A165F007A1027 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				96B9BA03205A167E007A1027 /* DependencyRegistry.swift */,
+			);
+			path = Dependency;
 			sourceTree = "<group>";
 		};
 		BDF8A9995BED67AF385F6044 /* Pods */ = {
@@ -568,6 +579,7 @@
 			files = (
 				96205DFA20588D1100AA9996 /* ViewController.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
+				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
 			);

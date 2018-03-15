@@ -11,8 +11,12 @@ import Alamofire
 import RxSwift
 import SwiftyJSON
 
-class LoginManager {
-    static let sharedInstance = LoginManager()
+protocol LoginManager {
+    func login(with username:String, password: String) -> Single<JSON>
+}
+
+class LoginManagerImplementation:LoginManager {
+//    static let sharedInstance = LoginManagerImplementation()
     
     /// Login and obtain accessToken and refreshToken using username and password
     ///
