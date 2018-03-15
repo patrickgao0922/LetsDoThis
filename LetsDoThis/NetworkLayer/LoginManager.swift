@@ -20,15 +20,14 @@ class LoginManager {
     ///   - username: Email
     ///   - password: Password
     /// - Returns: Single Observable with results of token dictionary
-    func login(with username:String, password: String) -> Single<[String:String]>{
-        return Single<[String:String]>.create(subscribe: { (single) -> Disposable in
+    func login(with username:String, password: String) -> Single<JSON>{
+        return Single<JSON>.create(subscribe: { (single) -> Disposable in
             let headers = self.getOAuthHeaders()
             let parameters = [
                 "grant_type":"password",
                 "username":username,
                 "password":password
             ]
-//            Alamofire.request
             Alamofire.request("http://localhost:8080/token", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers:headers)
                 .validate(statusCode: 200..<300)
                 .response {response in
@@ -36,19 +35,14 @@ class LoginManager {
                     return single(.error(error))
                 }
                 let json = JSON(response.data!)
-                var result = [String:String]()
-                if let accessToken = json["access_token"].string {
-                    result["access_token"] = accessToken
-                } else {
+                guard let _ = json["access_token"].string else {
                     return single(.error(json["access_token"].error!))
                 }
-                if let refreshToken = json["refresh_token"].string {
-                    result["refresh_token"] = refreshToken
-                } else {
+                guard let _ = json["refresh_token"].string  else {
                     return single(.error(json["refresh_token"].error!))
                 }
                 
-                single(.success(result))
+                single(.success(json))
             }
             return Disposables.create()
         })
