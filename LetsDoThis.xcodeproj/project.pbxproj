@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008BBB4E9E03B2D141685EE7 /* Pods_LetsDoThis_LetsDoThisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B015BA03B2A697F1D5685CD /* Pods_LetsDoThis_LetsDoThisUITests.framework */; };
 		0B8B37C75FE442AA081BFA75 /* Pods_LetsDoThisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8346540E63892C9C219F44B6 /* Pods_LetsDoThisUITests.framework */; };
 		838084D3BAA60E91DBA1ED56 /* Pods_LetsDoThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */; };
 		857C433AB3F595648DB6DB36 /* Pods_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ECA5BF7863FEA69CBE2209 /* Pods_LetsDoThisTests.framework */; };
@@ -22,6 +23,7 @@
 		96205E2A2058A63600AA9996 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2B2058A63600AA9996 /* Quick.framework */; };
 		96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2D2058A64600AA9996 /* Nimble.framework */; };
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
+		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +45,15 @@
 
 /* Begin PBXFileReference section */
 		273B18F05C58F70758B7F266 /* Pods-LetsDoThis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis.release.xcconfig"; sourceTree = "<group>"; };
+		330F17424021A45B25CE297F /* Pods-LetsDoThis-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis_LetsDoThisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36AA271A7FCBACC15C508D57 /* Pods-LetsDoThis-LetsDoThisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F3ECEA29E2CA4957F61ACAD /* Pods-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisTests/Pods-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E5A7DE98971714110A12E46 /* Pods-LetsDoThisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		69E9E8C58A0D8276ED20474C /* Pods-LetsDoThisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisTests/Pods-LetsDoThisTests.release.xcconfig"; sourceTree = "<group>"; };
 		70ECA5BF7863FEA69CBE2209 /* Pods_LetsDoThisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B015BA03B2A697F1D5685CD /* Pods_LetsDoThis_LetsDoThisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis_LetsDoThisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824E24A9857A9EFEBCFD80D9 /* Pods-LetsDoThis-LetsDoThisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.release.xcconfig"; sourceTree = "<group>"; };
 		8346540E63892C9C219F44B6 /* Pods_LetsDoThisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205DF420588D1100AA9996 /* LetsDoThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsDoThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205DF720588D1100AA9996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E67DE9C19837F3B47137CDE0 /* Pods-LetsDoThis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +95,7 @@
 				96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */,
 				96205E2A2058A63600AA9996 /* Quick.framework in Frameworks */,
 				857C433AB3F595648DB6DB36 /* Pods_LetsDoThisTests.framework in Frameworks */,
+				EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B8B37C75FE442AA081BFA75 /* Pods_LetsDoThisUITests.framework in Frameworks */,
+				008BBB4E9E03B2D141685EE7 /* Pods_LetsDoThis_LetsDoThisUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +119,8 @@
 				B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */,
 				70ECA5BF7863FEA69CBE2209 /* Pods_LetsDoThisTests.framework */,
 				8346540E63892C9C219F44B6 /* Pods_LetsDoThisUITests.framework */,
+				34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */,
+				7B015BA03B2A697F1D5685CD /* Pods_LetsDoThis_LetsDoThisUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,6 +206,10 @@
 				69E9E8C58A0D8276ED20474C /* Pods-LetsDoThisTests.release.xcconfig */,
 				4E5A7DE98971714110A12E46 /* Pods-LetsDoThisUITests.debug.xcconfig */,
 				B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */,
+				E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */,
+				824E24A9857A9EFEBCFD80D9 /* Pods-LetsDoThis-LetsDoThisTests.release.xcconfig */,
+				36AA271A7FCBACC15C508D57 /* Pods-LetsDoThis-LetsDoThisUITests.debug.xcconfig */,
+				330F17424021A45B25CE297F /* Pods-LetsDoThis-LetsDoThisUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -348,7 +364,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LetsDoThisUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LetsDoThis-LetsDoThisUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,13 +395,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		713E3F44FBF73D4EC96C2564 /* [CP] Embed Pods Frameworks */ = {
@@ -418,18 +441,26 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisTests/Pods-LetsDoThisTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisTests/Pods-LetsDoThisTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		98A198E1DA8FFD1351C63E9E /* [CP] Copy Pods Resources */ = {
@@ -465,7 +496,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LetsDoThisTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LetsDoThis-LetsDoThisTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -478,18 +509,26 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F01743FF9650D0756B03B195 /* [CP] Copy Pods Resources */ = {
@@ -498,13 +537,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThisTests/Pods-LetsDoThisTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -686,6 +732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8387LU2S3Z;
 				INFOPLIST_FILE = LetsDoThis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -702,6 +749,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8387LU2S3Z;
 				INFOPLIST_FILE = LetsDoThis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -714,7 +762,7 @@
 		};
 		96205E2320588D1100AA9996 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F3ECEA29E2CA4957F61ACAD /* Pods-LetsDoThisTests.debug.xcconfig */;
+			baseConfigurationReference = E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -732,7 +780,7 @@
 		};
 		96205E2420588D1100AA9996 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69E9E8C58A0D8276ED20474C /* Pods-LetsDoThisTests.release.xcconfig */;
+			baseConfigurationReference = 824E24A9857A9EFEBCFD80D9 /* Pods-LetsDoThis-LetsDoThisTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -750,7 +798,7 @@
 		};
 		96205E2620588D1100AA9996 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E5A7DE98971714110A12E46 /* Pods-LetsDoThisUITests.debug.xcconfig */;
+			baseConfigurationReference = 36AA271A7FCBACC15C508D57 /* Pods-LetsDoThis-LetsDoThisUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -767,7 +815,7 @@
 		};
 		96205E2720588D1100AA9996 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */;
+			baseConfigurationReference = 330F17424021A45B25CE297F /* Pods-LetsDoThis-LetsDoThisUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

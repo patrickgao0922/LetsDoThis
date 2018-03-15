@@ -13,19 +13,22 @@ target 'LetsDoThis' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'SwiftyJSON'
-
-  target 'LetsDoThisTests' do
-    inherit! :search_paths
-    # Pods for testing
+  
+  def testing_pods
     pod 'Quick'
     pod 'Nimble'
+end
+
+  target 'LetsDoThisTests' do
+#    inherit! :search_paths
+    # Pods for testing
+    testing_pods
   end
 
   target 'LetsDoThisUITests' do
-    inherit! :search_paths
+#    inherit! :search_paths
     # Pods for testing
-    pod 'Quick'
-    pod 'Nimble'
+    testing_pods
   end
 
 end

@@ -25,20 +25,24 @@ class OAuthTests:QuickSpec {
             it("Login in with username(email) and password") {
                 let username = "test@test.com"
                 let password = "test"
-                let loginSingle = loginManager.login(with: username, password: password)
+                waitUntil(timeout: 5, action: { (done) in
+                    loginManager.login(with: username, password: password).subscribe({ (single) in
+                        switch single {
+                        case .success(let result):
+                            let accessToken = result["access_token"]
+                            let refreshToken = result["refresh_token"]
+                            expect(accessToken).toNot(beNil())
+                            expect(refreshToken).toNot(beNil())
+                            done()
+                        case .error(let error):
+                            fail(error.localizedDescription)
+                            break
+                        }
+                        
+                    }).disposed(by: disposeBag)
+                })
                 
-                loginSingle.subscribe({ (single) in
-                    switch single {
-                    case .success(let result):
-                        var accessToken = result["access_token"]
-                        var refreshToken = result["refresh_token"]
-                        expect(accessToken).toNot(beNil())
-                        expect(refreshToken).toNot(beNil())
-                    default:
-                        break
-                    }
-                }).disposed(by: disposeBag)
-                self.waitForExpectations(timeout: 4.0, handler: nil)
+//                self.waitForExpectations(timeout: 4.0, handler: nil)
             }
         }
     }
