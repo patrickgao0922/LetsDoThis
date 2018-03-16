@@ -10,14 +10,17 @@ import Nimble
 import Quick
 @testable import LetsDoThis
 import RxSwift
+import Swinject
 
 class OAuthTests:QuickSpec {
     override func spec() {
         var loginManager:LoginManager!
         var disposeBag = DisposeBag()
+        let container = Container()
         describe("OAuth Login Networking Layer") {
             func setup() {
-                loginManager = LoginManager.sharedInstance
+                let dependencyRegistry = DependencyRegistry(container: container)
+                loginManager = dependencyRegistry.container.resolve(LoginManager.self)
             }
             beforeEach {
                 setup()

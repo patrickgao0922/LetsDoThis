@@ -21,8 +21,11 @@ class DependencyRegistry {
     }
     
     func registerDependencies() {
-//        container.register(LoginManager.self, factory: {r in
-//            LoginManagerImplementation()})
+        container.register(CoreDataContainer.self) { (r) in
+            CoreDataContainerImplementation(completionClosure: {
+            })
+        }.inObjectScope(.container)
+
         container.register(LoginManager.self) { _ in
             LoginManagerImplementation()
         }

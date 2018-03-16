@@ -11,6 +11,7 @@
 		0B8B37C75FE442AA081BFA75 /* Pods_LetsDoThisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8346540E63892C9C219F44B6 /* Pods_LetsDoThisUITests.framework */; };
 		838084D3BAA60E91DBA1ED56 /* Pods_LetsDoThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */; };
 		857C433AB3F595648DB6DB36 /* Pods_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ECA5BF7863FEA69CBE2209 /* Pods_LetsDoThisTests.framework */; };
+		960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B4A9D205B67800054D30F /* CoreDataContainer.swift */; };
 		96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205DF720588D1100AA9996 /* AppDelegate.swift */; };
 		96205DFA20588D1100AA9996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205DF920588D1100AA9996 /* ViewController.swift */; };
 		96205DFD20588D1100AA9996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96205DFB20588D1100AA9996 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2D2058A64600AA9996 /* Nimble.framework */; };
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
+		96B9BA08205A3058007A1027 /* AuthenticationVCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* AuthenticationVCP.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,7 @@
 		7B015BA03B2A697F1D5685CD /* Pods_LetsDoThis_LetsDoThisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis_LetsDoThisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824E24A9857A9EFEBCFD80D9 /* Pods-LetsDoThis-LetsDoThisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.release.xcconfig"; sourceTree = "<group>"; };
 		8346540E63892C9C219F44B6 /* Pods_LetsDoThisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		960B4A9D205B67800054D30F /* CoreDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContainer.swift; sourceTree = "<group>"; };
 		96205DF420588D1100AA9996 /* LetsDoThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsDoThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205DF720588D1100AA9996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96205DF920588D1100AA9996 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		96205E2D2058A64600AA9996 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
+		96B9BA07205A3058007A1027 /* AuthenticationVCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVCP.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +131,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		960B4A9C205B65970054D30F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				960B4A9D205B67800054D30F /* CoreDataContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		96205DEB20588D1100AA9996 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,9 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				960B4A9C205B65970054D30F /* CoreData */,
+				964ACCFF205A717A0042FDA8 /* TranslationLayer */,
+				96B9BA06205A3001007A1027 /* Presenter */,
 				96B9BA02205A165F007A1027 /* Dependency */,
 				96205E2F2058AF7200AA9996 /* DTOs */,
 				96205E2E2058AF6000AA9996 /* NetworkLayer */,
@@ -200,12 +215,27 @@
 			path = DTOs;
 			sourceTree = "<group>";
 		};
+		964ACCFF205A717A0042FDA8 /* TranslationLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TranslationLayer;
+			sourceTree = "<group>";
+		};
 		96B9BA02205A165F007A1027 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
 				96B9BA03205A167E007A1027 /* DependencyRegistry.swift */,
 			);
 			path = Dependency;
+			sourceTree = "<group>";
+		};
+		96B9BA06205A3001007A1027 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				96B9BA07205A3058007A1027 /* AuthenticationVCP.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		BDF8A9995BED67AF385F6044 /* Pods */ = {
@@ -580,6 +610,8 @@
 				96205DFA20588D1100AA9996 /* ViewController.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
+				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
+				96B9BA08205A3058007A1027 /* AuthenticationVCP.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
 			);
