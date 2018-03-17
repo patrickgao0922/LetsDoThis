@@ -12,7 +12,7 @@ import Quick
 import Nimble
 @testable import LetsDoThis
 
-class TestCoreData:QuickSpec {
+class TestTranslationlayer:QuickSpec {
     override func spec() {
         describe("Translation Layer Tests") {
             let dependencyRegistry:DependencyRegistry?

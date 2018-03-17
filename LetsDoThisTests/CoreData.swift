@@ -14,12 +14,11 @@ import Nimble
 
 class TestCoreData:QuickSpec {
     override func spec() {
-        describe("UserJson To UserDTO") {
-            describe("User") {
-                it("User Model save():") {
-                    
-                }
+        describe("User") {
+            it("User Model save():") {
+                
             }
+            
         }
     }
 }
