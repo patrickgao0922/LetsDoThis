@@ -25,6 +25,8 @@
 		96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2D2058A64600AA9996 /* Nimble.framework */; };
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
+		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
+		9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0F205CDB62002AA9AA /* UserMO+CoreDataProperties.swift */; };
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
 		96B9BA08205A3058007A1027 /* AuthenticationVCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* AuthenticationVCP.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
@@ -79,6 +81,8 @@
 		96205E2D2058A64600AA9996 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9668FB0F205CDB62002AA9AA /* UserMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		96B9BA07205A3058007A1027 /* AuthenticationVCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVCP.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +233,8 @@
 		9668FAF9205CD2E9002AA9AA /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */,
+				9668FB0F205CDB62002AA9AA /* UserMO+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -628,8 +634,10 @@
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
+				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
 				96B9BA08205A3058007A1027 /* AuthenticationVCP.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
+				9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */,
 				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
