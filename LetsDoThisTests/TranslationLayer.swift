@@ -1,5 +1,5 @@
 //
-//  CoreData.swift
+//  TranslationLayer.swift
 //  LetsDoThisTests
 //
 //  Created by Patrick Gao on 17/3/18.
@@ -14,12 +14,15 @@ import Nimble
 
 class TestCoreData:QuickSpec {
     override func spec() {
-        describe("UserJson To UserDTO") {
+        describe("Translation Layer Tests") {
+            let dependencyRegistry:DependencyRegistry?
+            
             describe("User") {
-                it("User Model save():") {
+                it("UserMO to UserDTO:") {
                     
                 }
             }
         }
     }
 }
+
