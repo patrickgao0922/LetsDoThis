@@ -16,9 +16,8 @@ import Nimble
 class TestTranslationlayer:QuickSpec {
     override func spec() {
         describe("Translation Layer Tests") {
-            
-            describe("User") {
-                it("UserMO to UserDTO:") {
+            describe("User Translation Layer") {
+                it("Translate UserJson To UserMO And Save:") {
                     
                 }
             }
