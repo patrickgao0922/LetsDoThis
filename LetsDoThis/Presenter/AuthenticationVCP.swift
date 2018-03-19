@@ -22,6 +22,6 @@ class AuthenticationVCPImplementation:AuthenticationVCP {
     }
     
     func authenticateUser(with email:String, password: String) {
-        
+        let loginSingleObservable = loginManager
     }
 }

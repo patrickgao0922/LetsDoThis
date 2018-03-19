@@ -13,7 +13,7 @@ import SwiftyJSON
 
 protocol LoginManager {
     func login(with username:String, password: String) -> Single<JSON>
-    
+    func retrieveUserProfile(with accessToken:String) -> Single<JSON>
     // for testing
     func updateUserTokensInUserDefaults(accessToken:String,refreshToken:String)
     func retrieveUserTokensInUserDefaults() -> (accessToken:String?,refreshToken:String?)
@@ -56,8 +56,28 @@ class LoginManagerImplementation:LoginManager {
         })
     }
     
+    /// Retrieve profile for server using access token
+    ///
+    /// - Parameter accessToken: access token string
+    /// - Returns: Single Observabe with JSON result
     func retrieveUserProfile(with accessToken:String) -> Single<JSON>{
         return Single<JSON>.create(subscribe: { (single) -> Disposable in
+            let headers:HTTPHeaders = self.getAuthenticationHeaders(accessToken: accessToken)
+            Alamofire.request("http://localhost:8080/v1/users/profile", method:.get, headers:headers)
+                .validate(statusCode: 200 ..< 300)
+                .response(completionHandler: { (response) in
+                    if let error = response.error {
+                        return single(.error(error))
+                        
+                    }
+                    guard let data = response.data else {
+                        fatalError("Response data is nil.")
+                    }
+                    
+                    
+                    let json = JSON(data)
+                    single(.success(json))
+                })
             return Disposables.create()
         })
     }
@@ -70,6 +90,18 @@ class LoginManagerImplementation:LoginManager {
         let headers:HTTPHeaders = [
             "Content-Type":"application/json",
             "Authorization":"Basic NWFhMzU0MjkwZGQyYzUwNTA3ZWNlODNlOmI2YjkwOGM0LWJiZTQtNDMyYi05Nzg5LTAxNGNiMjA3M2M4Yg=="
+        ]
+        return headers
+    }
+    
+    /// Generate HTTP headers with access token
+    ///
+    /// - Parameter accessToken: Access Token
+    /// - Returns: HTTP Headers
+    fileprivate func getAuthenticationHeaders(accessToken:String) -> HTTPHeaders{
+        let headers:HTTPHeaders = [
+            "Content-Type":"application/json",
+            "Authorization":"Bearer \(accessToken)"
         ]
         return headers
     }
@@ -94,4 +126,5 @@ class LoginManagerImplementation:LoginManager {
         defaults.set(accessToken, forKey: "accessToken")
         defaults.set(refreshToken, forKey: "refreshToken")
     }
+    
 }
