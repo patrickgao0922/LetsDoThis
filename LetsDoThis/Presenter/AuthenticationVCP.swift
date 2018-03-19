@@ -7,11 +7,21 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol AuthenticationVCP {
-    
+    var user:Variable<UserDTO>? {get set}
 }
 
 class AuthenticationVCPImplementation:AuthenticationVCP {
+    var user:Variable<UserDTO>?
+    var loginManager:LoginManager?
     
+    init(loginManager:LoginManager) {
+        self.loginManager = loginManager
+    }
+    
+    func authenticateUser(with email:String, password: String) {
+        
+    }
 }

@@ -13,6 +13,10 @@ import SwiftyJSON
 
 protocol LoginManager {
     func login(with username:String, password: String) -> Single<JSON>
+    
+    // for testing
+    func updateUserTokensInUserDefaults(accessToken:String,refreshToken:String)
+    func retrieveUserTokensInUserDefaults() -> (accessToken:String?,refreshToken:String?)
 }
 
 class LoginManagerImplementation:LoginManager {
@@ -52,14 +56,42 @@ class LoginManagerImplementation:LoginManager {
         })
     }
     
+    func retrieveUserProfile(with accessToken:String) -> Single<JSON>{
+        return Single<JSON>.create(subscribe: { (single) -> Disposable in
+            return Disposables.create()
+        })
+    }
+    
+    
     /// get HTTP Headers for OAuth
     ///
     /// - Returns: HTTPHeaders
-    fileprivate func getOAuthHeaders() -> HTTPHeaders {
+    func getOAuthHeaders() -> HTTPHeaders {
         let headers:HTTPHeaders = [
             "Content-Type":"application/json",
             "Authorization":"Basic NWFhMzU0MjkwZGQyYzUwNTA3ZWNlODNlOmI2YjkwOGM0LWJiZTQtNDMyYi05Nzg5LTAxNGNiMjA3M2M4Yg=="
         ]
         return headers
+    }
+    
+    /// Retrieve access token and refresh token from user defaults
+    ///
+    /// - Returns: Tokens tuple (accessToken, RefreshToken)
+    func retrieveUserTokensInUserDefaults() -> (accessToken:String?,refreshToken:String?) {
+        let defaults = UserDefaults.standard
+        let retrievedAccessToken = defaults.string(forKey: "accessToken")
+        let retrievedRefreshToken = defaults.string(forKey: "refreshToken")
+        return (retrievedAccessToken,retrievedRefreshToken)
+    }
+    
+    /// Update user access token and refresh token in standard user defaults
+    ///
+    /// - Parameters:
+    ///   - accessToken: Access token string retrieved from authentication server
+    ///   - refreshToken: Refresh token string retrieved from authentication server
+    func updateUserTokensInUserDefaults(accessToken:String,refreshToken:String){
+        let defaults = UserDefaults.standard
+        defaults.set(accessToken, forKey: "accessToken")
+        defaults.set(refreshToken, forKey: "refreshToken")
     }
 }

@@ -27,6 +27,9 @@ internal class UserTranslationLayerImplementation:UserTranslationLayer {
             fatalError("Unable to load core data container")
         }
     }
+    /// Translate user profile from http response to Core Data User modal and save into core data.
+    ///
+    /// - Parameter jsonObject: User JSON Object
     func translateUserJsonToUserModalAndSave(from jsonObject: JSON) {
         guard let id = jsonObject["_id"].string else {
             return
