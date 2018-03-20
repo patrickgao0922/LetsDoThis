@@ -32,8 +32,8 @@ class DependencyRegistry {
         .inObjectScope(.container)
     }
     func registerPresenters() {
-        container.register(AuthenticationVCP.self) { (r) in
-            AuthenticationVCPImplementation(loginManager: self.container.resolve(LoginManager.self)!)
+        container.register(UserModel.self) { (r) in
+            UserModelImplementation(loginManager: self.container.resolve(LoginManager.self)!, translationLayer: self.container.resolve(UserTranslationLayer.self)!)
         }
     }
     func registerViewControllers() {}

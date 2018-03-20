@@ -13,6 +13,7 @@ import SwinjectStoryboard
 
 internal protocol UserTranslationLayer {
     func translateUserJsonToUserModalAndSave(from jsonObject:JSON)
+    func translateUserJsonToUserDTO(fromUserJson userJson:JSON) throws -> UserDTO
 }
 
 internal class UserTranslationLayerImplementation:UserTranslationLayer {
@@ -57,6 +58,25 @@ internal class UserTranslationLayerImplementation:UserTranslationLayer {
         }
         
         return
+        
+    }
+    
+    func translateUserJsonToUserDTO(fromUserJson userJson:JSON) throws -> UserDTO {
+        guard let id = userJson["_id"].string else{
+            throw userJson["_id"].error!
+        }
+        guard let email = userJson["email"].string  else{
+            throw userJson["email"].error!
+        }
+        guard let firstname = userJson["firstname"].string else{
+            throw userJson["firstname"].error!
+        }
+        guard let lastname = userJson["lastname"].string else{
+            throw userJson["lastname"].error!
+        }
+        
+        let userDTO = UserDTO(with: id, email: email, firstname: firstname, lastname: lastname)
+        return userDTO
         
     }
 }
