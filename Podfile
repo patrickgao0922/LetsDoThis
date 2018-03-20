@@ -15,6 +15,7 @@ target 'LetsDoThis' do
   pod 'SwiftyJSON'
   pod 'Swinject'
   pod 'SwinjectStoryboard'
+  pod 'RxAlamofire'
   
   def testing_pods
     pod 'Quick'

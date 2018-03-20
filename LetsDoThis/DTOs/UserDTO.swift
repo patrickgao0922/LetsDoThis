@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserDTO {
+struct UserDTO {
     var id:String
     var email:String
     var firstname:String
