@@ -33,6 +33,9 @@
 		96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF7055205F15F300B3ED4A /* Utilities.swift */; };
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
+		96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207720630703002BC42C /* TestUserPresenter.swift */; };
+		96C0207B20630888002BC42C /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207A20630888002BC42C /* Aliases.swift */; };
+		96C0207D20631049002BC42C /* ActivityTypeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207C20631049002BC42C /* ActivityTypeTVC.swift */; };
 		96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B112061BA2300B0E48F /* UserModel.swift */; };
 		96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B142061E91700B0E48F /* UserPresenter.swift */; };
 		96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B162062088A00B0E48F /* GlobalVariables.swift */; };
@@ -98,6 +101,9 @@
 		96AF7055205F15F300B3ED4A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		96C0207720630703002BC42C /* TestUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserPresenter.swift; sourceTree = "<group>"; };
+		96C0207A20630888002BC42C /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		96C0207C20631049002BC42C /* ActivityTypeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeTVC.swift; sourceTree = "<group>"; };
 		96EB0B112061BA2300B0E48F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96EB0B142061E91700B0E48F /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		96EB0B162062088A00B0E48F /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				96C0207920630855002BC42C /* Aliases */,
 				96EB0B1A206212AF00B0E48F /* UIComponents */,
 				96EB0B132061E8FC00B0E48F /* Presenter */,
 				960B4A9C205B65970054D30F /* CoreData */,
@@ -220,6 +227,7 @@
 				96AF7055205F15F300B3ED4A /* Utilities.swift */,
 				96EB0B112061BA2300B0E48F /* UserModel.swift */,
 				96EB0B182062093800B0E48F /* TestVariables.swift */,
+				96C0207720630703002BC42C /* TestUserPresenter.swift */,
 			);
 			path = LetsDoThisTests;
 			sourceTree = "<group>";
@@ -282,6 +290,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		96C0207920630855002BC42C /* Aliases */ = {
+			isa = PBXGroup;
+			children = (
+				96C0207A20630888002BC42C /* Aliases.swift */,
+			);
+			path = Aliases;
+			sourceTree = "<group>";
+		};
 		96EB0B132061E8FC00B0E48F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				96EB0B1B206212E600B0E48F /* ValidationTextField.swift */,
+				96C0207C20631049002BC42C /* ActivityTypeTVC.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -684,12 +701,14 @@
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
 				9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */,
 				96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */,
+				96C0207B20630888002BC42C /* Aliases.swift in Sources */,
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
 				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */,
+				96C0207D20631049002BC42C /* ActivityTypeTVC.swift in Sources */,
 				96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */,
 				9668FB13205CE164002AA9AA /* UserTranslationLayer.swift in Sources */,
 				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
@@ -701,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96205E1020588D1100AA9996 /* LetsDoThisTests.swift in Sources */,
+				96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */,
 				9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */,
 				9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */,
 				96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */,

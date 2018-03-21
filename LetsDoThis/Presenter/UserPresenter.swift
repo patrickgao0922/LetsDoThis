@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol UserVCP {
-    
+    func retrieveExistingTokens() -> Tokens
 }
 
 class UserVCPresenterImplementation: UserVCP {
@@ -21,6 +21,17 @@ class UserVCPresenterImplementation: UserVCP {
         self.userModel = userModel
         userDTO = Variable<UserDTO>(UserDTO(with: "", email: "", firstname: "", lastname: ""))
     }
+    
+    func retrieveExistingTokens() -> Tokens{
+        let tokens:Tokens = ("","")
+        return tokens
+    }
+    
+    func retrieveUserProfile(withAccessToken accessToken:String){
+        
+    }
+    
+    
 }
 
 // MARK: - Setup Observables

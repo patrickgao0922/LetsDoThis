@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import Swinject
+import RxSwift
 @testable import LetsDoThis
 
 /// Utility Class for providing support functions
@@ -55,8 +56,6 @@ class TestUtilities {
                 print("There is error while saving managedObjectContext: \(error.localizedDescription)")
             }
         }
-        
-        
     }
     
 }

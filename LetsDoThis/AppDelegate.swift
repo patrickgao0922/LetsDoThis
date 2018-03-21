@@ -22,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         dependencyRegistry = DependencyRegistry(container: SwinjectStoryboard.defaultContainer)
         coreDataContainer = dependencyRegistry?.container.resolve(CoreDataContainer.self)
+        
+        // check user tokens
+        
+        // optional: retrieve user tokens by refresh token
+        
+        // update user login status
+        
+        // retrieve user profile
         return true
     }
 
