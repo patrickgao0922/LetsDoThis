@@ -37,6 +37,7 @@
 		96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B142061E91700B0E48F /* UserPresenter.swift */; };
 		96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B162062088A00B0E48F /* GlobalVariables.swift */; };
 		96EB0B192062093800B0E48F /* TestVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B182062093800B0E48F /* TestVariables.swift */; };
+		96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B1B206212E600B0E48F /* ValidationTextField.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		96EB0B142061E91700B0E48F /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		96EB0B162062088A00B0E48F /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		96EB0B182062093800B0E48F /* TestVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVariables.swift; sourceTree = "<group>"; };
+		96EB0B1B206212E600B0E48F /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				96EB0B1A206212AF00B0E48F /* UIComponents */,
 				96EB0B132061E8FC00B0E48F /* Presenter */,
 				960B4A9C205B65970054D30F /* CoreData */,
 				964ACCFF205A717A0042FDA8 /* TranslationLayer */,
@@ -285,6 +288,14 @@
 				96EB0B142061E91700B0E48F /* UserPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		96EB0B1A206212AF00B0E48F /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				96EB0B1B206212E600B0E48F /* ValidationTextField.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		BDF8A9995BED67AF385F6044 /* Pods */ = {
@@ -676,6 +687,7 @@
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
 				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
+				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */,
 				96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */,
