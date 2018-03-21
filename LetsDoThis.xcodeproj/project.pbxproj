@@ -35,6 +35,8 @@
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
 		96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B112061BA2300B0E48F /* UserModel.swift */; };
 		96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B142061E91700B0E48F /* UserPresenter.swift */; };
+		96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B162062088A00B0E48F /* GlobalVariables.swift */; };
+		96EB0B192062093800B0E48F /* TestVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B182062093800B0E48F /* TestVariables.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96EB0B112061BA2300B0E48F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96EB0B142061E91700B0E48F /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		96EB0B162062088A00B0E48F /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		96EB0B182062093800B0E48F /* TestVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVariables.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				96205E0320588D1100AA9996 /* LaunchScreen.storyboard */,
 				96205E0620588D1100AA9996 /* Info.plist */,
 				96205DFE20588D1100AA9996 /* LetsDoThis.xcdatamodeld */,
+				96EB0B162062088A00B0E48F /* GlobalVariables.swift */,
 			);
 			path = LetsDoThis;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				9668FB16205CE3C6002AA9AA /* TranslationLayer.swift */,
 				96AF7055205F15F300B3ED4A /* Utilities.swift */,
 				96EB0B112061BA2300B0E48F /* UserModel.swift */,
+				96EB0B182062093800B0E48F /* TestVariables.swift */,
 			);
 			path = LetsDoThisTests;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
 				9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */,
+				96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */,
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
 				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
@@ -687,6 +694,7 @@
 				96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */,
 				96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */,
 				96205E292058A56A00AA9996 /* Login.swift in Sources */,
+				96EB0B192062093800B0E48F /* TestVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

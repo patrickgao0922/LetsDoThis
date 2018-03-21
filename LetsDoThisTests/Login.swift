@@ -81,7 +81,7 @@ class TestLoginManagerImplementation:QuickSpec {
             }
             
             it("Retrieve User Profile") {
-                let accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWE4N2E0NDNlNzcwMTIxZTQ0MGY2MmMiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IjlmODZkMDgxODg0YzdkNjU5YTJmZWFhMGM1NWFkMDE1YTNiZjRmMWIyYjBiODIyY2QxNWQ2YzE1YjBmMDBhMDgiLCJmaXJzdG5hbWUiOiJUZXN0IiwibGFzdG5hbWUiOiJUZXN0IiwiX192IjowLCJpYXQiOjE1MjE1OTQ0NTEsImV4cCI6MTUyMTYwMTY1MSwiaXNzIjoicGF0cmlja2dhby5jb20uYXUifQ.NTDvKNsH9HdefmNAFCrnrXPelPZxHKA5NaZYFffwPGk"
+                let accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWE4N2E0NDNlNzcwMTIxZTQ0MGY2MmMiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IjlmODZkMDgxODg0YzdkNjU5YTJmZWFhMGM1NWFkMDE1YTNiZjRmMWIyYjBiODIyY2QxNWQ2YzE1YjBmMDBhMDgiLCJmaXJzdG5hbWUiOiJUZXN0IiwibGFzdG5hbWUiOiJUZXN0IiwiX192IjowLCJpYXQiOjE1MjE1OTQ0NTEsImlzcyI6InBhdHJpY2tnYW8uY29tLmF1In0.sBb7nDErZ2B6TR4K2Zc7CYNXolHFlfVTuDva1XzwT8E"
                 waitUntil(timeout: 5.0, action: { (done) in
                     loginManager.retrieveUserProfile(with: accessToken).subscribe({ (single) in
                         switch single {

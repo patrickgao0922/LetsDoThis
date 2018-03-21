@@ -29,8 +29,8 @@ class TestUserModelImplementation:QuickSpec {
         func cleanUp() {
             utilities?.cleanUpTestUserMoObject()
             let defaults = UserDefaults.standard
-            defaults.removeObject(forKey: "accessToken")
-            defaults.removeObject(forKey: "refreshToken")
+            defaults.removeObject(forKey: USERDEFAULTS_ACCESS_TOKEN_KEY)
+            defaults.removeObject(forKey: USERDEFAULTS_REFRESH_TOKEN_KEY)
         }
         beforeSuite {
             setup()
@@ -41,8 +41,8 @@ class TestUserModelImplementation:QuickSpec {
         describe("User Model") {
             it("test authenticateUser:") {
                 waitUntil(timeout: 5.0, action: { (done) in
-                    let email = "test@test.com"
-                    let password = "test"
+                    let email = USER_EMAIL
+                    let password = USER_PASSWORD
                     _ = userModel!.authenticateUser(with: email, password: password)
                         .subscribe({ (single) in
                             switch single {
@@ -54,6 +54,18 @@ class TestUserModelImplementation:QuickSpec {
                             }
                         })
                 })
+            }
+            
+            it("test retrieveTokensFromUserDefaults:") {
+                
+                let defaults = UserDefaults.standard
+                defaults.set("accessToken", forKey: USERDEFAULTS_ACCESS_TOKEN_KEY)
+                defaults.set("refreshToken", forKey: USERDEFAULTS_REFRESH_TOKEN_KEY)
+                
+                var tokens = userModel!.retrieveTokensFromUserDefaults()
+                //                    tokens = nil
+                expect(tokens).toNot(beNil())
+                
             }
         }
     }
