@@ -35,7 +35,7 @@
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
 		96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207720630703002BC42C /* TestUserPresenter.swift */; };
 		96C0207B20630888002BC42C /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207A20630888002BC42C /* Aliases.swift */; };
-		96C0207D20631049002BC42C /* ActivityTypeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207C20631049002BC42C /* ActivityTypeTVC.swift */; };
+		96C02081206319B0002BC42C /* ActivityTypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C02080206319B0002BC42C /* ActivityTypeCVC.swift */; };
 		96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B112061BA2300B0E48F /* UserModel.swift */; };
 		96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B142061E91700B0E48F /* UserPresenter.swift */; };
 		96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B162062088A00B0E48F /* GlobalVariables.swift */; };
@@ -103,7 +103,7 @@
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96C0207720630703002BC42C /* TestUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserPresenter.swift; sourceTree = "<group>"; };
 		96C0207A20630888002BC42C /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
-		96C0207C20631049002BC42C /* ActivityTypeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeTVC.swift; sourceTree = "<group>"; };
+		96C02080206319B0002BC42C /* ActivityTypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCVC.swift; sourceTree = "<group>"; };
 		96EB0B112061BA2300B0E48F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96EB0B142061E91700B0E48F /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		96EB0B162062088A00B0E48F /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				96EB0B1B206212E600B0E48F /* ValidationTextField.swift */,
-				96C0207C20631049002BC42C /* ActivityTypeTVC.swift */,
+				96C02080206319B0002BC42C /* ActivityTypeCVC.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -707,8 +707,8 @@
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
+				96C02081206319B0002BC42C /* ActivityTypeCVC.swift in Sources */,
 				9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */,
-				96C0207D20631049002BC42C /* ActivityTypeTVC.swift in Sources */,
 				96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */,
 				9668FB13205CE164002AA9AA /* UserTranslationLayer.swift in Sources */,
 				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
