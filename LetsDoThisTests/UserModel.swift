@@ -16,7 +16,7 @@ import CoreData
 
 class TestUserModelImplementation:QuickSpec {
     override func spec() {
-        var userModel:UserModel!
+        var userModel:UserModel?
         var disposeBag = DisposeBag()
         let container = Container()
         var utilities:TestUtilities?
@@ -27,6 +27,7 @@ class TestUserModelImplementation:QuickSpec {
         }
         
         func cleanUp() {
+            utilities?.cleanUpTestUserMoObject()
             let defaults = UserDefaults.standard
             defaults.removeObject(forKey: "accessToken")
             defaults.removeObject(forKey: "refreshToken")
@@ -40,8 +41,18 @@ class TestUserModelImplementation:QuickSpec {
         describe("User Model") {
             it("test authenticateUser:") {
                 waitUntil(timeout: 5.0, action: { (done) in
-                    let email = "test@"
-                    done()
+                    let email = "test@test.com"
+                    let password = "test"
+                    _ = userModel!.authenticateUser(with: email, password: password)
+                        .subscribe({ (single) in
+                            switch single {
+                            case .success(let userDTO):
+                                expect(userDTO.email).to(equal(email))
+                                done()
+                            case .error(let error):
+                                fail(error.localizedDescription)
+                            }
+                        })
                 })
             }
         }

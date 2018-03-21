@@ -19,4 +19,10 @@ struct UserDTO {
         self.firstname = firstname
         self.lastname = lastname
     }
+    init() {
+        self.id = ""
+        self.email = ""
+        self.firstname = ""
+        self.lastname = ""
+    }
 }

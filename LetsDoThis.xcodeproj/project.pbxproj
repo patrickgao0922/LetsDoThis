@@ -34,6 +34,7 @@
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
 		96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B112061BA2300B0E48F /* UserModel.swift */; };
+		96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B142061E91700B0E48F /* UserPresenter.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96EB0B112061BA2300B0E48F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		96EB0B142061E91700B0E48F /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,9 +183,10 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				96EB0B132061E8FC00B0E48F /* Presenter */,
 				960B4A9C205B65970054D30F /* CoreData */,
 				964ACCFF205A717A0042FDA8 /* TranslationLayer */,
-				96B9BA06205A3001007A1027 /* Presenter */,
+				96B9BA06205A3001007A1027 /* Model */,
 				96B9BA02205A165F007A1027 /* Dependency */,
 				96205E2F2058AF7200AA9996 /* DTOs */,
 				96205E2E2058AF6000AA9996 /* NetworkLayer */,
@@ -262,10 +265,18 @@
 			path = Dependency;
 			sourceTree = "<group>";
 		};
-		96B9BA06205A3001007A1027 /* Presenter */ = {
+		96B9BA06205A3001007A1027 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				96B9BA07205A3058007A1027 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96EB0B132061E8FC00B0E48F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				96EB0B142061E91700B0E48F /* UserPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -660,6 +671,7 @@
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */,
+				96EB0B152061E91700B0E48F /* UserPresenter.swift in Sources */,
 				9668FB13205CE164002AA9AA /* UserTranslationLayer.swift in Sources */,
 				96205E312058AF9600AA9996 /* LoginManager.swift in Sources */,
 			);

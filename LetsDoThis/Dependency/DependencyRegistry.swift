@@ -30,11 +30,16 @@ class DependencyRegistry {
             LoginManagerImplementation()
         }
         .inObjectScope(.container)
+        
+        container.register(UserTranslationLayer.self) { _ in
+            UserTranslationLayerImplementation()
+            }
+            .inObjectScope(.container)
     }
     func registerPresenters() {
         container.register(UserModel.self) { (r) in
-            UserModelImplementation(loginManager: self.container.resolve(LoginManager.self)!, translationLayer: self.container.resolve(UserTranslationLayer.self)!)
-        }
+            UserModelImplementation(loginManager: r.resolve(LoginManager.self)!, translationLayer: r.resolve(UserTranslationLayer.self)!)
+        }.inObjectScope(.container)
     }
     func registerViewControllers() {}
     
