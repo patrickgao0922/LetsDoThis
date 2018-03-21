@@ -10,4 +10,7 @@ import UIKit
 
 class ActivityTypeCVC: UICollectionViewCell {
     
+    @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var activityTypeIconImageView: UIImageView!
+    @IBOutlet var activityNameLabel: UILabel!
 }

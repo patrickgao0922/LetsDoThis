@@ -58,6 +58,11 @@
                                     <constraint firstItem="AD7-O2-lg3" firstAttribute="leading" secondItem="AFz-Pz-tXz" secondAttribute="leading" id="mLJ-T1-Gie"/>
                                     <constraint firstItem="jb4-XJ-feq" firstAttribute="centerY" secondItem="AFz-Pz-tXz" secondAttribute="centerY" id="w9a-aE-MCI"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="activityNameLabel" destination="RhG-gD-hZw" id="Ie8-vy-RDQ"/>
+                                    <outlet property="activityTypeIconImageView" destination="K8t-RF-F1i" id="38t-kv-Q3h"/>
+                                    <outlet property="backgroundImageView" destination="AD7-O2-lg3" id="9fu-xI-LjT"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
