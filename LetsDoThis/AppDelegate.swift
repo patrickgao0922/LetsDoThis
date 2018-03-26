@@ -8,20 +8,20 @@
 
 import UIKit
 import CoreData
-import SwinjectStoryboard
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coreDataContainer:CoreDataContainer?
-    var dependencyRegistry:DependencyRegistry?
+    static var coreDataContainer:CoreDataContainer?
+    static var dependencyRegistry:DependencyRegistry?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        dependencyRegistry = DependencyRegistry(container: SwinjectStoryboard.defaultContainer)
-        coreDataContainer = dependencyRegistry?.container.resolve(CoreDataContainer.self)
+//        dependencyRegistry = DependencyRegistry(container: Container())
+//        coreDataContainer = dependencyRegistry?.container.resolve(CoreDataContainer.self)
         
         // check user tokens
         
