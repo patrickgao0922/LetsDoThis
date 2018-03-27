@@ -24,22 +24,25 @@ class DependencyRegistry {
         container.register(CoreDataContainer.self) { (r) in
             CoreDataContainerImplementation(completionClosure: {
             })
-        }.inObjectScope(.container)
-
+            }.inObjectScope(.container)
+        
         container.register(LoginManager.self) { _ in
             LoginManagerImplementation()
-        }
-        .inObjectScope(.container)
+            }
+            .inObjectScope(.container)
         
         container.register(UserTranslationLayer.self) { _ in
             UserTranslationLayerImplementation()
             }
             .inObjectScope(.container)
+        container.register(ActivityTypeModel.self) { (r) in
+            ActivityTypeModelImplementation()
+        }
     }
     func registerPresenters() {
         container.register(UserModel.self) { (r) in
             UserModelImplementation(loginManager: r.resolve(LoginManager.self)!, translationLayer: r.resolve(UserTranslationLayer.self)!)
-        }.inObjectScope(.container)
+            }.inObjectScope(.container)
     }
     func registerViewControllers() {}
     

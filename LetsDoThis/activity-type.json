@@ -1,9 +1,13 @@
 [
   {
-    "name":"Party"
+    "name":"Party",
+    "icon":"icon-party",
+    "background":"background-party"
   },
   {
-    "name":"Karaoke"
+    "name":"Karaoke",
+    "icon":"icon-karaoke",
+    "background":"background-karaoke"
   }
 
 ]
