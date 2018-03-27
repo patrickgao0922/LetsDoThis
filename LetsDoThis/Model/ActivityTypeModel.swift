@@ -11,22 +11,28 @@ import RxSwift
 import SwiftyJSON
 
 protocol ActivityTypeModel {
-    func loadActivityType() -> Single<JSON>
+    func loadActivityType() -> Single<[ActivityTypeDTO]>
 }
 
 class ActivityTypeModelImplementation:ActivityTypeModel {
-    init(){}
+    fileprivate var translationLayer:ActivityTypeTranslationLayer
+    init(withTranslationLayer translationLayer:ActivityTypeTranslationLayer){
+        self.translationLayer = translationLayer
+    }
     enum ActivityTypeError:Error {
         case notFoundFilePath
         case unableLoadingJSONData
     }
-    func loadActivityType() -> Single<JSON>{
-        return Single<JSON>.create(subscribe: { (single) -> Disposable in
+    func loadActivityType() -> Single<[ActivityTypeDTO]>{
+        return Single<[ActivityTypeDTO]>.create(subscribe: { (single) -> Disposable in
             if let filePath = Bundle.main.url(forResource: "activity-type", withExtension: "json") {
                 do  {
                     let data = try Data(contentsOf: filePath, options:.mappedRead)
                     let json = try JSON(data: data)
-                    single(.success(json))
+                    let activityTypeDTOs = json.arrayValue.flatMap({ (json) -> ActivityTypeDTO? in
+                        return self.translationLayer.translateActivityTypeJsonToDTO(fromJson: json)
+                    })
+                    single(.success(activityTypeDTOs))
                 }
                 catch {
                     single(.error(ActivityTypeError.unableLoadingJSONData))
