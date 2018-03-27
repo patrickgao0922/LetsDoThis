@@ -7,9 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol ActivityTypeVCPresenter {}
+protocol ActivityTypeVCPresenter {
+    
+}
 
 class ActivityTypeVCPresenterImplementation:ActivityTypeVCPresenter {
+    fileprivate var activityTypeModel: ActivityTypeModel
+
+    var activityTypes:Variable<[ActivityTypeDTO]>
+    init(with activityTypeModel: ActivityTypeModel) {
+        self.activityTypes = Variable<[ActivityTypeDTO]>([])
+        self.activityTypeModel = activityTypeModel
+    }
     
 }

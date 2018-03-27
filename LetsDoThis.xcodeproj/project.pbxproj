@@ -27,6 +27,9 @@
 		963971422069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */; };
 		963971442069D52D00EFEC65 /* activity-type.json in Resources */ = {isa = PBXBuildFile; fileRef = 963971432069D52D00EFEC65 /* activity-type.json */; };
 		963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */; };
+		963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971472069DED900EFEC65 /* ActivityTypeDTO.swift */; };
+		9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */; };
+		9639714C2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
 		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
 		9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0F205CDB62002AA9AA /* UserMO+CoreDataProperties.swift */; };
@@ -100,6 +103,9 @@
 		963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeModelImplementation.swift; sourceTree = "<group>"; };
 		963971432069D52D00EFEC65 /* activity-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activity-type.json"; path = "../../../../Library/Containers/at.EternalStorms.Yoink/Data/Documents/YoinkPromisedFiles/yoinkFilePromiseCreationFolderC41CA049-7EA2-4448-B8C8-B64E9EBCC5BC/addC41CA049-7EA2-4448-B8C8-B64E9EBCC5BC/activity-type.json"; sourceTree = "<group>"; };
 		963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenter.swift; sourceTree = "<group>"; };
+		963971472069DED900EFEC65 /* ActivityTypeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeDTO.swift; sourceTree = "<group>"; };
+		963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
+		9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9668FB0F205CDB62002AA9AA /* UserMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -240,6 +246,7 @@
 				96EB0B182062093800B0E48F /* TestVariables.swift */,
 				96C0207720630703002BC42C /* TestUserPresenter.swift */,
 				963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */,
+				9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */,
 			);
 			path = LetsDoThisTests;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				9668FB14205CE208002AA9AA /* UserDTO.swift */,
+				963971472069DED900EFEC65 /* ActivityTypeDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				9668FB12205CE164002AA9AA /* UserTranslationLayer.swift */,
+				963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */,
 			);
 			path = TranslationLayer;
 			sourceTree = "<group>";
@@ -729,6 +738,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */,
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
@@ -739,6 +749,7 @@
 				96C0207B20630888002BC42C /* Aliases.swift in Sources */,
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
 				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
+				963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,
@@ -763,6 +774,7 @@
 				96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */,
 				963971422069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift in Sources */,
 				96205E292058A56A00AA9996 /* Login.swift in Sources */,
+				9639714C2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift in Sources */,
 				96EB0B192062093800B0E48F /* TestVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,7 @@ class TestActivityTypeModelImplementation:QuickSpec{
             it("Test ") {
                 
                 waitUntil(timeout: 5, action: { (done) in
-                    activityTypeModel?.loadActivityType().subscribe({ (single) in
+                    _ = activityTypeModel?.loadActivityType().subscribe({ (single) in
                         switch single {
                         case .success(let json):
                             guard let name = json[0]["name"].string else {

@@ -37,7 +37,11 @@ class DependencyRegistry {
             .inObjectScope(.container)
         container.register(ActivityTypeModel.self) { (r) in
             ActivityTypeModelImplementation()
-        }
+        }.inObjectScope(.container)
+        
+        container.register(ActivityTypeTranslationLayer.self) { (r) in
+            ActivityTypeTranslationLayerImplementation()
+        }.inObjectScope(.container)
     }
     func registerPresenters() {
         container.register(UserModel.self) { (r) in
