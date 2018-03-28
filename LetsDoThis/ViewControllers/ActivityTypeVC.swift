@@ -71,6 +71,7 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
         let dto = self.presenter.activityTypes.value[indexPath.row]
         cell.activityNameLabel.text = dto.name
         cell.activityIconImageView.image = UIImage(named: dto.icon)
+        cell.backgroundImageView.image = UIImage(named: dto.background)
         return cell
     }
     
