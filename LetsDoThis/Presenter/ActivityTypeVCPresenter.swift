@@ -10,13 +10,14 @@ import Foundation
 import RxSwift
 
 protocol ActivityTypeVCPresenter {
-    
+    var activityTypes:Variable<[ActivityTypeDTO]> {get}
+    func loadActivityTypes() -> Single<[ActivityTypeDTO]>
 }
 
 class ActivityTypeVCPresenterImplementation:ActivityTypeVCPresenter {
     fileprivate var activityTypeModel: ActivityTypeModel
     fileprivate var disposeBag:DisposeBag
-
+    
     var activityTypes:Variable<[ActivityTypeDTO]>
     init(with activityTypeModel: ActivityTypeModel) {
         self.activityTypes = Variable<[ActivityTypeDTO]>([])
@@ -24,14 +25,15 @@ class ActivityTypeVCPresenterImplementation:ActivityTypeVCPresenter {
         self.disposeBag = DisposeBag()
     }
     
-    func loadActivityTypes() -> Completable {
-        return Completable.create(subscribe: { (completable) -> Disposable in
-            activityTypeModel.
-                .flatMap({ (json) -> Completable in
-                    for
-                })
-            Disposables.create()
-        })
+    func loadActivityTypes() -> Single<[ActivityTypeDTO]>{
+        return activityTypeModel.loadActivityType()
+            .map { (activityTypeDTOs) -> [ActivityTypeDTO] in
+                self.activityTypes.value = activityTypeDTOs
+                return activityTypeDTOs
+        }
+        
     }
-    
 }
+
+// MARK: - Setup Observables
+

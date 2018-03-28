@@ -29,12 +29,8 @@ class TestActivityTypeModelImplementation:QuickSpec{
                 waitUntil(timeout: 5, action: { (done) in
                     _ = activityTypeModel?.loadActivityType().subscribe({ (single) in
                         switch single {
-                        case .success(let json):
-                            guard let name = json[0]["name"].string else {
-                                fail(json[0]["name"].error!.localizedDescription)
-                                return
-                            }
-                            expect(name).to(equal("Party"))
+                        case .success(let activityDTOs):
+                            expect(activityDTOs[0].name).to(equal("Party"))
                             done()
                         case .error(let error):
                             fail(error.localizedDescription)

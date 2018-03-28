@@ -23,9 +23,10 @@
 		96205E2A2058A63600AA9996 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2B2058A63600AA9996 /* Quick.framework */; };
 		96205E2C2058A64600AA9996 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96205E2D2058A64600AA9996 /* Nimble.framework */; };
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
+		96234EAD206B3C660095BD8A /* activity-type.json in Resources */ = {isa = PBXBuildFile; fileRef = 96234EAC206B3C660095BD8A /* activity-type.json */; };
+		96234EAF206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */; };
 		963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9639713F2069BC3300EFEC65 /* ActivityTypeModel.swift */; };
 		963971422069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */; };
-		963971442069D52D00EFEC65 /* activity-type.json in Resources */ = {isa = PBXBuildFile; fileRef = 963971432069D52D00EFEC65 /* activity-type.json */; };
 		963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */; };
 		963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971472069DED900EFEC65 /* ActivityTypeDTO.swift */; };
 		9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */; };
@@ -99,9 +100,10 @@
 		96205E2B2058A63600AA9996 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E2D2058A64600AA9996 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		96234EAC206B3C660095BD8A /* activity-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-type.json"; sourceTree = "<group>"; };
+		96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenterImplementationTests.swift; sourceTree = "<group>"; };
 		9639713F2069BC3300EFEC65 /* ActivityTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeModel.swift; sourceTree = "<group>"; };
 		963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeModelImplementation.swift; sourceTree = "<group>"; };
-		963971432069D52D00EFEC65 /* activity-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activity-type.json"; path = "../../../../Library/Containers/at.EternalStorms.Yoink/Data/Documents/YoinkPromisedFiles/yoinkFilePromiseCreationFolderC41CA049-7EA2-4448-B8C8-B64E9EBCC5BC/addC41CA049-7EA2-4448-B8C8-B64E9EBCC5BC/activity-type.json"; sourceTree = "<group>"; };
 		963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenter.swift; sourceTree = "<group>"; };
 		963971472069DED900EFEC65 /* ActivityTypeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeDTO.swift; sourceTree = "<group>"; };
 		963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
@@ -222,8 +224,8 @@
 				96205E2F2058AF7200AA9996 /* DTOs */,
 				96205E2E2058AF6000AA9996 /* NetworkLayer */,
 				96205DF720588D1100AA9996 /* AppDelegate.swift */,
+				96234EAC206B3C660095BD8A /* activity-type.json */,
 				96205DFB20588D1100AA9996 /* Main.storyboard */,
-				963971432069D52D00EFEC65 /* activity-type.json */,
 				96205E0120588D1100AA9996 /* Assets.xcassets */,
 				96205E0320588D1100AA9996 /* LaunchScreen.storyboard */,
 				96205E0620588D1100AA9996 /* Info.plist */,
@@ -247,6 +249,7 @@
 				96C0207720630703002BC42C /* TestUserPresenter.swift */,
 				963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */,
 				9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */,
+				96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */,
 			);
 			path = LetsDoThisTests;
 			sourceTree = "<group>";
@@ -491,7 +494,7 @@
 			files = (
 				96205E0520588D1100AA9996 /* LaunchScreen.storyboard in Resources */,
 				96205E0220588D1100AA9996 /* Assets.xcassets in Resources */,
-				963971442069D52D00EFEC65 /* activity-type.json in Resources */,
+				96234EAD206B3C660095BD8A /* activity-type.json in Resources */,
 				96205DFD20588D1100AA9996 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96234EAF206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift in Sources */,
 				96205E1020588D1100AA9996 /* LetsDoThisTests.swift in Sources */,
 				96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */,
 				9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */,

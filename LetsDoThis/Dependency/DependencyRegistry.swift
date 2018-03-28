@@ -8,7 +8,7 @@
 
 import Foundation
 import Swinject
-
+import SwinjectStoryboard
 class DependencyRegistry {
     var container:Container
     
@@ -36,7 +36,7 @@ class DependencyRegistry {
             }
             .inObjectScope(.container)
         container.register(ActivityTypeModel.self) { (r) in
-            ActivityTypeModelImplementation()
+            ActivityTypeModelImplementation(withTranslationLayer: r.resolve(ActivityTypeTranslationLayer.self)!)
         }.inObjectScope(.container)
         
         container.register(ActivityTypeTranslationLayer.self) { (r) in
@@ -47,7 +47,18 @@ class DependencyRegistry {
         container.register(UserModel.self) { (r) in
             UserModelImplementation(loginManager: r.resolve(LoginManager.self)!, translationLayer: r.resolve(UserTranslationLayer.self)!)
             }.inObjectScope(.container)
+        container.register(ActivityTypeVCPresenter.self) { (r) in
+            ActivityTypeVCPresenterImplementation(with: r.resolve(ActivityTypeModel.self)!)
+            }.inObjectScope(.container)
     }
-    func registerViewControllers() {}
+    func registerViewControllers() {
+//        container.register(ActivityTypeVC.self) { (r) in
+//            let presenter = r.resolve(ActivityTypeVCPresenter.self)!
+//            
+//            //NOTE: We don't have access to the constructor for this VC so we are using method injection
+//            let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "ActivityTypeVC") as! ActivityTypeVC
+//            return vc
+//        }
+    }
     
 }

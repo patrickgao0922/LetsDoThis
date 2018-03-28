@@ -29,7 +29,7 @@
         <!--Activity TypeVC-->
         <scene sceneID="XGI-e9-prx">
             <objects>
-                <viewController id="Ttj-cn-AlQ" customClass="ActivityTypeVC" customModule="LetsDoThis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityTypeVC" id="Ttj-cn-AlQ" customClass="ActivityTypeVC" customModule="LetsDoThis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXl-fL-2JK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VWy-MZ-t5Z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="533-jY-BaL"/>
+                    <navigationItem key="navigationItem" id="533-jY-BaL">
+                        <barButtonItem key="rightBarButtonItem" title="reload" id="z2W-mZ-TTw">
+                            <connections>
+                                <action selector="reloadButtonTouched:" destination="Ttj-cn-AlQ" id="Add-ME-kHi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="P5U-wJ-CmB" id="ATn-La-reJ"/>
                     </connections>
