@@ -70,6 +70,7 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ActivityTypeCVCell
         let dto = self.presenter.activityTypes.value[indexPath.row]
         cell.activityNameLabel.text = dto.name
+        cell.activityIconImageView.image = UIImage(named: dto.icon)
         return cell
     }
     
