@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Swinject
 import SwinjectStoryboard
 class DependencyRegistry {
@@ -52,13 +53,17 @@ class DependencyRegistry {
             }.inObjectScope(.container)
     }
     func registerViewControllers() {
-//        container.register(ActivityTypeVC.self) { (r) in
-//            let presenter = r.resolve(ActivityTypeVCPresenter.self)!
-//            
-//            //NOTE: We don't have access to the constructor for this VC so we are using method injection
-//            let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "ActivityTypeVC") as! ActivityTypeVC
-//            return vc
-//        }
     }
-    
+}
+
+// MARK: - Cell Makers
+extension DependencyRegistry {
+    typealias ActivityTypeCVCellMaker = (UICollectionView, IndexPath, ActivityTypeDTO) -> UICollectionViewCell
+    func makeActivityTypeCollectionViewCell(forCollectionView collectionView:UICollectionView,at indexPath:IndexPath, for activityTypeDTO:ActivityTypeDTO) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityTypeCVCell", for: indexPath) as! ActivityTypeCVCell
+        cell.activityNameLabel.text = activityTypeDTO.name
+        cell.activityIconImageView.image = UIImage(named: activityTypeDTO.icon)
+        cell.backgroundImageView.image = UIImage(named: activityTypeDTO.background)
+        return cell
+    }
 }

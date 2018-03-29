@@ -17,6 +17,7 @@ class ActivityTypeVC: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     var presenter:ActivityTypeVCPresenter!
     var disposeBag:DisposeBag = DisposeBag()
+    var cellMaker:DependencyRegistry.ActivityTypeCVCellMaker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +25,7 @@ class ActivityTypeVC: UIViewController {
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
-        if AppDelegate.dependencyRegistry == nil {
-            AppDelegate.dependencyRegistry = DependencyRegistry(container: SwinjectStoryboard.defaultContainer)
-        }
-        self.config(withActivityTypeVCPresenter: AppDelegate.dependencyRegistry!.container.resolve(ActivityTypeVCPresenter.self)!)
-        
         setUpObservable()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,8 +33,9 @@ class ActivityTypeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func config(withActivityTypeVCPresenter presenter:ActivityTypeVCPresenter) {
+    func config(withActivityTypeVCPresenter presenter:ActivityTypeVCPresenter, cellMaker:@escaping DependencyRegistry.ActivityTypeCVCellMaker) {
         self.presenter = presenter
+        self.cellMaker = cellMaker
         
     }
     
@@ -67,11 +61,8 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ActivityTypeCVCell
         let dto = self.presenter.activityTypes.value[indexPath.row]
-        cell.activityNameLabel.text = dto.name
-        cell.activityIconImageView.image = UIImage(named: dto.icon)
-        cell.backgroundImageView.image = UIImage(named: dto.background)
+        let cell = self.cellMaker(collectionView,indexPath,dto)
         return cell
     }
     
@@ -85,7 +76,7 @@ extension ActivityTypeVC {
 // MARK: - Setup Observable
 extension ActivityTypeVC {
     func setUpObservable() {
-        self.presenter.activityTypes.asObservable().subscribe(onNext: { (activityTypeDTOs) in
+        _ = self.presenter.activityTypes.asObservable().subscribe(onNext: { (activityTypeDTOs) in
             self.collectionView.reloadData()
         })
     }

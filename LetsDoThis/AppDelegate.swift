@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Swinject
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // update user login status
         
         // retrieve user profile
+        GMSPlacesClient.provideAPIKey("3e1dc566e15e87ea012049e7714265cfbe34c72d")
         return true
     }
 

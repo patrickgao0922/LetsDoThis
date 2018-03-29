@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mCZ-Ke-7RK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-party" translatesAutoresizingMaskIntoConstraints="NO" id="mCZ-Ke-7RK">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrR-W4-S8D">
@@ -67,7 +67,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </view>
-                                                                <blurEffect style="dark"/>
+                                                                <blurEffect style="light"/>
                                                             </visualEffectView>
                                                         </subviews>
                                                     </view>
@@ -76,7 +76,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="704-ma-Dov">
                                                     <rect key="frame" x="147.5" y="40" width="49" height="70.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="44V-I0-OHt">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-party" translatesAutoresizingMaskIntoConstraints="NO" id="44V-I0-OHt">
                                                             <rect key="frame" x="0.0" y="0.0" width="49" height="50"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-sD-SLd">
@@ -144,7 +144,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_placeholder" width="49" height="50"/>
-        <image name="placeholder" width="392" height="150"/>
+        <image name="background-party" width="392" height="150"/>
+        <image name="icon-party" width="49" height="50"/>
     </resources>
 </document>

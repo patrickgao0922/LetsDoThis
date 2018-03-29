@@ -26,10 +26,10 @@ extension SwinjectStoryboard {
 //                // where the fist table view controller are injected with presenter, schedulerCellMaker
 //                vc.configure(with: presenter, schedulerCellMaker: dependencyRegistry.makeSchedulerCell(for:at:with:))
 //            }
-//            dependencyRegistry.container.storyboardInitCompleted(ZoneCollectionViewController.self) { (r, vc) in
-//                let presenter = r.resolve(ZoneCollectionViewControllerPresenter.self)!
-//                vc.config(with: presenter, cellMaker: dependencyRegistry.makeZoneCell(for:at:with:))
-//            }
+            dependencyRegistry.container.storyboardInitCompleted(ActivityTypeVC.self) { (r, vc) in
+                let presenter = r.resolve(ActivityTypeVCPresenter.self)!
+                vc.config(withActivityTypeVCPresenter: presenter, cellMaker: dependencyRegistry.makeActivityTypeCollectionViewCell(forCollectionView:at:for:))
+            }
         }
         
         
