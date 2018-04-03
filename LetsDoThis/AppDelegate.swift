@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     static var coreDataContainer:CoreDataContainer?
     static var dependencyRegistry:DependencyRegistry?
-
-
+    var googleLocationManager:GooglePlacesAPIManagerImplementation!
+    let locationManager = CLLocationManager()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        dependencyRegistry = DependencyRegistry(container: Container())
@@ -31,7 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // update user login status
         
         // retrieve user profile
-        GMSPlacesClient.provideAPIKey("3e1dc566e15e87ea012049e7714265cfbe34c72d")
+        GMSPlacesClient.provideAPIKey("AIzaSyAnYRkQ0oq-cBFTW9jLCznEPUyZO1gbzMU")
+        googleLocationManager = GooglePlacesAPIManagerImplementation()
+        
+        locationManager.requestAlwaysAuthorization()
+        googleLocationManager.getCurrentPlace().subscribe { (single) in
+            switch single {
+            case .success(let list):
+                print(list?.likelihoods[0].place.name)
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
         return true
     }
 

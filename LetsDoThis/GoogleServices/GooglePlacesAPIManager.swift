@@ -19,13 +19,13 @@ class GooglePlacesAPIManagerImplementation:GooglePlacesAPIManager {
         self.placesCient = GMSPlacesClient.shared()
     }
     
-    func getCurrentPlace() -> Single<GMSPlaceLikelihoodList> {
-        return Single<GMSPlaceLikelihoodList>.create(subscribe: { (observer) -> Disposable in
+    func getCurrentPlace() -> Single<GMSPlaceLikelihoodList?> {
+        return Single<GMSPlaceLikelihoodList?>.create(subscribe: { (observer) -> Disposable in
             self.placesCient.currentPlace { (likelyhoodPlaceList, error) in
                 if error != nil {
                     return observer(.error(error!))
                 }
-                observer(.success(likelyhoodPlaceList))
+                return observer(.success(likelyhoodPlaceList))
             }
             return Disposables.create()
         })

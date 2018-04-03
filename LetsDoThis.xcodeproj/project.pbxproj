@@ -25,6 +25,7 @@
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
 		96234EAD206B3C660095BD8A /* activity-type.json in Resources */ = {isa = PBXBuildFile; fileRef = 96234EAC206B3C660095BD8A /* activity-type.json */; };
 		96234EAF206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */; };
+		962E7FE52072F84900F775CC /* ActivityTypeCVFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */; };
 		963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9639713F2069BC3300EFEC65 /* ActivityTypeModel.swift */; };
 		963971422069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */; };
 		963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */; };
@@ -52,6 +53,7 @@
 		96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB0B1B206212E600B0E48F /* ValidationTextField.swift */; };
 		96EED628206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EED627206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift */; };
 		96EED62B206C632F00C15B53 /* GooglePlacesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EED62A206C632F00C15B53 /* GooglePlacesAPIManager.swift */; };
+		96EED62E206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EED62D206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,7 @@
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		96234EAC206B3C660095BD8A /* activity-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-type.json"; sourceTree = "<group>"; };
 		96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenterImplementationTests.swift; sourceTree = "<group>"; };
+		962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCVFlowLayout.swift; sourceTree = "<group>"; };
 		9639713F2069BC3300EFEC65 /* ActivityTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeModel.swift; sourceTree = "<group>"; };
 		963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeModelImplementation.swift; sourceTree = "<group>"; };
 		963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenter.swift; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		96EB0B1B206212E600B0E48F /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		96EED627206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCVCellPresenter.swift; sourceTree = "<group>"; };
 		96EED62A206C632F00C15B53 /* GooglePlacesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPIManager.swift; sourceTree = "<group>"; };
+		96EED62D206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPIManagerImplementationTests.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		96205E0E20588D1100AA9996 /* LetsDoThisTests */ = {
 			isa = PBXGroup;
 			children = (
+				96EED62C206C707600C15B53 /* Google */,
 				96205E0F20588D1100AA9996 /* LetsDoThisTests.swift */,
 				96205E1120588D1100AA9996 /* Info.plist */,
 				96205E282058A56A00AA9996 /* Login.swift */,
@@ -342,6 +347,7 @@
 			children = (
 				96E97C612066129E006150EF /* ActivityTypeCVCell.swift */,
 				96E97C6320661BEF006150EF /* ActivityTypeVC.swift */,
+				962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */,
 			);
 			name = ActivityTypeCollectionView;
 			path = ../..;
@@ -371,6 +377,14 @@
 				96EED62A206C632F00C15B53 /* GooglePlacesAPIManager.swift */,
 			);
 			path = GoogleServices;
+			sourceTree = "<group>";
+		};
+		96EED62C206C707600C15B53 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				96EED62D206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 		BDF8A9995BED67AF385F6044 /* Pods */ = {
@@ -762,6 +776,7 @@
 				96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */,
 				963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */,
 				9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */,
+				962E7FE52072F84900F775CC /* ActivityTypeCVFlowLayout.swift in Sources */,
 				96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */,
 				96EED62B206C632F00C15B53 /* GooglePlacesAPIManager.swift in Sources */,
 				96EED628206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift in Sources */,
@@ -790,6 +805,7 @@
 				96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */,
 				9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */,
 				9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */,
+				96EED62E206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift in Sources */,
 				96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */,
 				96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */,
 				963971422069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift in Sources */,

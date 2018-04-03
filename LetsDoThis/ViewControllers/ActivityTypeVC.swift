@@ -25,6 +25,8 @@ class ActivityTypeVC: UIViewController {
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        let layout = ActivityTypeCVFlowLayout()
+        self.collectionView.setCollectionViewLayout(layout, animated: true)
         setUpObservable()
     }
 
@@ -67,9 +69,7 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
     }
     
     
-}
-
-extension ActivityTypeVC {
+    
     
 }
 
