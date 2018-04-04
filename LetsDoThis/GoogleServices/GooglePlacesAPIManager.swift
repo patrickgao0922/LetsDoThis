@@ -31,4 +31,6 @@ class GooglePlacesAPIManagerImplementation:GooglePlacesAPIManager {
         })
         
     }
+    
+    func searchNearbyPlacesByType
 }

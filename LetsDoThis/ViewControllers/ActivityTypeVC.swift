@@ -27,6 +27,7 @@ class ActivityTypeVC: UIViewController {
         self.collectionView.dataSource = self
         let layout = ActivityTypeCVFlowLayout()
         self.collectionView.setCollectionViewLayout(layout, animated: true)
+        setupCVUI()
         setUpObservable()
     }
 
@@ -71,6 +72,17 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
     
     
     
+}
+
+// MARK: - UI config
+extension ActivityTypeVC {
+    func setupCVUI() {
+        let gradientColors = [UIColor(named: "gradient-start")!.cgColor,UIColor(named: "gradient-end")!.cgColor]
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
 
 // MARK: - Setup Observable
