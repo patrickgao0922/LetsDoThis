@@ -50,5 +50,10 @@
 	<string>Show your location on the map</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Show your location on the map</string>
+	<key>Google</key>
+	<dict>
+		<key>APIKey</key>
+		<string>$(GOOGLE_API_KEY)</string>
+	</dict>
 </dict>
 </plist>

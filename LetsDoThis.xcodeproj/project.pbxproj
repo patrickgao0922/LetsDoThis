@@ -119,6 +119,8 @@
 		9668FB12205CE164002AA9AA /* UserTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTranslationLayer.swift; sourceTree = "<group>"; };
 		9668FB14205CE208002AA9AA /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9668FB16205CE3C6002AA9AA /* TranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLayer.swift; sourceTree = "<group>"; };
+		96A59C242074D365007B6F6E /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
+		96A59C252074D5B5007B6F6E /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		96AF7055205F15F300B3ED4A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				96A59C232074D340007B6F6E /* Config Files */,
 				96EED629206C631100C15B53 /* GoogleServices */,
 				96E97C5B2065EF84006150EF /* ViewControllers */,
 				96C0207920630855002BC42C /* Aliases */,
@@ -306,6 +309,15 @@
 				9668FB0F205CDB62002AA9AA /* UserMO+CoreDataProperties.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		96A59C232074D340007B6F6E /* Config Files */ = {
+			isa = PBXGroup;
+			children = (
+				96A59C242074D365007B6F6E /* dev.xcconfig */,
+				96A59C252074D5B5007B6F6E /* shared.xcconfig */,
+			);
+			path = "Config Files";
 			sourceTree = "<group>";
 		};
 		96B9BA02205A165F007A1027 /* Dependency */ = {
