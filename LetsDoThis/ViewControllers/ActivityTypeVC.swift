@@ -77,7 +77,34 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
 extension ActivityTypeVC {
     func setUpObservable() {
         _ = self.presenter.activityTypes.asObservable().subscribe(onNext: { (activityTypeDTOs) in
-            self.collectionView.reloadData()
+//            self.collectionView.reloadData()
+            
+            
+            
+            
+//            Delete all elements
+            self.collectionView.performBatchUpdates({
+                var oldIndexPaths = [IndexPath]()
+                for indexRow in 0..<self.collectionView.numberOfItems(inSection: 0) {
+                    let indexPath = IndexPath(row: indexRow, section: 0)
+                    oldIndexPaths.append(indexPath)
+                }
+                if self.collectionView.numberOfItems(inSection: 0) != 0 {
+                    self.collectionView.deleteItems(at: oldIndexPaths)
+                }
+                
+                var newIndexPaths = [IndexPath]()
+                for indexRow in 0..<activityTypeDTOs.count {
+                    let indexPath = IndexPath(row: indexRow, section: 0)
+                    newIndexPaths.append(indexPath)
+                }
+                self.collectionView.insertItems(at: newIndexPaths)
+            }, completion: nil)
+            
+//            Insert all elements again
+//            self.collectionView.performBatchUpdates({
+//
+//            }, completion: nil)
         })
     }
 }
