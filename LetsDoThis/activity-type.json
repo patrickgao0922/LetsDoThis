@@ -2,12 +2,14 @@
   {
     "name":"Party",
     "icon":"icon-party",
-    "background":"background-party"
+    "background":"background-party",
+    "googlePlaceTypes":[]
   },
   {
     "name":"Karaoke",
     "icon":"icon-karaoke",
-    "background":"background-karaoke"
+    "background":"background-karaoke",
+    "googlePlaceTypes":[]
   }
 
 ]
