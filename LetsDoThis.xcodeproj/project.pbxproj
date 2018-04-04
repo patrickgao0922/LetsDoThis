@@ -38,6 +38,7 @@
 		9668FB13205CE164002AA9AA /* UserTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB12205CE164002AA9AA /* UserTranslationLayer.swift */; };
 		9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB14205CE208002AA9AA /* UserDTO.swift */; };
 		9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB16205CE3C6002AA9AA /* TranslationLayer.swift */; };
+		96A59C272074D704007B6F6E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A59C262074D703007B6F6E /* Config.swift */; };
 		96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF7055205F15F300B3ED4A /* Utilities.swift */; };
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
@@ -121,6 +122,7 @@
 		9668FB16205CE3C6002AA9AA /* TranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLayer.swift; sourceTree = "<group>"; };
 		96A59C242074D365007B6F6E /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
 		96A59C252074D5B5007B6F6E /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
+		96A59C262074D703007B6F6E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		96AF7055205F15F300B3ED4A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				96205E0620588D1100AA9996 /* Info.plist */,
 				96205DFE20588D1100AA9996 /* LetsDoThis.xcdatamodeld */,
 				96EB0B162062088A00B0E48F /* GlobalVariables.swift */,
+				96A59C262074D703007B6F6E /* Config.swift */,
 			);
 			path = LetsDoThis;
 			sourceTree = "<group>";
@@ -793,6 +796,7 @@
 				96EED62B206C632F00C15B53 /* GooglePlacesAPIManager.swift in Sources */,
 				96EED628206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift in Sources */,
 				96C0207B20630888002BC42C /* Aliases.swift in Sources */,
+				96A59C272074D704007B6F6E /* Config.swift in Sources */,
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
 				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
 				963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */,
@@ -979,7 +983,7 @@
 		};
 		96205E2020588D1100AA9996 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E67DE9C19837F3B47137CDE0 /* Pods-LetsDoThis.debug.xcconfig */;
+			baseConfigurationReference = 96A59C242074D365007B6F6E /* dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

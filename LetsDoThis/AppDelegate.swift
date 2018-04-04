@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // update user login status
         
         // retrieve user profile
-        GMSPlacesClient.provideAPIKey("AIzaSyAnYRkQ0oq-cBFTW9jLCznEPUyZO1gbzMU")
+        let config = Config.shared
+        GMSPlacesClient.provideAPIKey(config.googleAPIKey!)
         googleLocationManager = GooglePlacesAPIManagerImplementation()
         
         locationManager.requestAlwaysAuthorization()

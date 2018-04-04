@@ -52,7 +52,7 @@
 	<string>Show your location on the map</string>
 	<key>Google</key>
 	<dict>
-		<key>APIKey</key>
+		<key>API Key</key>
 		<string>$(GOOGLE_API_KEY)</string>
 	</dict>
 </dict>
