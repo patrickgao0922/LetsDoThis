@@ -38,6 +38,7 @@
 		9668FB13205CE164002AA9AA /* UserTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB12205CE164002AA9AA /* UserTranslationLayer.swift */; };
 		9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB14205CE208002AA9AA /* UserDTO.swift */; };
 		9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB16205CE3C6002AA9AA /* TranslationLayer.swift */; };
+		966DCE872076DFB300078909 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DCE862076DFB300078909 /* UIViewControllerExtensions.swift */; };
 		96A59C272074D704007B6F6E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A59C262074D703007B6F6E /* Config.swift */; };
 		96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF7055205F15F300B3ED4A /* Utilities.swift */; };
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
@@ -123,6 +124,7 @@
 		9668FB12205CE164002AA9AA /* UserTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTranslationLayer.swift; sourceTree = "<group>"; };
 		9668FB14205CE208002AA9AA /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9668FB16205CE3C6002AA9AA /* TranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLayer.swift; sourceTree = "<group>"; };
+		966DCE862076DFB300078909 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		96A59C242074D365007B6F6E /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
 		96A59C252074D5B5007B6F6E /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		96A59C262074D703007B6F6E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -321,6 +323,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		966DCE852076DF8E00078909 /* UIViewControllerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				966DCE862076DFB300078909 /* UIViewControllerExtensions.swift */,
+			);
+			path = UIViewControllerExtensions;
+			sourceTree = "<group>";
+		};
 		96A59C232074D340007B6F6E /* Config Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +378,7 @@
 		96E97C5B2065EF84006150EF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				966DCE852076DF8E00078909 /* UIViewControllerExtensions */,
 				96C5DA502075DB6B00AD8D22 /* SideMenuController */,
 				96E97C6020661248006150EF /* ActivityTypeCollectionView */,
 			);
@@ -822,6 +833,7 @@
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */,
 				96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */,
+				966DCE872076DFB300078909 /* UIViewControllerExtensions.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				96E97C622066129E006150EF /* ActivityTypeCVCell.swift in Sources */,

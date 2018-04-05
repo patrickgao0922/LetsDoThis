@@ -36,29 +36,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(config.googleAPIKey!)
         googleLocationManager = GooglePlacesAPIManagerImplementation()
         
-        locationManager.requestAlwaysAuthorization()
-        googleLocationManager.getCurrentPlace().subscribe { (single) in
-            switch single {
-            case .success(let list):
-                print(list?.likelihoods[0].place.name)
-            case .error(let error):
-                print(error.localizedDescription)
-                let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
-                }))
-                if var topController = UIApplication.shared.keyWindow?.rootViewController {
-                    while let presentedViewController = topController.presentedViewController {
-                        topController = presentedViewController
-                    }
-                    
-                    // topController should now be your topmost view controller
-                    Thread.sleep(forTimeInterval: 5.0)
-                    topController.present(alert, animated: true, completion: nil)
-                }
-                
-            }
-        }
+//        locationManager.requestAlwaysAuthorization()
+//        googleLocationManager.getCurrentPlace().subscribe { (single) in
+//            switch single {
+//            case .success(let list):
+//                print(list?.likelihoods[0].place.name)
+//            case .error(let error):
+//                print(error.localizedDescription)
+//                let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//                    NSLog("The \"OK\" alert occured.")
+//                }))
+//                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+//                    while let presentedViewController = topController.presentedViewController {
+//                        topController = presentedViewController
+//                    }
+//
+//                    // topController should now be your topmost view controller
+//                    Thread.sleep(forTimeInterval: 5.0)
+//                    topController.present(alert, animated: true, completion: nil)
+//                }
+//
+//            }
+//        }
         return true
     }
 
