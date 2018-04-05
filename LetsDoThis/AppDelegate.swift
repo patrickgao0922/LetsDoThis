@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Swinject
 import GooglePlaces
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,6 +43,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(list?.likelihoods[0].place.name)
             case .error(let error):
                 print(error.localizedDescription)
+                let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    
+                    // topController should now be your topmost view controller
+                    Thread.sleep(forTimeInterval: 5.0)
+                    topController.present(alert, animated: true, completion: nil)
+                }
+                
             }
         }
         return true

@@ -14,9 +14,13 @@ import Alamofire
 protocol GooglePlacesAPIManager{
     
 }
-
+enum LocationServiceErrors:Error {
+    case locationServicesUnavailable
+    case denied
+}
 class GooglePlacesAPIManagerImplementation:GooglePlacesAPIManager {
     
+//    Necessary information
     let httpProtocol = "https://"
     let host = "maps.googleapis.com"
     
@@ -29,22 +33,35 @@ class GooglePlacesAPIManagerImplementation:GooglePlacesAPIManager {
         case nearbySearch = "/nearbysearch/json"
     }
     
-    
+//    Properties
     var placesCient:GMSPlacesClient!
+    var locationManager:CLLocationManager!
+    
     init() {
         self.placesCient = GMSPlacesClient.shared()
+        self.locationManager = CLLocationManager()
     }
     
     func getCurrentPlace() -> Single<GMSPlaceLikelihoodList?> {
+        
         return Single<GMSPlaceLikelihoodList?>.create(subscribe: { (observer) -> Disposable in
-            self.placesCient.currentPlace { (likelyhoodPlaceList, error) in
-                if error != nil {
-                    return observer(.error(error!))
+            
+            do {
+                try self.checkLocationServicesEnabled()
+                self.placesCient.currentPlace { (likelyhoodPlaceList, error) in
+                    if error != nil {
+                        return observer(.error(error!))
+                    }
+                    return observer(.success(likelyhoodPlaceList))
                 }
-                return observer(.success(likelyhoodPlaceList))
             }
+            catch {
+                observer(.error(error))
+            }
+            
+            
             return Disposables.create()
-        })
+        }).observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
         
     }
     
@@ -77,5 +94,17 @@ class GooglePlacesAPIManagerImplementation:GooglePlacesAPIManager {
             }
             return Disposables.create()
         })
+    }
+}
+
+// MARK: - CLLocation Supports
+extension GooglePlacesAPIManager {
+    fileprivate func checkLocationServicesEnabled() throws {
+        if !CLLocationManager.locationServicesEnabled() {
+            throw LocationServiceErrors.locationServicesUnavailable
+        }
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.denied {
+            throw LocationServiceErrors.denied
+        }
     }
 }

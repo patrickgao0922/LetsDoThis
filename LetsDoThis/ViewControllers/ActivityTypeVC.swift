@@ -69,6 +69,10 @@ extension ActivityTypeVC:UICollectionViewDelegate,UICollectionViewDataSource {
         return cell
     }
     
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        if kind == UICollectionElementKindSectionHeader {
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)        }
+//    }
     
     
     
@@ -82,6 +86,7 @@ extension ActivityTypeVC {
         gradientLayer.colors = gradientColors
         gradientLayer.frame = self.view.bounds
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
     }
 }
 

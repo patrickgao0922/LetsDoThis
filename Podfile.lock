@@ -11,6 +11,7 @@ PODS:
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
   - Nimble (7.0.3)
+  - PGModelViewController (0.1.1)
   - Quick (1.2.0)
   - RxAlamofire (4.1.0):
     - RxAlamofire/Core (= 4.1.0)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - GooglePlacePicker
   - GooglePlaces
   - Nimble
+  - PGModelViewController
   - Quick
   - RxAlamofire
   - RxCocoa (~> 4.0)
@@ -39,12 +41,29 @@ DEPENDENCIES:
   - Swinject
   - SwinjectStoryboard
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - Nimble
+    - PGModelViewController
+    - Quick
+    - RxAlamofire
+    - RxCocoa
+    - RxSwift
+    - SwiftyJSON
+    - Swinject
+    - SwinjectStoryboard
+
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  PGModelViewController: f91c8698befacbc778b2fb69007b179e241328bd
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
@@ -53,6 +72,6 @@ SPEC CHECKSUMS:
   Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
 
-PODFILE CHECKSUM: a58fd0f0f9f196f4cfe1fd3351084cd99be03298
+PODFILE CHECKSUM: 8c5b0cea9032cfd86cbcf0daca3c88248efe615f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

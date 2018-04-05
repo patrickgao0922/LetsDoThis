@@ -19,6 +19,7 @@ target 'LetsDoThis' do
   pod 'Swinject'
   pod 'SwinjectStoryboard'
   pod 'RxAlamofire'
+  pod 'PGModelViewController'
   google_pods
   
 def testing_pods
