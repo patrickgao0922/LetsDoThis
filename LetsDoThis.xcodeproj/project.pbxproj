@@ -44,6 +44,9 @@
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
 		96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207720630703002BC42C /* TestUserPresenter.swift */; };
 		96C0207B20630888002BC42C /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0207A20630888002BC42C /* Aliases.swift */; };
+		96C5DA522075DBA600AD8D22 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5DA512075DBA600AD8D22 /* SideMenuController.swift */; };
+		96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C5DA532075E3F200AD8D22 /* Activity.storyboard */; };
+		96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */; };
 		96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C5E2065FC41006150EF /* SwinjectStoryboard+Extension.swift */; };
 		96E97C622066129E006150EF /* ActivityTypeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C612066129E006150EF /* ActivityTypeCVCell.swift */; };
 		96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C6320661BEF006150EF /* ActivityTypeVC.swift */; };
@@ -128,6 +131,9 @@
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		96C0207720630703002BC42C /* TestUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserPresenter.swift; sourceTree = "<group>"; };
 		96C0207A20630888002BC42C /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		96C5DA512075DBA600AD8D22 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		96C5DA532075E3F200AD8D22 /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
 		96E97C5E2065FC41006150EF /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		96E97C612066129E006150EF /* ActivityTypeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTypeCVCell.swift; path = LetsDoThis/ViewControllers/ActivityTypeCVCell.swift; sourceTree = "<group>"; };
 		96E97C6320661BEF006150EF /* ActivityTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTypeVC.swift; path = LetsDoThis/ViewControllers/ActivityTypeVC.swift; sourceTree = "<group>"; };
@@ -240,6 +246,7 @@
 				96205DF720588D1100AA9996 /* AppDelegate.swift */,
 				96234EAC206B3C660095BD8A /* activity-type.json */,
 				96205DFB20588D1100AA9996 /* Main.storyboard */,
+				96C5DA532075E3F200AD8D22 /* Activity.storyboard */,
 				96205E0120588D1100AA9996 /* Assets.xcassets */,
 				96205E0320588D1100AA9996 /* LaunchScreen.storyboard */,
 				96205E0620588D1100AA9996 /* Info.plist */,
@@ -349,9 +356,19 @@
 			path = Aliases;
 			sourceTree = "<group>";
 		};
+		96C5DA502075DB6B00AD8D22 /* SideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				96C5DA512075DBA600AD8D22 /* SideMenuController.swift */,
+				96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */,
+			);
+			path = SideMenuController;
+			sourceTree = "<group>";
+		};
 		96E97C5B2065EF84006150EF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				96C5DA502075DB6B00AD8D22 /* SideMenuController */,
 				96E97C6020661248006150EF /* ActivityTypeCollectionView */,
 			);
 			path = ViewControllers;
@@ -537,6 +554,7 @@
 			files = (
 				96205E0520588D1100AA9996 /* LaunchScreen.storyboard in Resources */,
 				96205E0220588D1100AA9996 /* Assets.xcassets in Resources */,
+				96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */,
 				96234EAD206B3C660095BD8A /* activity-type.json in Resources */,
 				96205DFD20588D1100AA9996 /* Main.storyboard in Resources */,
 			);
@@ -625,7 +643,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -636,7 +653,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -657,7 +673,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -670,7 +685,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -733,7 +747,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -746,7 +759,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -793,6 +805,7 @@
 				9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */,
+				96C5DA522075DBA600AD8D22 /* SideMenuController.swift in Sources */,
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
 				96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */,
 				963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */,
@@ -808,6 +821,7 @@
 				963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */,
+				96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				96E97C622066129E006150EF /* ActivityTypeCVCell.swift in Sources */,
