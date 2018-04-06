@@ -11,7 +11,7 @@ PODS:
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
   - Nimble (7.0.3)
-  - PGModelViewController (0.1.1)
+  - PGModelViewController (0.1.2)
   - Quick (1.2.0)
   - RxAlamofire (4.1.0):
     - RxAlamofire/Core (= 4.1.0)
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  PGModelViewController: f91c8698befacbc778b2fb69007b179e241328bd
+  PGModelViewController: 63023044e25849f79f3475b7a13aa78dfea69c35
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a

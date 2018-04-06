@@ -40,6 +40,7 @@ class GooglePlacesAPIManagerImplementation:GooglePlacesAPIManager {
     init() {
         self.placesCient = GMSPlacesClient.shared()
         self.locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
     }
     
     func getCurrentPlace() -> Single<GMSPlaceLikelihoodList?> {

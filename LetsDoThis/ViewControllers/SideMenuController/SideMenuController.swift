@@ -10,6 +10,7 @@ import UIKit
 
 class SideMenuController: UIViewController {
     
+   
     var mainViewController:ActivityTypeVC!
     var testViewController:UIViewController!
 

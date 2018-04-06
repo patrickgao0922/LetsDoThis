@@ -26,3 +26,19 @@ extension UIViewController {
         }
     }
 }
+
+extension UIBarButtonItem {
+    /// Convienience Initializer with image
+    ///
+    /// - Parameters:
+    ///   - imageAsset: image namne
+    ///   - renderingMode: image redering mode
+    ///   - style: UIBarButtonItem style
+    ///   - target: target
+    ///   - action: action
+    convenience init(with imageAsset:String, in renderingMode:UIImageRenderingMode, style:UIBarButtonItemStyle, target:Any?, action: Selector?) {
+        let image = UIImage(named: imageAsset)?.withRenderingMode(renderingMode)
+        self.init(image: image, style: style, target: target, action: action)
+        
+    }
+}
