@@ -41,26 +41,37 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-pc-dph">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="5H3-lm-SdV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <view key="tableHeaderView" contentMode="scaleAspectFill" id="5H3-lm-SdV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oK-Qj-njd">
-                                            <rect key="frame" x="8" y="12" width="359" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-karaoke" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-j7-yoJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oK-Qj-njd">
+                                            <rect key="frame" x="8" y="12" width="359" height="177"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2oK-Qj-njd" secondAttribute="bottom" constant="3" id="4N5-ak-C44"/>
+                                        <constraint firstItem="2oK-Qj-njd" firstAttribute="leading" secondItem="5H3-lm-SdV" secondAttribute="leadingMargin" id="Abv-3U-cMZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="H8B-j7-yoJ" secondAttribute="trailing" id="CrS-iu-RRt"/>
                                         <constraint firstItem="2oK-Qj-njd" firstAttribute="leading" secondItem="5H3-lm-SdV" secondAttribute="leadingMargin" id="CyE-1I-aVS"/>
                                         <constraint firstItem="2oK-Qj-njd" firstAttribute="centerX" secondItem="5H3-lm-SdV" secondAttribute="centerX" id="RL0-ld-3cc"/>
+                                        <constraint firstItem="2oK-Qj-njd" firstAttribute="trailing" secondItem="5H3-lm-SdV" secondAttribute="trailingMargin" id="Uc9-51-SLN"/>
+                                        <constraint firstItem="H8B-j7-yoJ" firstAttribute="top" secondItem="5H3-lm-SdV" secondAttribute="top" id="Z81-sR-GCJ"/>
+                                        <constraint firstItem="H8B-j7-yoJ" firstAttribute="leading" secondItem="5H3-lm-SdV" secondAttribute="leading" id="cTB-fV-Hp1"/>
+                                        <constraint firstItem="2oK-Qj-njd" firstAttribute="top" secondItem="5H3-lm-SdV" secondAttribute="topMargin" constant="4" id="lhZ-Q6-hr1"/>
+                                        <constraint firstAttribute="bottom" secondItem="H8B-j7-yoJ" secondAttribute="bottom" id="rOu-zX-OVK"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="U6e-wf-FDc">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="228" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U6e-wf-FDc" id="Wwg-ul-xeS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -131,4 +142,7 @@
             <point key="canvasLocation" x="-126" y="-1235"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-karaoke" width="392" height="150"/>
+    </resources>
 </document>
