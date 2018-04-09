@@ -9,6 +9,9 @@
 import UIKit
 import PGModelViewController
 
+protocol LeftSideMenuViewControllerDelegate {
+    func optionSelected(segue:MenuOption)
+}
 
 enum MenuOption:String {
     case test = "testSegue"
@@ -18,20 +21,23 @@ class LeftSideMenuViewController: PGModelViewController{
     let cellIdentifier = "menuCell"
     @IBOutlet var tableView: UITableView!
     
+    var leftSideMenuViewControllerDelegate:LeftSideMenuViewControllerDelegate!
+    
     var tableHeaderView: UIView!
+    var tableHeaderMask:CAShapeLayer?
     @IBOutlet var tableHeaderLabel: UILabel!
     
-    fileprivate var headerViewHeight:CGFloat = 44
-    fileprivate var headerLabelFont:CGFloat = 10.0
+    fileprivate var headerViewHeight:CGFloat = 200
+    fileprivate var headerMaskCuttingAwayHeight:CGFloat = 30.0
+    fileprivate var headerLabelFont:CGFloat = 17.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        
         setupTableViewHeader()
-        updateHeaderView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +76,21 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        switch indexPath.row {
+//        case 0:
+//            self.dismiss(animated: true) {
+//                self.leftSideMenuViewControllerDelegate.optionSelected(segue: .test)
+//            }
+//
+//        default:
+//            break
+//        }
+        self.dismiss(animated: true) {
+            self.leftSideMenuViewControllerDelegate.optionSelected(segue: indexPath.row)
+        }
+    }
+    
 //    func table
     
     func setupTableViewHeader() {
@@ -78,6 +99,11 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         self.tableView.addSubview(tableHeaderView)
         tableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -headerViewHeight)
+        
+        tableHeaderMask = CAShapeLayer()
+        tableHeaderMask!.fillColor = UIColor.black.cgColor
+        tableHeaderView.layer.mask = tableHeaderMask
+        
         updateHeaderView()
     }
     
@@ -93,6 +119,19 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         tableHeaderView.frame = tableViewHeaderRect
         tableHeaderLabel.font = UIFont.systemFont(ofSize: newFontSize)
 //        print(tableView.contentOffset)
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: tableViewHeaderRect.size.width,y: 0))
+        path.addLine(to: CGPoint(x: tableViewHeaderRect.size.width,y: tableViewHeaderRect.size.height))
+        path.addLine(to: CGPoint(x: 0, y: tableViewHeaderRect.size.height - headerMaskCuttingAwayHeight))
+        tableHeaderMask?.path = path.cgPath
+        
+        
+    }
+    
+    func drawCuttingMask() {
+        
         
     }
     

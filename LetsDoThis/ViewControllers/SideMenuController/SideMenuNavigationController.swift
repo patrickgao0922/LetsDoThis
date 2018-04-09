@@ -47,13 +47,18 @@ class SideMenuNavigationController: UINavigationController {
         }
         if segueIdentifier == Segues.sideMenu.rawValue {
 //            let controller = segue.destination as! PGModelViewController
-            let controller = segue.destination as! LeftSideMenuViewController
-            controller.transitioningDelegate = pgModelViewControllerDelegate
-            controller.presentationStyle = .sideMenu
-            controller.direction = .left
-            controller.navigationItem.leftBarButtonItems = self.navigationItem.leftBarButtonItems
+            setupLeftSideMenuViewController(forSegue:segue)
         }
         
+    }
+    
+    fileprivate func setupLeftSideMenuViewController(forSegue segue:UIStoryboardSegue){
+        let controller = segue.destination as! LeftSideMenuViewController
+        controller.transitioningDelegate = pgModelViewControllerDelegate
+        controller.presentationStyle = .sideMenu
+        controller.direction = .left
+        controller.navigationItem.leftBarButtonItems = self.navigationItem.leftBarButtonItems
+        controller.leftSideMenuViewControllerDelegate = self
     }
  
 
@@ -77,5 +82,15 @@ extension SideMenuNavigationController {
     @objc
     func tapSideMenuButton() {
         self.performSegue(withIdentifier: Segues.sideMenu.rawValue, sender: self)
+    }
+}
+
+extension SideMenuNavigationController:LeftSideMenuViewControllerDelegate {
+    func optionSelected(segue: MenuOption) {
+        switch segue {
+        case .test:
+            let testVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testVC")
+            self.viewControllers = [testVC]
+        }
     }
 }

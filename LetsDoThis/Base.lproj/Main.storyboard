@@ -14,7 +14,7 @@
         <!--Title-->
         <scene sceneID="svs-WW-OWl">
             <objects>
-                <viewController id="4yA-gC-bg5" sceneMemberID="viewController">
+                <viewController restorationIdentifier="testVC" storyboardIdentifier="testVC" id="4yA-gC-bg5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gn-ZH-rbj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suN-dA-4K4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1783" y="-707"/>
+            <point key="canvasLocation" x="-2700" y="392"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="IQZ-ep-Gbj">
