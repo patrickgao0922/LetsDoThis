@@ -20,6 +20,7 @@ target 'LetsDoThis' do
   pod 'SwinjectStoryboard'
   pod 'RxAlamofire'
   pod 'PGModelViewController'
+  pod 'CryptoSwift'
   google_pods
   
 def testing_pods

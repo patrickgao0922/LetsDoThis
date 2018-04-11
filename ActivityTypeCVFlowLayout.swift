@@ -62,9 +62,9 @@ class ActivityTypeCVFlowLayout: UICollectionViewFlowLayout {
     
     override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let attr = self.layoutAttributesForItem(at: itemIndexPath)
-//        let size = self.collectionView!.frame.size
-//        attr?.size = self.collectionView!.frame.size
-//        attr?.center = CGPoint(x: size.width / 2.0, y: size.height)
+        let size = self.collectionView!.frame.size
+        attr?.size = CGSize(width: 0, height: size.height)
+        attr?.center = CGPoint(x: size.width / 2.0, y: size.height)
         attr?.alpha = 0
         return attr
     }

@@ -16,6 +16,21 @@ class Config {
         }
         return google["API Key"]
     }
+
+    var OAuth:(clientID:String,clientSecret:String)? {
+        guard let oauth = infoForKey("OAuth") as? Dictionary<String,String> else {
+            return nil
+        }
+        guard let clientID = oauth["Client ID"] else {
+            return nil
+        }
+        
+        guard let clientSecret = oauth["Client Secret"] else {
+            return nil
+        }
+        
+        return (clientID,clientSecret)
+    }
     
     fileprivate func infoForKey(_ key: String) -> Any? {
         return (Bundle.main.infoDictionary?[key])

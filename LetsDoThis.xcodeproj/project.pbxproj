@@ -41,6 +41,9 @@
 		966DCE872076DFB300078909 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DCE862076DFB300078909 /* UIViewControllerExtensions.swift */; };
 		966DCE8F2076FD9F00078909 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DCE8E2076FD9F00078909 /* LeftSideMenuViewController.swift */; };
 		96A59C272074D704007B6F6E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A59C262074D703007B6F6E /* Config.swift */; };
+		96A93E44207D7CCA005A9ED8 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A93E43207D7CCA005A9ED8 /* APIRouter.swift */; };
+		96A93E46207D7D45005A9ED8 /* APIRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A93E45207D7D45005A9ED8 /* APIRouterTests.swift */; };
+		96A93E48207D7EA4005A9ED8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A93E47207D7EA4005A9ED8 /* Constants.swift */; };
 		96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF7055205F15F300B3ED4A /* Utilities.swift */; };
 		96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA03205A167E007A1027 /* DependencyRegistry.swift */; };
 		96B9BA08205A3058007A1027 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BA07205A3058007A1027 /* UserModel.swift */; };
@@ -130,6 +133,9 @@
 		96A59C242074D365007B6F6E /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
 		96A59C252074D5B5007B6F6E /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		96A59C262074D703007B6F6E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		96A93E43207D7CCA005A9ED8 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		96A93E45207D7D45005A9ED8 /* APIRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouterTests.swift; sourceTree = "<group>"; };
+		96A93E47207D7EA4005A9ED8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		96AF7055205F15F300B3ED4A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		96B9BA03205A167E007A1027 /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		96B9BA07205A3058007A1027 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */,
 				9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */,
 				96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */,
+				96A93E45207D7D45005A9ED8 /* APIRouterTests.swift */,
 			);
 			path = LetsDoThisTests;
 			sourceTree = "<group>";
@@ -294,6 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				96205E302058AF9600AA9996 /* LoginManager.swift */,
+				96A93E43207D7CCA005A9ED8 /* APIRouter.swift */,
+				96A93E47207D7EA4005A9ED8 /* Constants.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -657,6 +666,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -668,6 +678,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -689,6 +700,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -702,6 +714,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -765,6 +778,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -778,6 +792,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -823,6 +838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */,
+				96A93E44207D7CCA005A9ED8 /* APIRouter.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				966DCE8F2076FD9F00078909 /* LeftSideMenuViewController.swift in Sources */,
 				96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */,
@@ -830,6 +846,7 @@
 				96B9BA04205A167E007A1027 /* DependencyRegistry.swift in Sources */,
 				96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */,
 				963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */,
+				96A93E48207D7EA4005A9ED8 /* Constants.swift in Sources */,
 				9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */,
 				962E7FE52072F84900F775CC /* ActivityTypeCVFlowLayout.swift in Sources */,
 				96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */,
@@ -860,6 +877,7 @@
 			files = (
 				96234EAF206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift in Sources */,
 				96205E1020588D1100AA9996 /* LetsDoThisTests.swift in Sources */,
+				96A93E46207D7D45005A9ED8 /* APIRouterTests.swift in Sources */,
 				96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */,
 				9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */,
 				9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */,

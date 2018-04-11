@@ -55,5 +55,12 @@
 		<key>API Key</key>
 		<string>$(GOOGLE_API_KEY)</string>
 	</dict>
+	<key>OAuth</key>
+	<dict>
+		<key>Client ID</key>
+		<string>${OAUTH_CLIENT_ID}</string>
+		<key>Client Secret</key>
+		<string>${OAUTH_CLIENT_SECRET}</string>
+	</dict>
 </dict>
 </plist>

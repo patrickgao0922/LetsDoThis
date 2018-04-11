@@ -77,18 +77,18 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath.row {
-//        case 0:
-//            self.dismiss(animated: true) {
-//                self.leftSideMenuViewControllerDelegate.optionSelected(segue: .test)
-//            }
-//
-//        default:
-//            break
-//        }
-        self.dismiss(animated: true) {
-            self.leftSideMenuViewControllerDelegate.optionSelected(segue: indexPath.row)
+        switch indexPath.row {
+        case 0:
+            self.dismiss(animated: true) {
+                self.leftSideMenuViewControllerDelegate.optionSelected(segue: .test)
+            }
+
+        default:
+            break
         }
+//        self.dismiss(animated: true) {
+////            self.leftSideMenuViewControllerDelegate.optionSelected(segue: indexPath.row)
+//        }
     }
     
 //    func table

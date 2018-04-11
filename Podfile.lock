@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.0)
+  - CryptoSwift (0.9.0)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -28,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - CryptoSwift
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -44,6 +46,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - CryptoSwift
     - GoogleMaps
     - GooglePlacePicker
     - GooglePlaces
@@ -59,6 +62,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
@@ -72,6 +76,6 @@ SPEC CHECKSUMS:
   Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
 
-PODFILE CHECKSUM: 8c5b0cea9032cfd86cbcf0daca3c88248efe615f
+PODFILE CHECKSUM: 10892fe42a68481e2472682ceeee6e17e989fb6b
 
 COCOAPODS: 1.5.0
