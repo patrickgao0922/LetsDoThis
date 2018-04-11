@@ -18,7 +18,8 @@ struct K {
     
     struct APIParameterKey {
         static let password = "password"
-        static let email = "email"
+        static let username = "username"
+        static let grantType = "grant_type"
     }
 }
 

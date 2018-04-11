@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CryptoSwift
 
 enum APIRouter: URLRequestConvertible {
     typealias Headers = [String:String]
@@ -31,16 +32,21 @@ enum APIRouter: URLRequestConvertible {
     fileprivate var parameters:Parameters? {
         switch self {
         case .login(let email, let password):
-            return [K.APIParameterKey.email:email, K.APIParameterKey.password:password]
+            return [K.APIParameterKey.username:email, K.APIParameterKey.password:password, K.APIParameterKey.grantType:"grant_type"]
         }
     }
     
     fileprivate var headers:Headers? {
-        var header:Headers?
+        var header:Headers = [String:String]()
+        header[HTTPHeaderField.acceptType.rawValue] = ContentType.json.rawValue
         switch self {
         case .login:
-            return [HTTPHeaderField.authentication.rawValue:]
+            guard let authorizationString = buildOAuthPasswordAuthorization() else {
+                return nil
+            }
+            header[HTTPHeaderField.authentication.rawValue] = authorizationString
         }
+        return header
     }
     
     func asURLRequest() throws -> URLRequest {
@@ -52,12 +58,37 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
 //        HTTP Headers
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
+        if let headers = self.headers {
+            for (key,value) in headers {
+                urlRequest.addValue(value, forHTTPHeaderField: key)
+            }
+        }
         
-        
+        if let parameters = parameters {
+            do {
+                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            } catch {
+                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+            }
+        }
+        return urlRequest
     }
     
     func buildOAuthPasswordAuthorization() -> String? {
-        return "Basic"
+        let config = Config.shared
+        guard let id = config.OAuth?.clientID else {
+            return nil
+        }
+        guard let secret = config.OAuth?.clientSecret else {
+            return nil
+        }
+        guard let data = "\(id):\(secret)".data(using: .utf8) else {
+            return nil
+        }
+//        guard let token = String(data: data.sha256(), encoding: String.Encoding.utf8) else {
+//            return nil
+//        }
+        let token = data.toHexString()
+        return "Basic \(token)"
     }
 }
