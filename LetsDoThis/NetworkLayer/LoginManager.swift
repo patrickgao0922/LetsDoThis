@@ -56,6 +56,15 @@ class LoginManagerImplementation:LoginManager {
         })
     }
     
+    static func getToken(with username:String, password:String) -> Single<Tokens> {
+        return Single<Tokens>.create(subscribe: { observer -> Disposable in
+            Alamofire.request(APIRouter.login(email: username, passwrod: password))
+                .validate(statusCode: 200..<300)
+            .responseJson
+            return Disposables.create()
+        })
+    }
+    
     /// Retrieve profile for server using access token
     ///
     /// - Parameter accessToken: access token string
