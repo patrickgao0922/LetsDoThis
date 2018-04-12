@@ -54,6 +54,28 @@ class TestLoginManagerImplementation:QuickSpec {
                     }).disposed(by: disposeBag)
                 })
             }
+
+            it("getToken in with username(email) and password") {
+                let username = "test@test.com"
+                let password = "test"
+                waitUntil(timeout: 5, action: { (done) in
+                    loginManager.getToken(with: username, password: password).subscribe({ (single) in
+                        switch single {
+                        case .success(let result):
+                            let accessToken = result.accessToken
+                            let refreshToken = result.refreshToken
+                            expect(accessToken).toNot(beNil())
+                            expect(refreshToken).toNot(beNil())
+                            print(accessToken)
+                            done()
+                        case .error(let error):
+                            fail(error.localizedDescription)
+                            break
+                        }
+                        
+                    }).disposed(by: disposeBag)
+                })
+            }
             
             it("Test saving access token and refresh token into user defaults") {
                 let accessToken = "test access token"
@@ -97,7 +119,6 @@ class TestLoginManagerImplementation:QuickSpec {
                         }
                     })
                 })
-                
                 
             }
         }

@@ -32,13 +32,13 @@ enum APIRouter: URLRequestConvertible {
     fileprivate var parameters:Parameters? {
         switch self {
         case .login(let email, let password):
-            return [K.APIParameterKey.username:email, K.APIParameterKey.password:password, K.APIParameterKey.grantType:"grant_type"]
+            return [K.APIParameterKey.username:email, K.APIParameterKey.password:password, K.APIParameterKey.grantType:"password"]
         }
     }
     
     fileprivate var headers:Headers? {
         var header:Headers = [String:String]()
-        header[HTTPHeaderField.acceptType.rawValue] = ContentType.json.rawValue
+        header[HTTPHeaderField.contentType.rawValue] = ContentType.json.rawValue
         switch self {
         case .login:
             guard let authorizationString = buildOAuthPasswordAuthorization() else {
@@ -88,7 +88,7 @@ enum APIRouter: URLRequestConvertible {
 //        guard let token = String(data: data.sha256(), encoding: String.Encoding.utf8) else {
 //            return nil
 //        }
-        let token = data.toHexString()
+        let token = data.base64EncodedString()
         return "Basic \(token)"
     }
 }

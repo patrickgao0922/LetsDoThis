@@ -17,10 +17,15 @@ protocol LoginManager {
     // for testing
     func updateUserTokensInUserDefaults(accessToken:String,refreshToken:String)
     func retrieveUserTokensInUserDefaults() -> (accessToken:String?,refreshToken:String?)
+    func getToken(with username:String, password:String) -> Single<UserToken>
 }
 
 class LoginManagerImplementation:LoginManager {
-//    static let sharedInstance = LoginManagerImplementation()
+    //    static let sharedInstance = LoginManagerImplementation()
+    
+    enum AuthenticationError:Error {
+        case noResponseData
+    }
     
     /// Login and obtain accessToken and refreshToken using username and password
     ///
@@ -39,28 +44,49 @@ class LoginManagerImplementation:LoginManager {
             Alamofire.request("http://localhost:8080/token", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers:headers)
                 .validate(statusCode: 200..<300)
                 .response {response in
-                if let error = response.error {
-                    return single(.error(error))
-                }
-                let json = JSON(response.data!)
-                guard let _ = json["access_token"].string else {
-                    return single(.error(json["access_token"].error!))
-                }
-                guard let _ = json["refresh_token"].string  else {
-                    return single(.error(json["refresh_token"].error!))
-                }
-                
-                single(.success(json))
+                    if let error = response.error {
+                        return single(.error(error))
+                    }
+                    let json = JSON(response.data!)
+                    guard let _ = json["access_token"].string else {
+                        return single(.error(json["access_token"].error!))
+                    }
+                    guard let _ = json["refresh_token"].string  else {
+                        return single(.error(json["refresh_token"].error!))
+                    }
+                    
+                    single(.success(json))
             }
             return Disposables.create()
         })
     }
     
-    static func getToken(with username:String, password:String) -> Single<Tokens> {
-        return Single<Tokens>.create(subscribe: { observer -> Disposable in
+    func getToken(with username:String, password:String) -> Single<UserToken> {
+        return Single<UserToken>.create(subscribe: { single -> Disposable in
             Alamofire.request(APIRouter.login(email: username, passwrod: password))
                 .validate(statusCode: 200..<300)
-            .responseJson
+                .response(completionHandler: { (response) in
+                    
+                    // Handle errors
+                    if let error = response.error {
+                        single(.error(error))
+                    }
+                    if let data = response.data {
+
+                        if let token = try? JSONDecoder().decode(UserToken.self, from: data)
+                        {
+                            
+                            single(.success(token))
+                        }
+                        else {
+                            single(.error(AuthenticationError.noResponseData))
+                        }
+                    }
+                    else {
+                        single(.error(AuthenticationError.noResponseData))
+                    
+                    }
+                })
             return Disposables.create()
         })
     }
@@ -135,5 +161,9 @@ class LoginManagerImplementation:LoginManager {
         defaults.set(accessToken, forKey: "accessToken")
         defaults.set(refreshToken, forKey: "refreshToken")
     }
+    
+}
+
+extension LoginManager {
     
 }
