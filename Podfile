@@ -26,6 +26,7 @@ target 'LetsDoThis' do
 def testing_pods
     pod 'Quick'
     pod 'Nimble'
+    pod 'Mockingjay'
 end
 
   target 'LetsDoThisTests' do
