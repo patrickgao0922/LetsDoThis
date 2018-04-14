@@ -16,6 +16,13 @@ class Config {
         }
         return google["API Key"]
     }
+    
+    var newsAPIKey:String {
+        guard let apiKey = infoForKey("News API Key") as? String else {
+            return ""
+        }
+        return apiKey
+    }
 
     var OAuth:(clientID:String,clientSecret:String)? {
         guard let oauth = infoForKey("OAuth") as? Dictionary<String,String> else {

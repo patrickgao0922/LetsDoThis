@@ -62,5 +62,7 @@
 		<key>Client Secret</key>
 		<string>${OAUTH_CLIENT_SECRET}</string>
 	</dict>
+	<key>News API Key</key>
+	<string>${NEWS_API_KEY}</string>
 </dict>
 </plist>
