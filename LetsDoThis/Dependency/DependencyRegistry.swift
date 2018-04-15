@@ -43,6 +43,10 @@ class DependencyRegistry {
         container.register(ActivityTypeTranslationLayer.self) { (r) in
             ActivityTypeTranslationLayerImplementation()
         }.inObjectScope(.container)
+        
+        container.register(NewsAPIClient.self) { (r) in
+            NewsAPIClientImplementation()
+        }.inObjectScope(.container)
     }
     func registerPresenters() {
         container.register(UserModel.self) { (r) in
@@ -51,6 +55,10 @@ class DependencyRegistry {
         container.register(ActivityTypeVCPresenter.self) { (r) in
             ActivityTypeVCPresenterImplementation(with: r.resolve(ActivityTypeModel.self)!)
             }.inObjectScope(.container)
+        
+        container.register(TopHeadlineVCPresenter.self) { (r) in
+            TopHeadlineVCPresenterImplementation(with: r.resolve(NewsAPIClient.self)!)
+        }
     }
     func registerViewControllers() {
     }

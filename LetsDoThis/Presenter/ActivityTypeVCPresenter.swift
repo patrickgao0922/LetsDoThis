@@ -16,13 +16,11 @@ protocol ActivityTypeVCPresenter {
 
 class ActivityTypeVCPresenterImplementation:ActivityTypeVCPresenter {
     fileprivate var activityTypeModel: ActivityTypeModel
-    fileprivate var disposeBag:DisposeBag
     
     var activityTypes:Variable<[ActivityTypeDTO]>
     init(with activityTypeModel: ActivityTypeModel) {
         self.activityTypes = Variable<[ActivityTypeDTO]>([])
         self.activityTypeModel = activityTypeModel
-        self.disposeBag = DisposeBag()
     }
     
     func loadActivityTypes() -> Single<[ActivityTypeDTO]>{

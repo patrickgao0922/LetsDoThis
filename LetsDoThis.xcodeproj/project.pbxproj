@@ -32,6 +32,7 @@
 		963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971472069DED900EFEC65 /* ActivityTypeDTO.swift */; };
 		9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */; };
 		9639714C2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */; };
+		965228A320840A1E00D8E039 /* TopHeadlineVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */; };
 		96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
 		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
@@ -127,6 +128,7 @@
 		963971472069DED900EFEC65 /* ActivityTypeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeDTO.swift; sourceTree = "<group>"; };
 		963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
 		9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
+		965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlineVCPresenter.swift; sourceTree = "<group>"; };
 		96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRouter.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -338,6 +340,21 @@
 			path = TranslationLayer;
 			sourceTree = "<group>";
 		};
+		965228A0208409FB00D8E039 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		965228A120840A0400D8E039 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		96636BB72081E6CB008B1068 /* News API */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +430,7 @@
 		96E97C5B2065EF84006150EF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				965228A0208409FB00D8E039 /* News */,
 				966DCE852076DF8E00078909 /* UIViewControllerExtensions */,
 				96C5DA502075DB6B00AD8D22 /* SideMenuController */,
 				96E97C6020661248006150EF /* ActivityTypeCollectionView */,
@@ -434,6 +452,7 @@
 		96EB0B132061E8FC00B0E48F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				965228A120840A0400D8E039 /* News */,
 				96EB0B142061E91700B0E48F /* UserPresenter.swift */,
 				963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */,
 				96EED627206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift */,
@@ -893,6 +912,7 @@
 				96F2E1BB2082F0B7003F17FB /* NewsAPIModels.swift in Sources */,
 				96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */,
 				96EED62B206C632F00C15B53 /* GooglePlacesAPIManager.swift in Sources */,
+				965228A320840A1E00D8E039 /* TopHeadlineVCPresenter.swift in Sources */,
 				96EED628206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift in Sources */,
 				96C0207B20630888002BC42C /* Aliases.swift in Sources */,
 				96A59C272074D704007B6F6E /* Config.swift in Sources */,

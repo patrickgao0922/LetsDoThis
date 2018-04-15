@@ -11,14 +11,14 @@ import RxSwift
 import Alamofire
 
 protocol NewsAPIClient {
-    func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int) -> Single<NewsResponse>
+    func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int?) -> Single<NewsResponse>
 }
 enum HTTPError:Error {
     case noResponseData
     case responseParsingError
 }
 class NewsAPIClientImplementation:NewsAPIClient {
-    func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int) -> Single<NewsResponse> {
+    func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int?) -> Single<NewsResponse> {
         return Single<NewsResponse>.create(subscribe: { (single) -> Disposable in
             
 //            Alamofire Request
@@ -30,11 +30,13 @@ class NewsAPIClientImplementation:NewsAPIClient {
                     guard let data = response.data else {
                         return single(.error(HTTPError.noResponseData))
                     }
-                    if let newsResponse = try? JSONDecoder().decode(NewsResponse.self, from: data) {
-                        single(.success(newsResponse))
+                    
+                    do {
+                        let newsResponse = try JSONDecoder().decode(NewsResponse.self, from: data)
+                            single(.success(newsResponse))
                     }
-                    else {
-                        single(.error(HTTPError.responseParsingError))
+                    catch {
+                        single(.error(error))
                     }
                     
                 })

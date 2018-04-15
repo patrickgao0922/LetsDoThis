@@ -28,14 +28,14 @@ enum NewsAPIRouter:URLRequestConvertible {
     }
     
     fileprivate var baseURL:String{
-        return "https://newsapi.org"
+        return "https://newsapi.org/v2"
     }
     fileprivate var apiVersion:String {
         return "/v2"
         
     }
     
-    case topHeadlines(country:Country?,category:Category?,page:Int)
+    case topHeadlines(country:Country?,category:Category?,page:Int?)
     case everything
     case sources
     
@@ -64,12 +64,14 @@ enum NewsAPIRouter:URLRequestConvertible {
         case .topHeadlines(let country, let category, let page):
             
             if let country = country {
-                parameters["country"] = country
+                parameters["country"] = country.rawValue
             }
             if let category = category {
-                parameters["category"] = category
+                parameters["category"] = category.rawValue
             }
-            parameters["page"] = page
+            if let page = page {
+                parameters["page"] = page
+            }
         case .everything:
             break
         case .sources:
