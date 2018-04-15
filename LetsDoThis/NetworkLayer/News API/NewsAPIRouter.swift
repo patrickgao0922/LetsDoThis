@@ -12,9 +12,30 @@ import Alamofire
 
 
 enum NewsAPIRouter:URLRequestConvertible {
-    fileprivate let baseURL = "https://newsapi.org"
-    fileprivate let apiVersion = "/v2"
-    case topHeadlines
+    
+    enum Country:String {
+        case china = "cn"
+        case usa = "us"
+    }
+    enum Category:String {
+        case business = "business"
+        case entertainment = "entertainment"
+        case general = "general"
+        case health = "health"
+        case science = "science"
+        case sports = "sports"
+        case technology = "technology"
+    }
+    
+    fileprivate var baseURL:String{
+        return "https://newsapi.org"
+    }
+    fileprivate var apiVersion:String {
+        return "/v2"
+        
+    }
+    
+    case topHeadlines(country:Country?,category:Category?,page:Int)
     case everything
     case sources
     
@@ -23,7 +44,7 @@ enum NewsAPIRouter:URLRequestConvertible {
     /// HTTP Path
     fileprivate var path:String {
         switch self {
-        case .topHeadlines:
+        case .topHeadlines(_,_,_):
             return "/top-headlines"
         case .everything:
             return "/everything"
@@ -36,11 +57,39 @@ enum NewsAPIRouter:URLRequestConvertible {
         let apiKey = Config.shared.newsAPIKey
         return ["Authorization":"Bearer \(apiKey)"]
     }
+    
+    fileprivate var parameters:Parameters {
+        var parameters = Parameters()
+        switch self {
+        case .topHeadlines(let country, let category, let page):
+            
+            if let country = country {
+                parameters["country"] = country
+            }
+            if let category = category {
+                parameters["category"] = category
+            }
+            parameters["page"] = page
+        case .everything:
+            break
+        case .sources:
+            break
+        }
+        return parameters
+    }
     func asURLRequest() throws -> URLRequest {
+        let url = try baseURL.asURL()
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
+        urlRequest.httpMethod = HTTPMethod.get.rawValue
         
-//        Placeholder
-        return URLRequest(url: URL(fileURLWithPath: ""))
+//        Setup headers
+        for (key,value) in headers {
+            urlRequest.addValue(value, forHTTPHeaderField: key)
+        }
+        
+        return try URLEncoding.default.encode(urlRequest, with: parameters)
+        
     }
     
     

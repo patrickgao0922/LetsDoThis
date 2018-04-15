@@ -65,6 +65,9 @@
 		96EED628206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EED627206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift */; };
 		96EED62B206C632F00C15B53 /* GooglePlacesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EED62A206C632F00C15B53 /* GooglePlacesAPIManager.swift */; };
 		96EED62E206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EED62D206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift */; };
+		96F2E1B92082EF4E003F17FB /* NewsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2E1B82082EF4E003F17FB /* NewsAPIClient.swift */; };
+		96F2E1BB2082F0B7003F17FB /* NewsAPIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2E1BA2082F0B7003F17FB /* NewsAPIModels.swift */; };
+		96F2E1C020830244003F17FB /* NewsAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F2E1BF20830244003F17FB /* NewsAPIClientTests.swift */; };
 		EEE67B3888F21EE2E0779377 /* Pods_LetsDoThis_LetsDoThisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DC1E756D2613382402B2D5 /* Pods_LetsDoThis_LetsDoThisTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +162,9 @@
 		96EED627206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCVCellPresenter.swift; sourceTree = "<group>"; };
 		96EED62A206C632F00C15B53 /* GooglePlacesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPIManager.swift; sourceTree = "<group>"; };
 		96EED62D206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPIManagerImplementationTests.swift; sourceTree = "<group>"; };
+		96F2E1B82082EF4E003F17FB /* NewsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIClient.swift; sourceTree = "<group>"; };
+		96F2E1BA2082F0B7003F17FB /* NewsAPIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIModels.swift; sourceTree = "<group>"; };
+		96F2E1BF20830244003F17FB /* NewsAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIClientTests.swift; sourceTree = "<group>"; };
 		B39F8BC029C19E6A6DABFFE0 /* Pods_LetsDoThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsDoThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B834C8163340E9A6472CE431 /* Pods-LetsDoThisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThisUITests/Pods-LetsDoThisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65D06B1F37B63399FE41AA2 /* Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +280,7 @@
 		96205E0E20588D1100AA9996 /* LetsDoThisTests */ = {
 			isa = PBXGroup;
 			children = (
+				96F2E1BE2083022B003F17FB /* News API */,
 				96EED62C206C707600C15B53 /* Google */,
 				96205E0F20588D1100AA9996 /* LetsDoThisTests.swift */,
 				96205E1120588D1100AA9996 /* Info.plist */,
@@ -335,6 +342,8 @@
 			isa = PBXGroup;
 			children = (
 				96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */,
+				96F2E1B82082EF4E003F17FB /* NewsAPIClient.swift */,
+				96F2E1BA2082F0B7003F17FB /* NewsAPIModels.swift */,
 			);
 			path = "News API";
 			sourceTree = "<group>";
@@ -454,6 +463,14 @@
 				96EED62D206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift */,
 			);
 			path = Google;
+			sourceTree = "<group>";
+		};
+		96F2E1BE2083022B003F17FB /* News API */ = {
+			isa = PBXGroup;
+			children = (
+				96F2E1BF20830244003F17FB /* NewsAPIClientTests.swift */,
+			);
+			path = "News API";
 			sourceTree = "<group>";
 		};
 		BDF8A9995BED67AF385F6044 /* Pods */ = {
@@ -873,12 +890,14 @@
 				9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */,
 				96A93E4C207DB152005A9ED8 /* Models.swift in Sources */,
 				962E7FE52072F84900F775CC /* ActivityTypeCVFlowLayout.swift in Sources */,
+				96F2E1BB2082F0B7003F17FB /* NewsAPIModels.swift in Sources */,
 				96EB0B172062088A00B0E48F /* GlobalVariables.swift in Sources */,
 				96EED62B206C632F00C15B53 /* GooglePlacesAPIManager.swift in Sources */,
 				96EED628206C51DB00C15B53 /* ActivityTypeCVCellPresenter.swift in Sources */,
 				96C0207B20630888002BC42C /* Aliases.swift in Sources */,
 				96A59C272074D704007B6F6E /* Config.swift in Sources */,
 				960B4A9E205B67800054D30F /* CoreDataContainer.swift in Sources */,
+				96F2E1B92082EF4E003F17FB /* NewsAPIClient.swift in Sources */,
 				9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */,
 				963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
@@ -905,6 +924,7 @@
 				96C0207820630703002BC42C /* TestUserPresenter.swift in Sources */,
 				9668FB17205CE3C6002AA9AA /* TranslationLayer.swift in Sources */,
 				9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */,
+				96F2E1C020830244003F17FB /* NewsAPIClientTests.swift in Sources */,
 				96EED62E206C709000C15B53 /* GooglePlacesAPIManagerImplementationTests.swift in Sources */,
 				96AF7056205F15F300B3ED4A /* Utilities.swift in Sources */,
 				96EB0B122061BA2300B0E48F /* UserModel.swift in Sources */,
