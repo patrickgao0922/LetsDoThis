@@ -76,6 +76,9 @@ extension SideMenuNavigationController {
 //        }
         self.navigationItem.leftBarButtonItems = [sideMenuButtonItem!]
         self.topViewController?.navigationItem.leftBarButtonItems = self.navigationItem.leftBarButtonItems
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.isTranslucent = true
         
     }
     

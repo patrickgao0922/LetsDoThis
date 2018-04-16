@@ -35,6 +35,7 @@
 		965228A320840A1E00D8E039 /* TopHeadlineVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */; };
 		965228A5208414F800D8E039 /* TopHeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A4208414F800D8E039 /* TopHeadlineViewController.swift */; };
 		965228A72084207F00D8E039 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965228A62084207F00D8E039 /* News.storyboard */; };
+		965228A9208448E700D8E039 /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A8208448E700D8E039 /* NewsTVC.swift */; };
 		96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
 		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
@@ -133,6 +134,7 @@
 		965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlineVCPresenter.swift; sourceTree = "<group>"; };
 		965228A4208414F800D8E039 /* TopHeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlineViewController.swift; sourceTree = "<group>"; };
 		965228A62084207F00D8E039 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		965228A8208448E700D8E039 /* NewsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRouter.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				965228A4208414F800D8E039 /* TopHeadlineViewController.swift */,
+				965228A8208448E700D8E039 /* NewsTVC.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -906,6 +909,7 @@
 				96A93E44207D7CCA005A9ED8 /* APIRouter.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				966DCE8F2076FD9F00078909 /* LeftSideMenuViewController.swift in Sources */,
+				965228A9208448E700D8E039 /* NewsTVC.swift in Sources */,
 				96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */,
 				96C5DA522075DBA600AD8D22 /* SideMenuController.swift in Sources */,
 				96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */,
