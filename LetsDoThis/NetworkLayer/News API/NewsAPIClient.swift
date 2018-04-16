@@ -18,6 +18,15 @@ enum HTTPError:Error {
     case responseParsingError
 }
 class NewsAPIClientImplementation:NewsAPIClient {
+    
+    
+    /// get top headlines
+    ///
+    /// - Parameters:
+    ///   - country: country of the news
+    ///   - category: categories
+    ///   - page: page num of the result
+    /// - Returns: Single Observable with NewsResponse data type
     func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int?) -> Single<NewsResponse> {
         return Single<NewsResponse>.create(subscribe: { (single) -> Disposable in
             
@@ -43,4 +52,6 @@ class NewsAPIClientImplementation:NewsAPIClient {
             return Disposables.create()
         })
     }
+    
+    func getSources(
 }

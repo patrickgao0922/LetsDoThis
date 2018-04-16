@@ -27,6 +27,12 @@ enum NewsAPIRouter:URLRequestConvertible {
         case technology = "technology"
     }
     
+    enum Language:String {
+        case ae, ar, at, au, be, bg, br, ca, ch, cn, co, cu, cz, de, eg, fr, gb, gr, hk, hu, id, ie, il
+        case int = "in"
+        case it, jp, kr, lt, lv, ma, mx, my, ng, nl, no, nz, ph, pl, pt, ro, rs, ru, sa, se, sg, si, sk, th, tr, tw, ua, us, ve, za
+    }
+    
     fileprivate var baseURL:String{
         return "https://newsapi.org/v2"
     }
