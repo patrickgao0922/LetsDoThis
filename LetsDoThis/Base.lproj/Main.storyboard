@@ -11,25 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
-        <scene sceneID="svs-WW-OWl">
-            <objects>
-                <viewController restorationIdentifier="testVC" storyboardIdentifier="testVC" id="4yA-gC-bg5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4gn-ZH-rbj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="f31-XM-T54"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Qnm-U0-Gb8"/>
-                    <navigationItem key="navigationItem" title="Title" id="h4L-9E-Cvo">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="9tT-5D-OHb"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="suN-dA-4K4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2700" y="392"/>
-        </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="IQZ-ep-Gbj">
             <objects>

@@ -86,11 +86,15 @@ extension SideMenuNavigationController {
 }
 
 extension SideMenuNavigationController:LeftSideMenuViewControllerDelegate {
-    func optionSelected(segue: MenuOption) {
-        switch segue {
-        case .test:
-            let testVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testVC")
-            self.viewControllers = [testVC]
+    func optionSelected(option: MenuOption) {
+        var switchedVC:UIViewController!
+        switch option {
+        case .main:
+            switchedVC = UIStoryboard(name: "Activity", bundle: nil).instantiateViewController(withIdentifier: "ActivityTypeVC")
+        case .topHeadline:
+            switchedVC = UIStoryboard(name: "News", bundle: nil).instantiateViewController(withIdentifier: "topHeadlineVC")
         }
+        self.viewControllers = [switchedVC]
+        setup()
     }
 }

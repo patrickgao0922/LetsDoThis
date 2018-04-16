@@ -33,6 +33,8 @@
 		9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */; };
 		9639714C2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */; };
 		965228A320840A1E00D8E039 /* TopHeadlineVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */; };
+		965228A5208414F800D8E039 /* TopHeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A4208414F800D8E039 /* TopHeadlineViewController.swift */; };
+		965228A72084207F00D8E039 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965228A62084207F00D8E039 /* News.storyboard */; };
 		96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
 		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
@@ -129,6 +131,8 @@
 		963971492069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
 		9639714B2069F4EA00EFEC65 /* TestActivityTypeTranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeTranslationLayer.swift; sourceTree = "<group>"; };
 		965228A220840A1E00D8E039 /* TopHeadlineVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlineVCPresenter.swift; sourceTree = "<group>"; };
+		965228A4208414F800D8E039 /* TopHeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlineViewController.swift; sourceTree = "<group>"; };
+		965228A62084207F00D8E039 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRouter.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				96205DF720588D1100AA9996 /* AppDelegate.swift */,
 				96234EAC206B3C660095BD8A /* activity-type.json */,
 				96205DFB20588D1100AA9996 /* Main.storyboard */,
+				965228A62084207F00D8E039 /* News.storyboard */,
 				96C5DA532075E3F200AD8D22 /* Activity.storyboard */,
 				96205E0120588D1100AA9996 /* Assets.xcassets */,
 				96205E0320588D1100AA9996 /* LaunchScreen.storyboard */,
@@ -343,6 +348,7 @@
 		965228A0208409FB00D8E039 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				965228A4208414F800D8E039 /* TopHeadlineViewController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96205E0520588D1100AA9996 /* LaunchScreen.storyboard in Resources */,
+				965228A72084207F00D8E039 /* News.storyboard in Resources */,
 				96205E0220588D1100AA9996 /* Assets.xcassets in Resources */,
 				96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */,
 				96234EAD206B3C660095BD8A /* activity-type.json in Resources */,
@@ -922,6 +929,7 @@
 				963971482069DED900EFEC65 /* ActivityTypeDTO.swift in Sources */,
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */,
+				965228A5208414F800D8E039 /* TopHeadlineViewController.swift in Sources */,
 				96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */,
 				966DCE872076DFB300078909 /* UIViewControllerExtensions.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,

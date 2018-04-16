@@ -10,11 +10,12 @@ import UIKit
 import PGModelViewController
 
 protocol LeftSideMenuViewControllerDelegate {
-    func optionSelected(segue:MenuOption)
+    func optionSelected(option:MenuOption)
 }
 
 enum MenuOption:String {
-    case test = "testSegue"
+    case topHeadline = "Top Headline"
+    case main = "Main"
 }
 
 class LeftSideMenuViewController: PGModelViewController{
@@ -33,34 +34,34 @@ class LeftSideMenuViewController: PGModelViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         setupTableViewHeader()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -69,7 +70,9 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
         switch indexPath.row {
         case 0 :
-            cell.textLabel!.text = "test"
+            cell.textLabel!.text = MenuOption.main.rawValue
+        case 1:
+            cell.textLabel!.text = MenuOption.topHeadline.rawValue
         default:
             break
         }
@@ -77,21 +80,21 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            self.dismiss(animated: true) {
-                self.leftSideMenuViewControllerDelegate.optionSelected(segue: .test)
+        self.dismiss(animated: true) {
+            var selectedOption = MenuOption.topHeadline
+            switch indexPath.row {
+            case 0:
+                selectedOption = .main
+            case 1:
+                selectedOption = MenuOption.topHeadline
+            default:
+                break
             }
-
-        default:
-            break
+            self.leftSideMenuViewControllerDelegate.optionSelected(option: selectedOption)
         }
-//        self.dismiss(animated: true) {
-////            self.leftSideMenuViewControllerDelegate.optionSelected(segue: indexPath.row)
-//        }
     }
     
-//    func table
+    //    func table
     
     func setupTableViewHeader() {
         tableHeaderView = tableView.tableHeaderView
@@ -109,7 +112,7 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     
     func updateHeaderView() {
         var tableViewHeaderRect = CGRect(x: 0, y: -headerViewHeight, width: tableView.bounds.width, height: headerViewHeight)
-//        var font = tableHeaderLabel.font = UIFont.systemFont(ofSize: <#T##CGFloat#>)
+        //        var font = tableHeaderLabel.font = UIFont.systemFont(ofSize: <#T##CGFloat#>)
         var newFontSize = headerLabelFont
         if tableView.contentOffset.y < -headerViewHeight {
             tableViewHeaderRect.origin.y = tableView.contentOffset.y
@@ -118,7 +121,7 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         }
         tableHeaderView.frame = tableViewHeaderRect
         tableHeaderLabel.font = UIFont.systemFont(ofSize: newFontSize)
-//        print(tableView.contentOffset)
+        //        print(tableView.contentOffset)
         
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: 0))
