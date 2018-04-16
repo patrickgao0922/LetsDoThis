@@ -59,6 +59,10 @@ class DependencyRegistry {
         container.register(TopHeadlineVCPresenter.self) { (r) in
             TopHeadlineVCPresenterImplementation(with: r.resolve(NewsAPIClient.self)!)
         }
+        
+        container.register(NewsTVCPresenter.self) { r,article in
+            NewsTVCPresenterImplementation(with: article)
+        }
     }
     func registerViewControllers() {
     }
@@ -74,4 +78,15 @@ extension DependencyRegistry {
         cell.backgroundImageView.image = UIImage(named: activityTypeDTO.background)
         return cell
     }
+    
+    typealias NewsTVCMaker = (UITableView,IndexPath,Article) -> NewsTVC
+    func makeNewsTVC(forTableView tableView:UITableView, at indexPath:IndexPath, with article:Article) -> NewsTVC{
+        let cellIdentifier = "NewsTVC"
+        let presenter = container.resolve(NewsTVCPresenter.self,argument:article)!
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsTVC
+        cell.config(with: presenter)
+        return cell
+    }
 }
+

@@ -9,7 +9,15 @@
 import UIKit
 
 class NewsTVC: UITableViewCell {
-
+    
+    /// News Table View Cell UI components
+    @IBOutlet var mediaIcon: UIImageView!
+    @IBOutlet var mediaNameLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var featuredImage: UIImageView!
+    var presenter:NewsTVCPresenter!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +29,11 @@ class NewsTVC: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+// MARK: - Config
+extension NewsTVC {
+    func config(with presenter:NewsTVCPresenter) {
+        self.presenter = presenter
+    }
 }
