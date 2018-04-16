@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Today Headlines-->
         <scene sceneID="Ylq-qa-Vbd">
             <objects>
-                <viewController restorationIdentifier="topHeadlineVC" storyboardIdentifier="topHeadlineVC" id="bIY-b1-H6p" sceneMemberID="viewController">
+                <viewController restorationIdentifier="topHeadlineVC" storyboardIdentifier="topHeadlineVC" id="bIY-b1-H6p" userLabel="Today Headlines" customClass="TopHeadlineViewController" customModule="LetsDoThis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2E-6Z-ACq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,22 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B1B-jW-FBY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="fwg-AB-eca">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-Dt-zfP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="bHx-Dt-zfP" secondAttribute="bottom" id="59B-q0-YUc"/>
+                                        <constraint firstItem="bHx-Dt-zfP" firstAttribute="leading" secondItem="fwg-AB-eca" secondAttribute="leading" id="Ohl-h0-Qn0"/>
+                                        <constraint firstItem="bHx-Dt-zfP" firstAttribute="top" secondItem="fwg-AB-eca" secondAttribute="top" id="quk-p6-Dsp"/>
+                                        <constraint firstAttribute="trailing" secondItem="bHx-Dt-zfP" secondAttribute="trailing" id="rXq-j1-46Z"/>
+                                    </constraints>
+                                </view>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKT-iR-kxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2700" y="391.75412293853077"/>
+            <point key="canvasLocation" x="-2712.8000000000002" y="347.67616191904051"/>
         </scene>
     </scenes>
 </document>
