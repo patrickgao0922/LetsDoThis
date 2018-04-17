@@ -29,7 +29,7 @@ class TopHeadlineVCPresenterImplementation:TopHeadlineVCPresenter {
     
 //    News loading functions
     func loadLatestTopHeadline() -> Single<[Article]> {
-        return newsAPIClient.getTopHeadlines(for: .usa, on: nil, of: 1)
+        return newsAPIClient.getTopHeadlines(for: .us, on: nil, of: 1)
             .map({ (newsResponse) -> [Article] in
                 guard let articles = newsResponse.articles else {
                     return []

@@ -20,11 +20,27 @@ class NewsAPIClientTests:QuickSpec {
         let newsAPIClient = dependencyRegistry.container.resolve(NewsAPIClient.self)!
         it("test get top headlines") {
             waitUntil(timeout: 5.0, action: { (done) in
-                _ = newsAPIClient.getTopHeadlines(for: .usa, on: nil, of: nil)
+                _ = newsAPIClient.getTopHeadlines(for: .us, on: nil, of: nil)
                     .subscribe({ (single) in
                         switch single {
                         case .success(let response):
-                            expect(response.totalResults!).to(equal(19))
+                            expect(response.totalResults!).to(equal(20))
+                        case .error(let error):
+                            fail(error.localizedDescription)
+                        }
+                        done()
+                    })
+            })
+        }
+        
+        it("test obtain favicon:") {
+            waitUntil(timeout: 10.0, action: { (done) in
+                _ = newsAPIClient.obtainSourceFavicon(byURL: "https://cnn.com")
+                    .subscribe({ (single) in
+                        switch single {
+                        case .success(let imagePath):
+                            print(imagePath)
+                            _ = succeed()
                         case .error(let error):
                             fail(error.localizedDescription)
                         }

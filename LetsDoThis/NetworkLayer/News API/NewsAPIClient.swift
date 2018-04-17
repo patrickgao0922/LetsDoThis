@@ -6,16 +6,18 @@
 //  Copyright © 2018 Patrick Gao. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import Alamofire
 
 protocol NewsAPIClient {
     func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int?) -> Single<NewsResponse>
+    func obtainSourceFavicon(byURL urlString:String) -> Single<String>
 }
 enum HTTPError:Error {
     case noResponseData
     case responseParsingError
+    case invalidURL
 }
 class NewsAPIClientImplementation:NewsAPIClient {
     
@@ -53,5 +55,51 @@ class NewsAPIClientImplementation:NewsAPIClient {
         })
     }
     
-    func getSources(
+    func getSources(inCountry country:NewsAPIRouter.Country? = nil, onCategory category:NewsAPIRouter.Category? = nil, inLanguage language:NewsAPIRouter.Language? = nil) -> Single<SourceResponse>{
+        return Single<SourceResponse>.create(subscribe: { (single) -> Disposable in
+            request(NewsAPIRouter.sources(country: country, category: category, language: language))
+                .response(completionHandler: { (response) in
+                    if let error = response.error {
+                        single(.error(error))
+                    }
+                    guard let data = response.data else {
+                        return single(.error(HTTPError.noResponseData))
+                    }
+                    do {
+                        let sourcesResponse = try JSONDecoder().decode(SourceResponse.self, from: data)
+                        single(.success(sourcesResponse))
+                    }
+                    catch {
+                        single(.error(error))
+                    }
+                })
+            return Disposables.create()
+        })
+    }
+    
+    func obtainSourceFavicon(byURL urlString:String) -> Single<String>{
+        return Single<String>.create(subscribe: { (single) -> Disposable in
+            guard let url = URL(string: urlString) else {
+                single(.error(HTTPError.invalidURL))
+                return Disposables.create()
+            }
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let fileURL = documentsURL.appendingPathComponent("website-favicons").appendingPathComponent("\(url.host!)-favicon.ico")
+                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            download(url.appendingPathComponent("/favicon.ico"), method: .get, to:destination)
+                .responseData(completionHandler: { (response) in
+                    if let error = response.error {
+                        single(.error(error))
+                    }
+                    guard let imagePath = response.destinationURL?.path else {
+                        return single(.error(HTTPError.noResponseData))
+                    }
+                    single(.success(imagePath))
+                })
+            return Disposables.create()
+        })
+        
+    }
 }

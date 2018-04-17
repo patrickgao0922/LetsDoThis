@@ -14,22 +14,23 @@ import Alamofire
 enum NewsAPIRouter:URLRequestConvertible {
     
     enum Country:String {
-        case china = "cn"
-        case usa = "us"
+        case ae, ar, at, au, be, bg, br, ca, ch, cn, co, cu, cz, de, eg, fr, gb, gr, hk, hu, id, ie, il
+        case inu = "in"
+        case it, jp, kr, lt, lv, ma, mx, my, ng, nl, no, nz, ph, pl, pt, ro, rs, ru, sa, se, sg, si, sk, th, tr, tw, ua, us, ve, za
     }
     enum Category:String {
-        case business = "business"
-        case entertainment = "entertainment"
-        case general = "general"
-        case health = "health"
-        case science = "science"
-        case sports = "sports"
-        case technology = "technology"
+        case business
+        case entertainment
+        case general
+        case health
+        case science
+        case sports
+        case technology
     }
     
     enum Language:String {
         case ae, ar, at, au, be, bg, br, ca, ch, cn, co, cu, cz, de, eg, fr, gb, gr, hk, hu, id, ie, il
-        case int = "in"
+        case inu = "in"
         case it, jp, kr, lt, lv, ma, mx, my, ng, nl, no, nz, ph, pl, pt, ro, rs, ru, sa, se, sg, si, sk, th, tr, tw, ua, us, ve, za
     }
     
@@ -43,7 +44,7 @@ enum NewsAPIRouter:URLRequestConvertible {
     
     case topHeadlines(country:Country?,category:Category?,page:Int?)
     case everything
-    case sources
+    case sources(country:Country?,category:Category?,language:Language?)
     
     
 //    HTTP Componens
@@ -80,8 +81,16 @@ enum NewsAPIRouter:URLRequestConvertible {
             }
         case .everything:
             break
-        case .sources:
-            break
+        case .sources(let country, let category, let language):
+            if let country = country {
+                parameters[NewsAPIHTTPParameterKey.country.rawValue] = country.rawValue
+            }
+            if let category = category {
+                parameters[NewsAPIHTTPParameterKey.category.rawValue] = category.rawValue
+            }
+            if let language = language {
+                parameters[NewsAPIHTTPParameterKey.language.rawValue] = language.rawValue
+            }
         }
         return parameters
     }
@@ -99,6 +108,12 @@ enum NewsAPIRouter:URLRequestConvertible {
         return try URLEncoding.default.encode(urlRequest, with: parameters)
         
     }
-    
-    
+}
+
+enum NewsAPIHTTPParameterKey:String {
+    case country = "country"
+    case category = "category"
+    case language = "language"
+    case page = "page"
+    case pageSize = "pageSize"
 }

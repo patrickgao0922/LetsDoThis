@@ -8,6 +8,13 @@
 
 import Foundation
 
+struct SourceResponse:Codable {
+    var status:String
+    var code:String?
+    var message:String?
+    var sources:[Source]?
+}
+
 struct NewsResponse:Codable {
     var status:String
     var code:String?
@@ -29,4 +36,9 @@ struct Article:Codable {
 struct Source:Codable {
     var id:String?
     var name:String?
+    var description:String?
+    var url: String?
+    var category:String?
+    var language: String?
+    var country: String?
 }
