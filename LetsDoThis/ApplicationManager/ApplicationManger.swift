@@ -30,6 +30,9 @@ class ApplicationMangerImplementation:ApplicationManger {
             .flatMap({ (sourceResponse) -> Single<[SourceFavicon]> in
                 let sources = sourceResponse.sources
                 
+                
+                
+//                Setup favicon requests observables
                 var requestArray = [Observable<SourceFavicon>] ()
                 
                 if sources != nil {

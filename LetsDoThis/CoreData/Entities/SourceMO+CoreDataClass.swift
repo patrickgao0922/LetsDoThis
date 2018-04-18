@@ -12,5 +12,5 @@ import CoreData
 
 @objc(SourceMO)
 public class SourceMO: NSManagedObject {
-
+    static let entityName = "Source"
 }

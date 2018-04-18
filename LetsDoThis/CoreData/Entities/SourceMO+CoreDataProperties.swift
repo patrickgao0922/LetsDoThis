@@ -24,5 +24,6 @@ extension SourceMO {
     @NSManaged public var category: String?
     @NSManaged public var country: String?
     @NSManaged public var iconPath: String?
+    @NSManaged public var language: String?
 
 }
