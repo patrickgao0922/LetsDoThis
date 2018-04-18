@@ -22,12 +22,12 @@ class ApplicationManagerTests:QuickSpec {
         it("Test update sources") {
             
             waitUntil(timeout: 50, action: { (done) in
-                applicationManager.updateSources()
+                _ = applicationManager.updateSources()
                     .subscribe({ (single) in
                         switch single {
                         case .success(let paths):
                             print("Elements Num: \(paths.count)")
-                            print(paths[100])
+                            print("\(paths[100].id):\(paths[100].imagePath)")
                             expect(paths.count).notTo(equal(0))
                         case .error(let error):
                             fail(error.localizedDescription)

@@ -9,8 +9,10 @@
 import Foundation
 import RxSwift
 
+typealias SourceFavicon = (id:String,imagePath:String)
+
 protocol ApplicationManger {
-    func updateSources() -> Single<[String]>
+    func updateSources() -> Single<[SourceFavicon]>
 }
 
 class ApplicationMangerImplementation:ApplicationManger {
@@ -19,19 +21,25 @@ class ApplicationMangerImplementation:ApplicationManger {
     init(with newsAPIClient:NewsAPIClient) {
         self.newsAPIClient = newsAPIClient
     }
-    func updateSources() -> Single<[String]> {
+    
+    
+    func updateSources() -> Single<[SourceFavicon]> {
         let scheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         return newsAPIClient.getSources(inCountry: nil, onCategory: nil, inLanguage: nil)
                 .observeOn(scheduler)
-            .flatMap({ (sourceResponse) -> Single<[String]> in
+            .flatMap({ (sourceResponse) -> Single<[SourceFavicon]> in
                 let sources = sourceResponse.sources
                 
-                var requestArray = [Observable<String>] ()
+                var requestArray = [Observable<SourceFavicon>] ()
                 
                 if sources != nil {
                     for source in sources! {
                         if source.url != nil {
-                            requestArray.append(self.newsAPIClient.obtainSourceFavicon(byURL: source.url!).asObservable())
+                            requestArray.append(self.newsAPIClient.obtainSourceFavicon(byURL: source.url!)
+                                .map({ (imagePath) -> SourceFavicon in
+                                    (source.id!,imagePath)
+                                })
+                                .asObservable())
                         }
                         
                     }

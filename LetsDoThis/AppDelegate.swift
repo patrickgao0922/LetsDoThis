@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let locationManager = CLLocationManager()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        dependencyRegistry = DependencyRegistry(container: Container())
-//        coreDataContainer = dependencyRegistry?.container.resolve(CoreDataContainer.self)
+        AppDelegate.dependencyRegistry = DependencyRegistry(container: Container())
+        AppDelegate.coreDataContainer = AppDelegate.dependencyRegistry?.container.resolve(CoreDataContainer.self)
         
         // check user tokens
         
