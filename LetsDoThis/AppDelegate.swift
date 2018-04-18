@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var dependencyRegistry:DependencyRegistry?
     var googleLocationManager:GooglePlacesAPIManagerImplementation!
     let locationManager = CLLocationManager()
+    var applicationManager:ApplicationManger!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         AppDelegate.dependencyRegistry = DependencyRegistry(container: Container())
@@ -36,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(config.googleAPIKey!)
         googleLocationManager = GooglePlacesAPIManagerImplementation()
         
+        applicationManager = AppDelegate.dependencyRegistry?.container.resolve(ApplicationManger.self)
+        
+        _ = applicationManager.updateSources().subscribe()
 //        locationManager.requestAlwaysAuthorization()
 //        googleLocationManager.getCurrentPlace().subscribe { (single) in
 //            switch single {

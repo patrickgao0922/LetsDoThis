@@ -8,18 +8,22 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
-typealias SourceFavicon = (id:String,imagePath:String)
+typealias SourceFavicon = (id:Source,imagePath:String)
 
 protocol ApplicationManger {
     func updateSources() -> Single<[SourceFavicon]>
 }
 
 class ApplicationMangerImplementation:ApplicationManger {
-    var newsAPIClient:NewsAPIClient!
-    
-    init(with newsAPIClient:NewsAPIClient) {
+    fileprivate var newsAPIClient:NewsAPIClient!
+    fileprivate var coreDataContainer:CoreDataContainer
+    fileprivate var managedObjectContext:NSManagedObjectContext
+    init(with newsAPIClient:NewsAPIClient, using coreDataContainer:CoreDataContainer) {
         self.newsAPIClient = newsAPIClient
+        self.coreDataContainer = coreDataContainer
+        self.managedObjectContext = coreDataContainer.persistentContainer.newBackgroundContext()
     }
     
     
@@ -31,24 +35,38 @@ class ApplicationMangerImplementation:ApplicationManger {
                 let sources = sourceResponse.sources
                 
                 
+                let sourceMos = sources?.map({ (source) -> SourceMO? in
+                    source.createOrFetchManagedObjectInCoreData(with: self.managedObjectContext)
+                })
+                
                 
 //                Setup favicon requests observables
                 var requestArray = [Observable<SourceFavicon>] ()
                 
-                if sources != nil {
-                    for source in sources! {
+                if let sourceMos = sourceMos, let sources = sources{
+                    for index in 0..<sources.count {
+                        let source = sources[index]
                         if source.url != nil {
                             requestArray.append(self.newsAPIClient.obtainSourceFavicon(byURL: source.url!)
                                 .map({ (imagePath) -> SourceFavicon in
-                                    (source.id!,imagePath)
+                                    if let sourceMo = sourceMos[index] {
+                                        sourceMo.iconPath = imagePath
+                                    }
+                                    
+                                    return (source,imagePath)
                                 })
                                 .asObservable())
                         }
                         
                     }
                 }
-                return Observable.zip(requestArray).asSingle()
+                return Observable.zip(requestArray).asSingle().map({ (sourceFavicons) -> [SourceFavicon] in
+                    try? self.managedObjectContext.save()
+                    return sourceFavicons
+                })
             })
         
     }
 }
+//extension ApplicationMangerImplementation {
+//}

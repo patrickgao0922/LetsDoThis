@@ -50,7 +50,7 @@ struct Source:Codable {
         guard let id = self.id else {
             return nil
         }
-        sourceFetch.predicate = NSPredicate(format: "id == %@", id)
+        sourceFetch.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
         var sourceMo:SourceMO! = nil
         do {
             let sources = try managedObjectContext.fetch(sourceFetch)
@@ -60,6 +60,7 @@ struct Source:Codable {
             else {
                 sourceMo = NSEntityDescription.insertNewObject(forEntityName: SourceMO.entityName, into: managedObjectContext) as! SourceMO
             }
+            sourceMo.id = id
             if let name = self.name {
                 sourceMo.name = name
             }
@@ -82,6 +83,39 @@ struct Source:Codable {
         }
         catch {
             return nil
+        }
+    }
+    
+    func getIconPath() -> String? {
+        guard let managedObjectContext = AppDelegate.coreDataContainer?.persistentContainer.newBackgroundContext() else {
+            return nil
+        }
+        guard let sourceMo = fetchManagedObjectFromCoreData(managedObjectContext: managedObjectContext) else {
+            return nil
+        }
+        guard let iconPath = sourceMo.iconPath else {
+            return nil
+        }
+        return iconPath
+    }
+    
+    fileprivate func fetchManagedObjectFromCoreData(managedObjectContext:NSManagedObjectContext) -> SourceMO?{
+        let sourceFetch:NSFetchRequest<SourceMO> = SourceMO.fetchRequest()
+        
+        guard let id = self.id else {
+            return nil
+        }
+        sourceFetch.predicate = NSPredicate(format: "id == %@", id)
+        var sourceMo:SourceMO! = nil
+        do {
+            let sources = try managedObjectContext.fetch(sourceFetch)
+            if sources.count != 0 {
+                sourceMo = sources[0]
+            }
+            return sourceMo
+        }
+        catch {
+            return sourceMo
         }
     }
 }

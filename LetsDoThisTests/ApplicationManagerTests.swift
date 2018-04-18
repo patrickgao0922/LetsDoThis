@@ -10,6 +10,7 @@ import Foundation
 import Quick
 import Nimble
 import Swinject
+import CoreData
 @testable import LetsDoThis
 
 
@@ -28,7 +29,11 @@ class ApplicationManagerTests:QuickSpec {
                         case .success(let paths):
                             print("Elements Num: \(paths.count)")
                             print("\(paths[100].id):\(paths[100].imagePath)")
-                            expect(paths.count).notTo(equal(0))
+                            
+                            let managedObjectContext = dependeyRegistry.container.resolve(CoreDataContainer.self)!.persistentContainer.newBackgroundContext()
+                            let fetchRequest:NSFetchRequest<SourceMO> = SourceMO.fetchRequest()
+                            let sourceMOs = try? managedObjectContext.fetch(fetchRequest)
+                            expect(sourceMOs!.count).to(equal(paths.count))
                         case .error(let error):
                             fail(error.localizedDescription)
                         }

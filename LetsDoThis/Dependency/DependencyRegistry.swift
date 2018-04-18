@@ -49,7 +49,7 @@ class DependencyRegistry {
         }.inObjectScope(.container)
         
         container.register(ApplicationManger.self) { r in
-            ApplicationMangerImplementation(with: r.resolve(NewsAPIClient.self)!)
+            ApplicationMangerImplementation(with: r.resolve(NewsAPIClient.self)!, using: r.resolve(CoreDataContainer.self)!)
         }
     }
     func registerPresenters() {
