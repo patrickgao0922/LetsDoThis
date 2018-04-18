@@ -10,10 +10,10 @@ import Foundation
 import RxSwift
 import CoreData
 
-typealias SourceFavicon = (id:Source,imagePath:String)
+//typealias SourceFavicon = (id:Source,imagePath:String)
 
 protocol ApplicationManger {
-    func updateSources() -> Single<[SourceFavicon]>
+    func updateSources() -> Single<[Source]>
 }
 
 class ApplicationMangerImplementation:ApplicationManger {
@@ -31,39 +31,41 @@ class ApplicationMangerImplementation:ApplicationManger {
         let scheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         return newsAPIClient.getSources(inCountry: nil, onCategory: nil, inLanguage: nil)
                 .observeOn(scheduler)
-            .flatMap({ (sourceResponse) -> Single<[Source]> in
-                let sources = sourceResponse.sources
-                
-                
-                let sourceMos = sources?.map({ (source) -> SourceMO? in
+            .map({ (sourceResponse) in
+                guard let sources = sourceResponse.sources else {
+                    return []
+                }
+                _ = sources.map({ (source) -> SourceMO? in
                     source.createOrFetchManagedObjectInCoreData(with: self.managedObjectContext)
                 })
                 
+                return sources
+                
                 
 //                Setup favicon requests observables
-                var requestArray = [Observable<SourceFavicon>] ()
+//                var requestArray = [Observable<SourceFavicon>] ()
                 
-                if let sourceMos = sourceMos, let sources = sources{
-                    for index in 0..<sources.count {
-                        let source = sources[index]
-                        if source.url != nil {
-                            requestArray.append(self.newsAPIClient.obtainSourceFavicon(byURL: source.url!)
-                                .map({ (imagePath) -> SourceFavicon in
-                                    if let sourceMo = sourceMos[index] {
-                                        sourceMo.iconPath = imagePath
-                                    }
-                                    
-                                    return (source,imagePath)
-                                })
-                                .asObservable())
-                        }
-                        
-                    }
-                }
-                return Observable.zip(requestArray).asSingle().map({ (sourceFavicons) -> [SourceFavicon] in
-                    try? self.managedObjectContext.save()
-                    return sourceFavicons
-                })
+//                if let sourceMos = sourceMos, let sources = sources{
+//                    for index in 0..<sources.count {
+//                        let source = sources[index]
+//                        if source.url != nil {
+//                            requestArray.append(self.newsAPIClient.obtainSourceFavicon(byURL: source.url!)
+//                                .map({ (imagePath) -> SourceFavicon in
+//                                    if let sourceMo = sourceMos[index] {
+//                                        sourceMo.iconPath = imagePath
+//                                    }
+//
+//                                    return (source,imagePath)
+//                                })
+//                                .asObservable())
+//                        }
+//
+//                    }
+//                }
+//                return Observable.zip(requestArray).asSingle().map({ (sourceFavicons) -> [SourceFavicon] in
+//                    try? self.managedObjectContext.save()
+//                    return sourceFavicons
+//                })
             })
         
     }

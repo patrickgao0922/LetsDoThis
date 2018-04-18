@@ -34,6 +34,9 @@ struct Article:Codable {
     var publishedAt:String?
 }
 
+
+
+/// Source DTO
 struct Source:Codable {
     var id:String?
     var name:String?
@@ -44,24 +47,10 @@ struct Source:Codable {
     var country: String?
     
     func createOrFetchManagedObjectInCoreData(with managedObjectContext:NSManagedObjectContext) -> SourceMO? {
-//        Fetching first
-        let sourceFetch:NSFetchRequest<SourceMO> = SourceMO.fetchRequest()
-
-        guard let predicate = buildFetchPredicate() else {
-            return nil
-        }
-        
-        sourceFetch.predicate = predicate
-        
-        var sourceMo:SourceMO! = nil
-        do {
-            let sources = try managedObjectContext.fetch(sourceFetch)
-            if sources.count != 0 {
-                sourceMo = sources[0]
-            }
-            else {
-                sourceMo = NSEntityDescription.insertNewObject(forEntityName: SourceMO.entityName, into: managedObjectContext) as! SourceMO
-            }
+//        Fetching or creating managed object
+        if let sourceMo = fetchManagedObjectFromCoreData(managedObjectContext: managedObjectContext,createNewObject: true) {
+            
+//            Updating all the values
             sourceMo.id = id
             if let name = self.name {
                 sourceMo.name = name
@@ -83,7 +72,7 @@ struct Source:Codable {
             }
             return sourceMo
         }
-        catch {
+        else {
             return nil
         }
     }
@@ -92,7 +81,7 @@ struct Source:Codable {
         guard let managedObjectContext = AppDelegate.coreDataContainer?.persistentContainer.newBackgroundContext() else {
             return nil
         }
-        guard let sourceMo = fetchManagedObjectFromCoreData(managedObjectContext: managedObjectContext) else {
+        guard let sourceMo = fetchManagedObjectFromCoreData(managedObjectContext: managedObjectContext,createNewObject: false) else {
             return nil
         }
         guard let iconPath = sourceMo.iconPath else {
@@ -101,7 +90,7 @@ struct Source:Codable {
         return iconPath
     }
     
-    fileprivate func fetchManagedObjectFromCoreData(managedObjectContext:NSManagedObjectContext) -> SourceMO?{
+    fileprivate func fetchManagedObjectFromCoreData(managedObjectContext:NSManagedObjectContext, createNewObject: Bool) -> SourceMO?{
         let sourceFetch:NSFetchRequest<SourceMO> = SourceMO.fetchRequest()
         
         guard let predicate = buildFetchPredicate() else {
@@ -115,6 +104,8 @@ struct Source:Codable {
             let sources = try managedObjectContext.fetch(sourceFetch)
             if sources.count != 0 {
                 sourceMo = sources[0]
+            } else if createNewObject {
+                sourceMo = NSEntityDescription.insertNewObject(forEntityName: SourceMO.entityName, into: managedObjectContext) as! SourceMO
             }
             return sourceMo
         }
