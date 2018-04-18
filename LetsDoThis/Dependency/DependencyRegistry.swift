@@ -47,6 +47,10 @@ class DependencyRegistry {
         container.register(NewsAPIClient.self) { (r) in
             NewsAPIClientImplementation()
         }.inObjectScope(.container)
+        
+        container.register(ApplicationManger.self) { r in
+            ApplicationMangerImplementation(with: r.resolve(NewsAPIClient.self)!)
+        }
     }
     func registerPresenters() {
         container.register(UserModel.self) { (r) in
