@@ -47,10 +47,12 @@ struct Source:Codable {
 //        Fetching first
         let sourceFetch:NSFetchRequest<SourceMO> = SourceMO.fetchRequest()
 
-        guard let id = self.id else {
+        guard let predicate = buildFetchPredicate() else {
             return nil
         }
-        sourceFetch.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
+        
+        sourceFetch.predicate = predicate
+        
         var sourceMo:SourceMO! = nil
         do {
             let sources = try managedObjectContext.fetch(sourceFetch)
@@ -102,10 +104,12 @@ struct Source:Codable {
     fileprivate func fetchManagedObjectFromCoreData(managedObjectContext:NSManagedObjectContext) -> SourceMO?{
         let sourceFetch:NSFetchRequest<SourceMO> = SourceMO.fetchRequest()
         
-        guard let id = self.id else {
+        guard let predicate = buildFetchPredicate() else {
             return nil
         }
-        sourceFetch.predicate = NSPredicate(format: "id == %@", id)
+        
+        sourceFetch.predicate = predicate
+        
         var sourceMo:SourceMO! = nil
         do {
             let sources = try managedObjectContext.fetch(sourceFetch)
@@ -116,6 +120,17 @@ struct Source:Codable {
         }
         catch {
             return sourceMo
+        }
+    }
+    
+    fileprivate func buildFetchPredicate() -> NSPredicate? {
+        if let id = self.id {
+            return NSPredicate(format: "id == %@", id)
+        } else if let url = self.url {
+            return NSPredicate(format: "url = %@", url)
+        }
+        else {
+            return nil
         }
     }
 }

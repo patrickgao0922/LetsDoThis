@@ -27,11 +27,11 @@ class ApplicationMangerImplementation:ApplicationManger {
     }
     
     
-    func updateSources() -> Single<[SourceFavicon]> {
+    func updateSources() -> Single<[Source]> {
         let scheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         return newsAPIClient.getSources(inCountry: nil, onCategory: nil, inLanguage: nil)
                 .observeOn(scheduler)
-            .flatMap({ (sourceResponse) -> Single<[SourceFavicon]> in
+            .flatMap({ (sourceResponse) -> Single<[Source]> in
                 let sources = sourceResponse.sources
                 
                 
