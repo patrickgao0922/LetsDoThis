@@ -40,32 +40,7 @@ class ApplicationMangerImplementation:ApplicationManger {
                 })
                 
                 return sources
-                
-                
-//                Setup favicon requests observables
-//                var requestArray = [Observable<SourceFavicon>] ()
-                
-//                if let sourceMos = sourceMos, let sources = sources{
-//                    for index in 0..<sources.count {
-//                        let source = sources[index]
-//                        if source.url != nil {
-//                            requestArray.append(self.newsAPIClient.obtainSourceFavicon(byURL: source.url!)
-//                                .map({ (imagePath) -> SourceFavicon in
-//                                    if let sourceMo = sourceMos[index] {
-//                                        sourceMo.iconPath = imagePath
-//                                    }
-//
-//                                    return (source,imagePath)
-//                                })
-//                                .asObservable())
-//                        }
-//
-//                    }
-//                }
-//                return Observable.zip(requestArray).asSingle().map({ (sourceFavicons) -> [SourceFavicon] in
-//                    try? self.managedObjectContext.save()
-//                    return sourceFavicons
-//                })
+
             })
         
     }

@@ -47,10 +47,10 @@ struct Source:Codable {
     var country: String?
     
     func createOrFetchManagedObjectInCoreData(with managedObjectContext:NSManagedObjectContext) -> SourceMO? {
-//        Fetching or creating managed object
+        //        Fetching or creating managed object
         if let sourceMo = fetchManagedObjectFromCoreData(managedObjectContext: managedObjectContext,createNewObject: true) {
             
-//            Updating all the values
+            //            Updating all the values
             sourceMo.id = id
             if let name = self.name {
                 sourceMo.name = name
@@ -117,7 +117,10 @@ struct Source:Codable {
     fileprivate func buildFetchPredicate() -> NSPredicate? {
         if let id = self.id {
             return NSPredicate(format: "id == %@", id)
-        } else if let url = self.url {
+        } else if let name = self.name {
+            return NSPredicate(format: "name == %@", name)
+        }
+        else if let url = self.url {
             return NSPredicate(format: "url = %@", url)
         }
         else {
