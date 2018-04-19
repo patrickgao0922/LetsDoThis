@@ -12,13 +12,14 @@ import Alamofire
 
 enum Directory:String {
     case websiteFaveicons
-    case newsImages
+    case featuredImage
 }
 
 protocol NewsAPIClient {
     func getTopHeadlines(for country:NewsAPIRouter.Country?, on category:NewsAPIRouter.Category?, of page:Int?) -> Single<NewsResponse>
     func getSources(inCountry country:NewsAPIRouter.Country?, onCategory category:NewsAPIRouter.Category?, inLanguage language:NewsAPIRouter.Language?) -> Single<SourceResponse>
     func obtainSourceFavicon(byURL urlString:String) -> Single<String>
+    func fetchFeaturedImage(from urlString:String, title:String) -> Single<String>
 }
 enum HTTPError:Error {
     case noResponseData
@@ -113,5 +114,13 @@ class NewsAPIClientImplementation:NewsAPIClient {
                 })
             return Disposables.create()
         })
+    }
+    
+    func fetchFeaturedImage(from urlString:String, title:String) -> Single<String>{
+        guard let url = URL(string: urlString) else {
+            return Single.error(HTTPError.invalidURL)
+        }
+        let filename = "\(title.trimmingCharacters(in: CharacterSet.whitespaces))"
+        return downloadImagesToDestination(from: url, inDirectory: .featuredImage, filename: filename)
     }
 }

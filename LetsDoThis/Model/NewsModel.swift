@@ -16,5 +16,5 @@ class NewsModelImplementation {
         self.newsAPIClient = newsAPIClient
     }
     
-    func loadFeatured
+//    func loadFeaturedB
 }

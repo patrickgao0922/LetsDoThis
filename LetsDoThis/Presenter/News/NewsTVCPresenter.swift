@@ -11,18 +11,20 @@ import RxSwift
 import CoreData
 
 protocol NewsTVCPresenter {
-    var article:Article {get}
     var featuredImagePath:Variable<String?> {get}
     var title:String? {get}
     var mediaName:String? {get}
     var mediaIconPath:Variable<String?> {get}
+    func loadFeaturedImage()
+    func loadMediaIcon()
 }
 
 class NewsTVCPresenterImplementation:NewsTVCPresenter{
-    var newsAPIClient:NewsAPIClient
-    var coreDataContainer:CoreDataContainer
+    fileprivate var newsAPIClient:NewsAPIClient
     fileprivate var managedObjectContext:NSManagedObjectContext
-    var article:Article
+    fileprivate var article:Article
+    
+    var coreDataContainer:CoreDataContainer
     var featuredImagePath:Variable<String?>
     var title:String? {
         return article.title
@@ -42,7 +44,7 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
     }
     
     
-    func loadfeaturedImage() {
+    func loadMediaIcon() {
         guard let source = article.source else {
             return
         }
@@ -50,20 +52,42 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
         guard let sourceMO = source.createOrFetchManagedObjectInCoreData(with: managedObjectContext) else {
             return
         }
-        guard let url = sourceMO.url else {
+        
+        if let iconPath = sourceMO.iconPath {
+            mediaIconPath.value = iconPath
+        } else {
+            guard let url = sourceMO.url else {
+                return
+            }
+            _ = newsAPIClient.obtainSourceFavicon(byURL: url)
+                .subscribe({ (single) in
+                    switch single {
+                    case .success(let imagePath):
+                        self.mediaIconPath.value = imagePath
+                        sourceMO.iconPath = imagePath
+                        try? self.managedObjectContext.save()
+                    case .error (_):
+                        return
+                    }
+                })
+        }
+        
+    }
+    func loadFeaturedImage() {
+        guard let featuredImageURL = article.urlToImage else {
             return
         }
-        _ = newsAPIClient.obtainSourceFavicon(byURL: url)
-            .subscribe({ (single) in
+        guard let title = self.title else{
+            return
+        }
+        _ = newsAPIClient.fetchFeaturedImage(from: featuredImageURL, title: title)
+            .subscribe { (single) in
                 switch single {
                 case .success(let imagePath):
-                    self.mediaIconPath.value = imagePath
+                    self.featuredImagePath.value = imagePath
                 case .error (_):
                     return
                 }
-            })
-    }
-    func loadMediaIcon() {
-        
+        }
     }
 }
