@@ -65,7 +65,7 @@ class DependencyRegistry {
         }
         
         container.register(NewsTVCPresenter.self) { r,article in
-            NewsTVCPresenterImplementation(with: article)
+            NewsTVCPresenterImplementation(with: article, newsAPIClient: r.resolve(NewsAPIClient.self)!, coreDataContainer: r.resolve(CoreDataContainer.self)!)
         }
     }
     func registerViewControllers() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class NewsTVC: UITableViewCell {
     
@@ -16,6 +17,8 @@ class NewsTVC: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var featuredImage: UIImageView!
     var presenter:NewsTVCPresenter!
+    
+    fileprivate var disposeBag: DisposeBag = DisposeBag()
     
     
     override func awakeFromNib() {
@@ -35,5 +38,17 @@ class NewsTVC: UITableViewCell {
 extension NewsTVC {
     func config(with presenter:NewsTVCPresenter) {
         self.presenter = presenter
+    }
+}
+
+// MARK: - Setup Observable
+extension NewsTVC {
+    func setupObservables() {
+        _ = presenter.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
+            if let imagePath = imagePath {
+                let image = UIImage(contentsOfFile: imagePath)
+                self.featuredImage.image = image
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: disposeBag)
     }
 }
