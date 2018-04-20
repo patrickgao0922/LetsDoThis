@@ -58,6 +58,13 @@ extension NewsTVC {
                 self.featuredImage.image = image
             }
         })
+        _ = presenter.mediaIconPath.asObservable().subscribe(onNext: {(imagePath) in
+            if let imagePath = imagePath {
+                let image = UIImage(contentsOfFile: imagePath)
+                self.mediaIcon.image = image
+            }
+        })
         presenter.loadFeaturedImage()
+        presenter.loadMediaIcon()
     }
 }

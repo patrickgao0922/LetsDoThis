@@ -92,14 +92,14 @@ class NewsAPIClientImplementation:NewsAPIClient {
             return Single.error(HTTPError.invalidURL)
         }
         let filename = "\(host)-favicon.ico"
-        return downloadImagesToDestination(from: url, inDirectory: .websiteFaveicons, filename: filename)
+        return downloadImagesToDestination(from: url.appendingPathComponent("/favicon.ico"), inDirectory: .websiteFaveicons, filename: filename)
     }
     
     func downloadImagesToDestination(from url:URL, inDirectory: Directory, filename:String) -> Single<String>{
         return Single<String>.create(subscribe: { (single) -> Disposable in
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                let fileURL = documentsURL.appendingPathComponent(Directory.websiteFaveicons.rawValue).appendingPathComponent(filename)
+                let fileURL = documentsURL.appendingPathComponent(inDirectory.rawValue).appendingPathComponent(filename)
                 return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
             }
             download(url, method: .get, to:destination)

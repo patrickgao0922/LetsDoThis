@@ -38,7 +38,7 @@ class ApplicationMangerImplementation:ApplicationManger {
                 _ = sources.map({ (source) -> SourceMO? in
                     source.createOrFetchManagedObjectInCoreData(with: self.managedObjectContext)
                 })
-                
+                try? self.managedObjectContext.save()
                 return sources
 
             })
