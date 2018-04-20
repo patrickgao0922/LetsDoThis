@@ -78,7 +78,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGT-ti-Zbs">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGT-ti-Zbs">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="ECa-LE-pJp"/>
@@ -91,8 +91,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-2L-x3e">
-                                                    <rect key="frame" x="285" y="64" width="25" height="25"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-2L-x3e">
+                                                    <rect key="frame" x="176" y="64" width="134" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="qcY-aB-0TJ"/>
                                                     </constraints>
@@ -109,6 +109,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="gGT-ti-Zbs" secondAttribute="bottom" id="6Fe-e3-2O1"/>
                                                 <constraint firstItem="gGT-ti-Zbs" firstAttribute="leading" secondItem="Xn5-su-4zI" secondAttribute="leading" id="6NI-SI-Z5p"/>
                                                 <constraint firstItem="uc4-kY-Qyg" firstAttribute="trailing" secondItem="Xn5-su-4zI" secondAttribute="trailingMargin" id="DdH-aK-6oS"/>
+                                                <constraint firstItem="LsN-2L-x3e" firstAttribute="leading" secondItem="gGT-ti-Zbs" secondAttribute="trailing" constant="16" id="Xvp-mT-LHE"/>
                                                 <constraint firstItem="LsN-2L-x3e" firstAttribute="bottom" secondItem="Xn5-su-4zI" secondAttribute="bottomMargin" id="YQT-pv-4S9"/>
                                                 <constraint firstItem="gGT-ti-Zbs" firstAttribute="top" secondItem="Xn5-su-4zI" secondAttribute="top" id="bhQ-Kq-dj1"/>
                                                 <constraint firstItem="3c7-Lh-Nad" firstAttribute="top" secondItem="Xn5-su-4zI" secondAttribute="topMargin" id="dLb-n6-9Kt"/>
