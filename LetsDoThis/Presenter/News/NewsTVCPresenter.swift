@@ -15,6 +15,7 @@ protocol NewsTVCPresenter {
     var title:String? {get}
     var mediaName:String? {get}
     var mediaIconPath:Variable<String?> {get}
+    var publishedAt:String? {get}
     func loadFeaturedImage()
     func loadMediaIcon()
 }
@@ -31,6 +32,9 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
     }
     var mediaName:String? {
         return article.source?.name
+    }
+    var publishedAt: String? {
+        return article.publishedAt
     }
     var mediaIconPath:Variable<String?>
     

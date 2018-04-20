@@ -18,6 +18,13 @@ extension SwinjectStoryboard {
         
         let dependencyRegistry = AppDelegate.dependencyRegistry!
         
+//        Setup Dependency
+        defaultContainer.storyboardInitCompleted(TopHeadlineViewController.self) { (r, vc) in
+            let presenter = r.resolve(TopHeadlineVCPresenter.self)!
+            
+            vc.config(with: presenter, cellMaker: dependencyRegistry.makeNewsTVC)
+        }
+        
         /// Main entry of the storyboard
         func main() {
 //            dependencyRegistry.container.storyboardInitCompleted(SchedulerTableViewController.self) { (r, vc) in

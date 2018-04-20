@@ -140,6 +140,9 @@
                     <navigationItem key="navigationItem" title="Title" id="1P9-Dq-Lgf">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="geg-l9-d4Q"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="B1B-jW-FBY" id="XiC-NX-Dia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKT-iR-kxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

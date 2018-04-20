@@ -13,20 +13,22 @@ class TopHeadlineViewController: UIViewController {
     var presenter:TopHeadlineVCPresenter!
     var news:Variable<[Article]> = Variable<[Article]>([])
     let disposeBag = DisposeBag()
+    
+    @IBOutlet var tableView: UITableView!
+    var cellMaker:DependencyRegistry.NewsTVCMaker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func config(with presenter:TopHeadlineVCPresenter) {
+    func config(with presenter:TopHeadlineVCPresenter, cellMaker:@escaping DependencyRegistry.NewsTVCMaker) {
         self.presenter = presenter
+        self.cellMaker = cellMaker
+        
+        setUpObservables()
     }
     
 
@@ -39,7 +41,24 @@ class TopHeadlineViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+}
 
+extension TopHeadlineViewController:UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.news.value.count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let article = self.news.value[indexPath.row]
+        return self.cellMaker(tableView,indexPath,article)
+    }
+}
+
+extension TopHeadlineViewController:UITableViewDelegate {
+    
 }
 
 // MARK: - Setup Observables
@@ -48,5 +67,14 @@ extension TopHeadlineViewController {
         _ = presenter.news.asObservable().subscribe(onNext: { (articles) in
             self.news.value = articles
         })
+        
+        _ = presenter.loadLatestTopHeadline()
+            .subscribe({ (single) in
+                switch single {
+                case .success(_):
+                    self.tableView.reloadData()
+                default:break
+                }
+            })
     }
 }

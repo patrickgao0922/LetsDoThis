@@ -38,17 +38,26 @@ class NewsTVC: UITableViewCell {
 extension NewsTVC {
     func config(with presenter:NewsTVCPresenter) {
         self.presenter = presenter
+        setupCell()
+        setupObservables()
+    }
+    
+    func setupCell() {
+        self.mediaNameLabel.text = presenter.mediaName
+        self.titleLabel.text = presenter.title
     }
 }
 
 // MARK: - Setup Observable
 extension NewsTVC {
+    
     func setupObservables() {
         _ = presenter.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
             if let imagePath = imagePath {
                 let image = UIImage(contentsOfFile: imagePath)
                 self.featuredImage.image = image
             }
-        }, onError: nil, onCompleted: nil, onDisposed: disposeBag)
+        })
+        presenter.loadFeaturedImage()
     }
 }
