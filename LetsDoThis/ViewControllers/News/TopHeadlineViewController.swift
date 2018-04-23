@@ -15,6 +15,8 @@ class TopHeadlineViewController: UIViewController {
     let disposeBag = DisposeBag()
     let tableViewHeaderHeight:CGFloat = 200
     @IBOutlet var blurView: UIVisualEffectView!
+    let blurViewStartAlpha:CGFloat = 0.3
+    let blurViewFinalAlpha:CGFloat = 1.0
     var headerLabelFont:CGFloat = 31
     
     // Header Components
@@ -136,6 +138,7 @@ extension TopHeadlineViewController:UIScrollViewDelegate {
         
         var newFontSize = headerLabelFont
         
+//        Drag down
         if tableView.contentOffset.y < -tableViewHeaderHeight {
             let moveDifference = (tableView.contentOffset.y + tableViewHeaderHeight)
             tableViewHeaderRect.origin.y = tableView.contentOffset.y
@@ -143,6 +146,11 @@ extension TopHeadlineViewController:UIScrollViewDelegate {
             tableViewHeaderRect.size.width = tableView.bounds.width - 2 * moveDifference
             tableViewHeaderRect.size.height = -tableView.contentOffset.y
             newFontSize = -tableView.contentOffset.y/tableViewHeaderHeight*headerLabelFont
+        }
+        
+        if tableView.contentOffset.y > -tableViewHeaderHeight && tableView.contentOffset.y < 0 {
+            let blurAlphaRange = blurViewFinalAlpha - blurViewStartAlpha
+            blurView.alpha = blurViewStartAlpha + blurAlphaRange*(1 + tableView.contentOffset.y/tableViewHeaderHeight)
         }
         headerView.frame = tableViewHeaderRect
 //        tableHeaderLabel.font = UIFont.systemFont(ofSize: newFontSize)
