@@ -39,6 +39,7 @@ class LeftSideMenuViewController: PGModelViewController{
         tableView.delegate = self
         tableView.dataSource = self
         setupTableViewHeader()
+        setupUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,6 +58,20 @@ class LeftSideMenuViewController: PGModelViewController{
      }
      */
     
+}
+
+// MARK: - Setup UI
+extension LeftSideMenuViewController {
+    func setupUI() {
+        let gradientColors = [UIColor(named: "gradient-start")!.cgColor,UIColor(named: "gradient-end")!.cgColor]
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.view.bounds
+        self.tableView.backgroundView = UIView()
+        self.tableView.backgroundView?.layer.insertSublayer(gradientLayer, at: 0)
+//        self.tableView.layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
 }
 
 extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {

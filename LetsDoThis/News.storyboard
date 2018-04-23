@@ -29,6 +29,14 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-karaoke" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-Dt-zfP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         </imageView>
+                                        <visualEffectView opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOc-ii-Yuw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GxL-BJ-2d6">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <blurEffect style="dark"/>
+                                        </visualEffectView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Di5-54-rsK">
                                             <rect key="frame" x="28" y="98" width="318.5" height="74"/>
                                             <subviews>
@@ -61,9 +69,13 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="bHx-Dt-zfP" secondAttribute="bottom" id="59B-q0-YUc"/>
+                                        <constraint firstItem="UOc-ii-Yuw" firstAttribute="top" secondItem="fwg-AB-eca" secondAttribute="top" id="9ll-OU-7UP"/>
                                         <constraint firstItem="bHx-Dt-zfP" firstAttribute="leading" secondItem="fwg-AB-eca" secondAttribute="leading" id="Ohl-h0-Qn0"/>
+                                        <constraint firstItem="UOc-ii-Yuw" firstAttribute="leading" secondItem="fwg-AB-eca" secondAttribute="leading" id="TO9-Jl-Uuq"/>
                                         <constraint firstAttribute="trailing" secondItem="Di5-54-rsK" secondAttribute="trailing" constant="28.5" id="Uhj-4R-oQd"/>
                                         <constraint firstAttribute="bottom" secondItem="Di5-54-rsK" secondAttribute="bottom" constant="28" id="Wgs-B9-e5w"/>
+                                        <constraint firstAttribute="trailing" secondItem="UOc-ii-Yuw" secondAttribute="trailing" id="jik-9K-PBG"/>
+                                        <constraint firstAttribute="bottom" secondItem="UOc-ii-Yuw" secondAttribute="bottom" id="l5e-Nq-8uL"/>
                                         <constraint firstItem="bHx-Dt-zfP" firstAttribute="top" secondItem="fwg-AB-eca" secondAttribute="top" id="quk-p6-Dsp"/>
                                         <constraint firstAttribute="trailing" secondItem="bHx-Dt-zfP" secondAttribute="trailing" id="rXq-j1-46Z"/>
                                         <constraint firstItem="Di5-54-rsK" firstAttribute="centerX" secondItem="fwg-AB-eca" secondAttribute="centerX" id="u84-C7-vYN"/>
@@ -143,6 +155,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="geg-l9-d4Q"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="blurView" destination="UOc-ii-Yuw" id="avN-7C-2yi"/>
                         <outlet property="featuredNewsDateLabel" destination="gvr-4V-eNW" id="cKa-Vn-zJy"/>
                         <outlet property="featuredNewsFeaturedImageView" destination="bHx-Dt-zfP" id="KoP-ha-Chb"/>
                         <outlet property="featuredNewsMediaName" destination="wWq-Dk-hgC" id="Gga-or-xN2"/>

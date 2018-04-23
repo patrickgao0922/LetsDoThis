@@ -14,6 +14,7 @@ class TopHeadlineViewController: UIViewController {
     var news:Variable<[Article]> = Variable<[Article]>([])
     let disposeBag = DisposeBag()
     let tableViewHeaderHeight:CGFloat = 200
+    @IBOutlet var blurView: UIVisualEffectView!
     var headerLabelFont:CGFloat = 31
     
     // Header Components
@@ -32,6 +33,7 @@ class TopHeadlineViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Today's Headlines"
         setupTableViewHeader()
     }
     
@@ -133,11 +135,12 @@ extension TopHeadlineViewController:UIScrollViewDelegate {
         var tableViewHeaderRect = CGRect(x: 0, y: -tableViewHeaderHeight, width: tableView.bounds.width, height: tableViewHeaderHeight)
         
         var newFontSize = headerLabelFont
-        let moveDifference = (tableView.contentOffset.y - tableViewHeaderHeight)
+        
         if tableView.contentOffset.y < -tableViewHeaderHeight {
+            let moveDifference = (tableView.contentOffset.y + tableViewHeaderHeight)
             tableViewHeaderRect.origin.y = tableView.contentOffset.y
-            tableViewHeaderRect.origin.x = -moveDifference
-            tableViewHeaderRect.size.width = tableView.bounds.width + 2 * moveDifference
+            tableViewHeaderRect.origin.x = moveDifference
+            tableViewHeaderRect.size.width = tableView.bounds.width - 2 * moveDifference
             tableViewHeaderRect.size.height = -tableView.contentOffset.y
             newFontSize = -tableView.contentOffset.y/tableViewHeaderHeight*headerLabelFont
         }
