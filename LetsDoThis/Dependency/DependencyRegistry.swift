@@ -83,13 +83,17 @@ extension DependencyRegistry {
         return cell
     }
     
-    typealias NewsTVCMaker = (UITableView,IndexPath,Article) -> NewsTVC
-    func makeNewsTVC(forTableView tableView:UITableView, at indexPath:IndexPath, with article:Article) -> NewsTVC{
+    typealias NewsTVCMaker = (UITableView,IndexPath,Article,NewsTVCPresenter?) -> NewsTVC
+    func makeNewsTVC(forTableView tableView:UITableView, at indexPath:IndexPath, with article:Article, cellPresenter:NewsTVCPresenter? = nil) -> NewsTVC{
         let cellIdentifier = "NewsTVC"
-        let presenter = container.resolve(NewsTVCPresenter.self,argument:article)!
+        var presenter: NewsTVCPresenter? = cellPresenter
+        if cellPresenter == nil {
+            presenter = container.resolve(NewsTVCPresenter.self,argument:article)
+        }
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsTVC
-        cell.config(with: presenter)
+        cell.config(with: presenter!)
         return cell
     }
 }

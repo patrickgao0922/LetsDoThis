@@ -71,11 +71,11 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTVC" rowHeight="100" id="ti2-40-s6T" customClass="NewsTVC" customModule="LetsDoThis" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTVC" rowHeight="130" id="ti2-40-s6T" customClass="NewsTVC" customModule="LetsDoThis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ti2-40-s6T" id="Xn5-su-4zI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGT-ti-Zbs">
@@ -86,19 +86,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc4-kY-Qyg">
-                                                    <rect key="frame" x="318" y="68" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="336" y="53.5" width="24" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-2L-x3e">
-                                                    <rect key="frame" x="176" y="64" width="134" height="25"/>
+                                                    <rect key="frame" x="176" y="39.5" width="152" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="qcY-aB-0TJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c7-Lh-Nad">
-                                                    <rect key="frame" x="176" y="11" width="184" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c7-Lh-Nad">
+                                                    <rect key="frame" x="176" y="11" width="184" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -114,6 +114,7 @@
                                                 <constraint firstItem="gGT-ti-Zbs" firstAttribute="top" secondItem="Xn5-su-4zI" secondAttribute="top" id="bhQ-Kq-dj1"/>
                                                 <constraint firstItem="3c7-Lh-Nad" firstAttribute="top" secondItem="Xn5-su-4zI" secondAttribute="topMargin" id="dLb-n6-9Kt"/>
                                                 <constraint firstItem="uc4-kY-Qyg" firstAttribute="leading" secondItem="LsN-2L-x3e" secondAttribute="trailing" constant="8" id="eeD-Jb-2UQ"/>
+                                                <constraint firstItem="LsN-2L-x3e" firstAttribute="top" secondItem="3c7-Lh-Nad" secondAttribute="bottom" constant="8" id="hHQ-bm-Uk0"/>
                                                 <constraint firstItem="3c7-Lh-Nad" firstAttribute="leading" secondItem="gGT-ti-Zbs" secondAttribute="trailing" constant="16" id="ttP-jR-cfY"/>
                                                 <constraint firstItem="uc4-kY-Qyg" firstAttribute="bottom" secondItem="Xn5-su-4zI" secondAttribute="bottomMargin" id="vDo-Fy-RN3"/>
                                             </constraints>
@@ -142,6 +143,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="geg-l9-d4Q"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="featuredNewsDateLabel" destination="gvr-4V-eNW" id="cKa-Vn-zJy"/>
+                        <outlet property="featuredNewsFeaturedImageView" destination="bHx-Dt-zfP" id="KoP-ha-Chb"/>
+                        <outlet property="featuredNewsMediaName" destination="wWq-Dk-hgC" id="Gga-or-xN2"/>
+                        <outlet property="featuredNewsTitleLable" destination="Tqv-Rp-WB4" id="twU-um-lIn"/>
                         <outlet property="tableView" destination="B1B-jW-FBY" id="XiC-NX-Dia"/>
                     </connections>
                 </viewController>

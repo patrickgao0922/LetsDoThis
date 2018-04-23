@@ -14,6 +14,13 @@ class TopHeadlineViewController: UIViewController {
     var news:Variable<[Article]> = Variable<[Article]>([])
     let disposeBag = DisposeBag()
     
+    // Header Components
+    
+    @IBOutlet var featuredNewsTitleLable: UILabel!
+    @IBOutlet var featuredNewsDateLabel: UILabel!
+    @IBOutlet var featuredNewsMediaName: UILabel!
+    @IBOutlet var featuredNewsFeaturedImageView: UIImageView!
+    
     @IBOutlet var tableView: UITableView!
     var cellMaker:DependencyRegistry.NewsTVCMaker!
 
@@ -46,14 +53,29 @@ class TopHeadlineViewController: UIViewController {
 
 extension TopHeadlineViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.news.value.count
+        return self.news.value.count - 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article = self.news.value[indexPath.row]
-        return self.cellMaker(tableView,indexPath,article)
+        let articleIndex = indexPath.row + 1
+        let article = self.news.value[articleIndex]
+        var cell:NewsTVC
+        if presenter.cellPresenters.count < indexPath.row + 1 {
+            cell = self.cellMaker(tableView,indexPath,article,nil)
+            presenter.addCellPresenter(cellPresenter:cell.presenter)
+        }
+        else {
+            cell = self.cellMaker(tableView,indexPath,article, presenter.cellPresenters[indexPath.row])
+        }
+        return cell
+    }
+}
+
+extension TopHeadlineViewController {
+    func setupFeatureNews() {
+        
     }
 }
 
@@ -76,5 +98,15 @@ extension TopHeadlineViewController {
                 default:break
                 }
             })
+        
+        _ = presenter.featuredNewsPresenter.asObservable().subscribe(onNext: { (featuredNewsPresenter) in
+            if let featuredNewsPresenter = featuredNewsPresenter {
+                self.featuredNewsTitleLable.text = featuredNewsPresenter.title
+                self.featuredNewsMediaName.text = featuredNewsPresenter.mediaName
+                _ = featuredNewsPresenter.featuredImage.asObservable().subscribe(onNext: { (image) in
+                    self.featuredNewsFeaturedImageView.image = image
+                })
+            }
+        })
     }
 }

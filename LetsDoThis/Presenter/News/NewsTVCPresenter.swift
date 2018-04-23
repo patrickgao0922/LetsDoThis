@@ -16,6 +16,8 @@ protocol NewsTVCPresenter {
     var mediaName:String? {get}
     var mediaIconPath:Variable<String?> {get}
     var publishedAt:String? {get}
+    var mediaIcon:Variable<UIImage?> {get}
+    var featuredImage:Variable<UIImage?> {get}
     func loadFeaturedImage()
     func loadMediaIcon()
 }
@@ -24,6 +26,8 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
     fileprivate var newsAPIClient:NewsAPIClient
     fileprivate var managedObjectContext:NSManagedObjectContext
     fileprivate var article:Article
+    var mediaIcon:Variable<UIImage?>
+    var featuredImage:Variable<UIImage?>
     
     var coreDataContainer:CoreDataContainer
     var featuredImagePath:Variable<String?>
@@ -43,8 +47,12 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
         self.coreDataContainer = coreDataContainer
         featuredImagePath = Variable<String?>(nil)
         mediaIconPath = Variable<String?>(nil)
+        featuredImage = Variable<UIImage?>(nil)
+        mediaIcon = Variable<UIImage?>(nil)
         self.newsAPIClient = newsAPIClient
         self.managedObjectContext = coreDataContainer.persistentContainer.newBackgroundContext()
+        setupObservables()
+        startDownloading()
     }
     
     
@@ -93,5 +101,26 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
                     return
                 }
         }
+    }
+}
+
+extension NewsTVCPresenter {
+    fileprivate func setupObservables() {
+        _ = self.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
+            if let imagePath = imagePath {
+                self.featuredImage.value = UIImage(contentsOfFile: imagePath)
+            }
+        })
+        
+        _ = self.mediaIconPath.asObservable().subscribe(onNext: { (imagePath) in
+            if let imagePath = imagePath {
+                self.featuredImage.value = UIImage(contentsOfFile: imagePath)
+            }
+        })
+    }
+    
+    fileprivate func startDownloading() {
+        self.loadMediaIcon()
+        self.loadFeaturedImage()
     }
 }

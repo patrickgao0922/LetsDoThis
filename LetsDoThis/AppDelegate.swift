@@ -11,6 +11,7 @@ import CoreData
 import Swinject
 import GooglePlaces
 import RxSwift
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var applicationManager:ApplicationManger!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        AppDelegate.dependencyRegistry = DependencyRegistry(container: Container())
+//        AppDelegate.dependencyRegistry = DependencyRegistry(container: defaultContainer)
         AppDelegate.coreDataContainer = AppDelegate.dependencyRegistry?.container.resolve(CoreDataContainer.self)
         
         // check user tokens

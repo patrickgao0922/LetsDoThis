@@ -45,6 +45,12 @@ extension NewsTVC {
     func setupCell() {
         self.mediaNameLabel.text = presenter.mediaName
         self.titleLabel.text = presenter.title
+        if let featuredImagePath = self.presenter.featuredImagePath.value {
+            self.featuredImage.image = UIImage(contentsOfFile: featuredImagePath)
+        }
+        if let mediaIconPath = self.presenter.mediaIconPath.value {
+            self.mediaIcon.image = UIImage(contentsOfFile: mediaIconPath)
+        }
     }
 }
 
@@ -52,19 +58,19 @@ extension NewsTVC {
 extension NewsTVC {
     
     func setupObservables() {
-        _ = presenter.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
-            if let imagePath = imagePath {
-                let image = UIImage(contentsOfFile: imagePath)
+        _ = presenter.featuredImage.asObservable().subscribe(onNext: { (image) in
+
+                
                 self.featuredImage.image = image
-            }
+            
         })
-        _ = presenter.mediaIconPath.asObservable().subscribe(onNext: {(imagePath) in
-            if let imagePath = imagePath {
-                let image = UIImage(contentsOfFile: imagePath)
+        _ = presenter.mediaIcon.asObservable().subscribe(onNext: {(image) in
+
+                
                 self.mediaIcon.image = image
-            }
+
         })
-        presenter.loadFeaturedImage()
-        presenter.loadMediaIcon()
+//        presenter.loadFeaturedImage()
+//        presenter.loadMediaIcon()
     }
 }
