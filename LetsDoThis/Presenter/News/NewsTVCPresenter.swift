@@ -112,15 +112,16 @@ extension NewsTVCPresenter {
             }
         })
         
-        _ = self.mediaIconPath.asObservable().subscribe(onNext: { (imagePath) in
-            if let imagePath = imagePath {
-                self.featuredImage.value = UIImage(contentsOfFile: imagePath)
-            }
-        })
+//        _ = self.mediaIconPath.asObservable().subscribe(onNext: { (imagePath) in
+//            if let imagePath = imagePath {
+//                self.featuredImage.value = UIImage(contentsOfFile: imagePath)
+//
+//            }
+//        })
     }
     
     fileprivate func startDownloading() {
-        self.loadMediaIcon()
+//        self.loadMediaIcon()
         self.loadFeaturedImage()
     }
 }
