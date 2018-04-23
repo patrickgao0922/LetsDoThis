@@ -15,7 +15,7 @@ protocol LeftSideMenuViewControllerDelegate {
 
 enum MenuOption:String {
     case topHeadline = "Top Headline"
-    case main = "Main"
+//    case main = "Main"
 }
 
 class LeftSideMenuViewController: PGModelViewController{
@@ -84,9 +84,9 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
         switch indexPath.row {
-        case 0 :
-            cell.textLabel!.text = MenuOption.main.rawValue
-        case 1:
+//        case 0 :
+//            cell.textLabel!.text = MenuOption.main.rawValue
+        case 0:
             cell.textLabel!.text = MenuOption.topHeadline.rawValue
         default:
             break
@@ -98,9 +98,9 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         self.dismiss(animated: true) {
             var selectedOption = MenuOption.topHeadline
             switch indexPath.row {
+//            case 0:
+//                selectedOption = .main
             case 0:
-                selectedOption = .main
-            case 1:
                 selectedOption = MenuOption.topHeadline
             default:
                 break

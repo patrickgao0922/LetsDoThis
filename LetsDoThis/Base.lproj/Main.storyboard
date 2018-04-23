@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="-3114.4000000000001" y="-503.29835082458777"/>
         </scene>
-        <!--ActivityTypeVC-->
+        <!--topHeadlineVC-->
         <scene sceneID="Gwv-2S-M0E">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ActivityTypeVC" storyboardName="Activity" referencedIdentifier="ActivityTypeVC" id="IMG-au-gnz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="topHeadlineVC" storyboardName="News" referencedIdentifier="topHeadlineVC" id="IMG-au-gnz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bCx-hO-sDJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igz-gU-M5G" userLabel="First Responder" sceneMemberID="firstResponder"/>

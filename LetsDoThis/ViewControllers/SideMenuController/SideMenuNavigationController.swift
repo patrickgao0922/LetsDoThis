@@ -92,8 +92,8 @@ extension SideMenuNavigationController:LeftSideMenuViewControllerDelegate {
     func optionSelected(option: MenuOption) {
         var switchedVC:UIViewController!
         switch option {
-        case .main:
-            switchedVC = UIStoryboard(name: "Activity", bundle: nil).instantiateViewController(withIdentifier: "ActivityTypeVC")
+//        case .main:
+//            switchedVC = UIStoryboard(name: "Activity", bundle: nil).instantiateViewController(withIdentifier: "ActivityTypeVC")
         case .topHeadline:
             switchedVC = UIStoryboard(name: "News", bundle: nil).instantiateViewController(withIdentifier: "topHeadlineVC")
         }
