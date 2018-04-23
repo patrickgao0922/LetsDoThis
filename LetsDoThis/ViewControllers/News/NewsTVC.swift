@@ -48,9 +48,10 @@ extension NewsTVC {
         if let featuredImagePath = self.presenter.featuredImagePath.value {
             self.featuredImage.image = UIImage(contentsOfFile: featuredImagePath)
         }
-        if let mediaIconPath = self.presenter.mediaIconPath.value {
-            self.mediaIcon.image = UIImage(contentsOfFile: mediaIconPath)
-        }
+//        if let mediaIconPath = self.presenter.mediaIconPath.value {
+//            self.mediaIcon.image = UIImage(contentsOfFile: mediaIconPath)
+//        }
+        self.featuredImage.layer.cornerRadius = 5.0
     }
 }
 

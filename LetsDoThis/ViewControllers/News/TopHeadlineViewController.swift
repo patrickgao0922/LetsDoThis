@@ -13,8 +13,11 @@ class TopHeadlineViewController: UIViewController {
     var presenter:TopHeadlineVCPresenter!
     var news:Variable<[Article]> = Variable<[Article]>([])
     let disposeBag = DisposeBag()
+    let tableViewHeaderHeight:CGFloat = 200
+    var headerLabelFont:CGFloat = 31
     
     // Header Components
+    @IBOutlet var headerView: UIView!
     
     @IBOutlet var featuredNewsTitleLable: UILabel!
     @IBOutlet var featuredNewsDateLabel: UILabel!
@@ -29,6 +32,7 @@ class TopHeadlineViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        setupTableViewHeader()
     }
     
     func config(with presenter:TopHeadlineVCPresenter, cellMaker:@escaping DependencyRegistry.NewsTVCMaker) {
@@ -80,7 +84,9 @@ extension TopHeadlineViewController {
 }
 
 extension TopHeadlineViewController:UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
 }
 
 // MARK: - Setup Observables
@@ -108,5 +114,38 @@ extension TopHeadlineViewController {
                 })
             }
         })
+    }
+}
+
+
+// MARK: - Strechy header
+extension TopHeadlineViewController:UIScrollViewDelegate {
+    func setupTableViewHeader() {
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        self.tableView.addSubview(headerView)
+        tableView.contentInset = UIEdgeInsets(top: tableViewHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -tableViewHeaderHeight)
+        
+        updateHeaderRect()
+    }
+    func updateHeaderRect() {
+        var tableViewHeaderRect = CGRect(x: 0, y: -tableViewHeaderHeight, width: tableView.bounds.width, height: tableViewHeaderHeight)
+        
+        var newFontSize = headerLabelFont
+        let moveDifference = (tableView.contentOffset.y - tableViewHeaderHeight)
+        if tableView.contentOffset.y < -tableViewHeaderHeight {
+            tableViewHeaderRect.origin.y = tableView.contentOffset.y
+            tableViewHeaderRect.origin.x = -moveDifference
+            tableViewHeaderRect.size.width = tableView.bounds.width + 2 * moveDifference
+            tableViewHeaderRect.size.height = -tableView.contentOffset.y
+            newFontSize = -tableView.contentOffset.y/tableViewHeaderHeight*headerLabelFont
+        }
+        headerView.frame = tableViewHeaderRect
+//        tableHeaderLabel.font = UIFont.systemFont(ofSize: newFontSize)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateHeaderRect()
     }
 }
