@@ -160,16 +160,17 @@
                         <outlet property="featuredNewsTitleLable" destination="Tqv-Rp-WB4" id="twU-um-lIn"/>
                         <outlet property="headerView" destination="fwg-AB-eca" id="Wyu-65-1gb"/>
                         <outlet property="tableView" destination="B1B-jW-FBY" id="XiC-NX-Dia"/>
+                        <segue destination="cY8-v3-ltL" kind="show" identifier="showWebView" id="QDc-kj-NRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKT-iR-kxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2712.8000000000002" y="347.67616191904051"/>
         </scene>
-        <!--View Controller-->
+        <!--News Web View Controller-->
         <scene sceneID="aYt-Nh-5cR">
             <objects>
-                <viewController id="cY8-v3-ltL" sceneMemberID="viewController">
+                <viewController id="cY8-v3-ltL" customClass="NewsWebViewController" customModule="LetsDoThis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PzL-b2-ddk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,7 +178,7 @@
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOc-JF-ZjG">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
@@ -192,6 +193,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EH1-Xw-dff"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="KOc-JF-ZjG" id="fjV-J7-UdA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddk-Vl-vSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

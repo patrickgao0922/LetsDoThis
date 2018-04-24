@@ -94,7 +94,7 @@ extension LeftSideMenuViewController {
         let blurView = UIVisualEffectView.init(effect: blurEffect)
 //        blurView.backgroundColor = UIColor.red.withAlphaComponent(0.6)
         blurView.backgroundColor = UIColor.clear
-        blurView.alpha = 0.5
+        blurView.alpha = 0.3
         blurView.clipsToBounds = true
         blurView.frame = tableView.backgroundView!.bounds
         
@@ -112,7 +112,7 @@ extension LeftSideMenuViewController {
 // MARK: - Drag Behavior
 extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

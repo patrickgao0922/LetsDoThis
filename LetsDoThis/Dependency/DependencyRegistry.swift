@@ -51,6 +51,10 @@ class DependencyRegistry {
         container.register(ApplicationManger.self) { r in
             ApplicationMangerImplementation(with: r.resolve(NewsAPIClient.self)!, using: r.resolve(CoreDataContainer.self)!)
         }
+        
+        container.register(NewsWebViewModel.self) { r, article in
+            NewsWebViewModelImplementation(with: article)
+        }
     }
     func registerPresenters() {
         container.register(UserModel.self) { (r) in

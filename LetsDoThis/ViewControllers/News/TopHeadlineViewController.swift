@@ -9,7 +9,12 @@
 import UIKit
 import RxSwift
 
+
 class TopHeadlineViewController: UIViewController {
+    
+    enum Segue:String {
+        case showWebView = "showWebView"
+    }
     var presenter:TopHeadlineVCPresenter!
     var news:Variable<[Article]> = Variable<[Article]>([])
     let disposeBag = DisposeBag()
@@ -47,15 +52,29 @@ class TopHeadlineViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let segueIdentifierString = segue.identifier {
+            guard let segueIdentifier = Segue(rawValue: segueIdentifierString) else {
+                return
+            }
+            switch segueIdentifier {
+            case .showWebView:
+                let cellPresenter = presenter.cellPresenters[tableView.indexPathForSelectedRow!.row]
+                let vm = AppDelegate.dependencyRegistry!.container.resolve(NewsWebViewModel.self, argument: cellPresenter.article)!
+                let destnation = segue.destination as! NewsWebViewController
+                destnation.config(with: vm)
+            }
+        }
+        
+        
     }
-    */
+ 
     
 }
 
@@ -78,6 +97,11 @@ extension TopHeadlineViewController:UITableViewDataSource {
             cell = self.cellMaker(tableView,indexPath,article, presenter.cellPresenters[indexPath.row])
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: Segue.showWebView.rawValue, sender: self)
     }
 }
 

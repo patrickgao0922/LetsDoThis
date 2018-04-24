@@ -11,6 +11,7 @@ import RxSwift
 import CoreData
 
 protocol NewsTVCPresenter {
+    var article:Article{get}
     var featuredImagePath:Variable<String?> {get}
     var title:String? {get}
     var mediaName:String? {get}
@@ -25,7 +26,7 @@ protocol NewsTVCPresenter {
 class NewsTVCPresenterImplementation:NewsTVCPresenter{
     fileprivate var newsAPIClient:NewsAPIClient
     fileprivate var managedObjectContext:NSManagedObjectContext
-    fileprivate var article:Article
+    var article:Article
     var mediaIcon:Variable<UIImage?>
     var featuredImage:Variable<UIImage?>
     
