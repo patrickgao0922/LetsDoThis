@@ -69,11 +69,47 @@ extension LeftSideMenuViewController {
         gradientLayer.frame = self.view.bounds
         self.tableView.backgroundView = UIView()
         self.tableView.backgroundView?.layer.insertSublayer(gradientLayer, at: 0)
-//        self.tableView.layer.insertSublayer(gradientLayer, at: 0)
+        setupBlurEffect()
+    }
+    
+    func setupBlurEffect() {
+//        // blur
+//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        blurView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.60];
+//        blurView.clipsToBounds = YES;
+//        blurView.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f].CGColor;
+//        blurView.layer.borderWidth = 1.0;
+//        blurView.layer.cornerRadius = 6.0;
+//
+//        // label
+//        UILabel *label = [[UILabel alloc] init];
+//        label.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
+//        [label sizeToFit];
+//
+//        // add the label to effect view
+//        [blurView.contentView addSubview:label];
+        // blur
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView.init(effect: blurEffect)
+//        blurView.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+        blurView.backgroundColor = UIColor.clear
+        blurView.alpha = 0.5
+        blurView.clipsToBounds = true
+        blurView.frame = tableView.backgroundView!.bounds
         
+        let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
+//        let vibrancyView = UIVisualEffectView(effect: vibrancyEffect)
+//        blurView.contentView.addSubview(vibrancyView)
+        
+        // add the label to effect view
+        self.tableView.backgroundView?.addSubview(blurView)
+        self.tableView.separatorEffect = vibrancyEffect
+
     }
 }
 
+// MARK: - Drag Behavior
 extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -82,12 +118,12 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! LeftMenuOptionTableViewCell
         switch indexPath.row {
 //        case 0 :
 //            cell.textLabel!.text = MenuOption.main.rawValue
         case 0:
-            cell.textLabel!.text = MenuOption.topHeadline.rawValue
+            cell.optionNameLabel!.text = MenuOption.topHeadline.rawValue
         default:
             break
         }
@@ -107,6 +143,10 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
             }
             self.leftSideMenuViewControllerDelegate.optionSelected(option: selectedOption)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
     //    func table

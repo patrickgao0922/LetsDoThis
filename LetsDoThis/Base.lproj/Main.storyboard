@@ -51,15 +51,49 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="U6e-wf-FDc">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="70" id="U6e-wf-FDc" customClass="LeftMenuOptionTableViewCell" customModule="LetsDoThis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U6e-wf-FDc" id="Wwg-ul-xeS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOh-qT-Qjq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ay1-zf-B37">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9m-Gk-ki2">
+                                                                <rect key="frame" x="166" y="24" width="42" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="V9m-Gk-ki2" firstAttribute="centerY" secondItem="ay1-zf-B37" secondAttribute="centerY" id="Kt2-NQ-En8"/>
+                                                            <constraint firstItem="V9m-Gk-ki2" firstAttribute="centerX" secondItem="ay1-zf-B37" secondAttribute="centerX" id="oqr-H5-0Z7"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="dark"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="eOh-qT-Qjq" firstAttribute="top" secondItem="Wwg-ul-xeS" secondAttribute="top" id="0oz-YG-xJB"/>
+                                                <constraint firstAttribute="bottom" secondItem="eOh-qT-Qjq" secondAttribute="bottom" id="2hq-q4-OSz"/>
+                                                <constraint firstItem="eOh-qT-Qjq" firstAttribute="leading" secondItem="Wwg-ul-xeS" secondAttribute="leading" id="hdJ-K0-bHh"/>
+                                                <constraint firstAttribute="trailing" secondItem="eOh-qT-Qjq" secondAttribute="trailing" id="ifq-GA-a43"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="optionNameLabel" destination="V9m-Gk-ki2" id="y4H-LB-Ecn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
