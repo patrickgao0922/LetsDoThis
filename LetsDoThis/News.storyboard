@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-karaoke" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-Dt-zfP">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-karaoke" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-Dt-zfP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
@@ -73,11 +73,12 @@
                                                                             <constraint firstItem="on5-Ll-1a5" firstAttribute="centerX" secondItem="bL9-KW-HFc" secondAttribute="centerX" id="rbh-Ju-Hnu"/>
                                                                         </constraints>
                                                                     </view>
+                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="aYd-Ia-Vib"/>
                                                                     </constraints>
                                                                     <vibrancyEffect>
-                                                                        <blurEffect style="extraLight"/>
+                                                                        <blurEffect style="dark"/>
                                                                     </vibrancyEffect>
                                                                 </visualEffectView>
                                                             </subviews>
@@ -91,7 +92,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="54" id="jWQ-cI-LoC"/>
                                                         </constraints>
-                                                        <blurEffect style="extraLight"/>
+                                                        <blurEffect style="dark"/>
                                                     </visualEffectView>
                                                 </subviews>
                                                 <constraints>
@@ -100,6 +101,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="Vbb-bq-yjd" secondAttribute="bottom" id="viB-x2-X0s"/>
                                                 </constraints>
                                             </view>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <blurEffect style="dark"/>
                                         </visualEffectView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is Today's Headline This is Today's Headline This is Today's Headline This is Today's Headline " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqv-Rp-WB4">
@@ -109,7 +111,7 @@
                                                 <constraint firstAttribute="width" constant="300" id="yk5-06-S3J"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -204,7 +206,7 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="value" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -302,7 +304,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                                                 <real key="value" value="5"/>
