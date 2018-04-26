@@ -11,12 +11,17 @@ import WebKit
 import RxSwift
 
 class NewsWebViewController: UIViewController {
+    @IBOutlet var activityIndicatorContainer: UIVisualEffectView!
+    @IBOutlet var activityIndicator: PGActivityIndicator!
     @IBOutlet var webView: WKWebView!
     var vm:NewsWebViewModel!
     var url:Variable<URL?> = Variable<URL?>(nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.navigationDelegate = self
+        activityIndicatorContainer.layer.cornerRadius = 10
+        activityIndicatorContainer.clipsToBounds = true
         setupObservables()
         // Do any additional setup after loading the view.
     }
@@ -44,6 +49,12 @@ class NewsWebViewController: UIViewController {
     }
     */
 
+}
+
+extension NewsWebViewController:WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicatorContainer.isHidden = true
+    }
 }
 
 // MARK: - Setup Observable

@@ -24,6 +24,7 @@ class TopHeadlineViewController: UIViewController {
     let blurViewFinalAlpha:CGFloat = 1.0
     var headerLabelFont:CGFloat = 31
     
+    @IBOutlet var activityIndicatorView: UIView!
     // Header Components
     @IBOutlet var headerView: UIView!
     
@@ -39,6 +40,7 @@ class TopHeadlineViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setupUI()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Today's Headlines"
         setupTableViewHeader()
@@ -117,6 +119,23 @@ extension TopHeadlineViewController:UITableViewDelegate {
     }
 }
 
+// MARK: - Setup UI
+extension TopHeadlineViewController{
+    func setupUI() {
+        setupActivityIndicatorView()
+    }
+    func setupActivityIndicatorView() {
+        let gradientColors = [UIColor(named: "gradient-start")!.cgColor,UIColor(named: "gradient-end")!.cgColor]
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+//        gradientLayer.transform = CATransform3DMakeRotation(CGFloat.pi/8, 0, 0, 1)
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.frame = view.bounds
+        self.activityIndicatorView.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
+
 // MARK: - Setup Observables
 extension TopHeadlineViewController {
     func setUpObservables() {
@@ -131,6 +150,7 @@ extension TopHeadlineViewController {
                     self.tableView.reloadData()
                 default:break
                 }
+                self.activityIndicatorView.isHidden = true
             })
         
         _ = presenter.featuredNewsPresenter.asObservable().subscribe(onNext: { (featuredNewsPresenter) in

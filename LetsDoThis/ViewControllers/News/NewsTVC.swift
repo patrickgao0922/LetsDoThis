@@ -65,12 +65,12 @@ extension NewsTVC {
                 self.featuredImage.image = image
             
         })
-        _ = presenter.mediaIcon.asObservable().subscribe(onNext: {(image) in
-
-                
-                self.mediaIcon.image = image
-
-        })
+//        _ = presenter.mediaIcon.asObservable().subscribe(onNext: {(image) in
+//
+//                
+//                self.mediaIcon.image = image
+//
+//        })
 //        presenter.loadFeaturedImage()
 //        presenter.loadMediaIcon()
     }
