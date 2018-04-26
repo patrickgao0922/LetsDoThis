@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-karaoke" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-j7-yoJ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side-menu-header-background" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-j7-yoJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oK-Qj-njd">
@@ -161,6 +161,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background-karaoke" width="392" height="150"/>
+        <image name="side-menu-header-background" width="414" height="202"/>
     </resources>
 </document>
