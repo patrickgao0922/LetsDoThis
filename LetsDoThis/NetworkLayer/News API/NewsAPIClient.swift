@@ -50,7 +50,9 @@ class NewsAPIClientImplementation:NewsAPIClient {
                     }
                     
                     do {
-                        let newsResponse = try JSONDecoder().decode(NewsResponse.self, from: data)
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .iso8601
+                        let newsResponse = try decoder.decode(NewsResponse.self, from: data)
                         single(.success(newsResponse))
                     }
                     catch {

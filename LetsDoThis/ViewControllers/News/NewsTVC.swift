@@ -12,7 +12,7 @@ import RxSwift
 class NewsTVC: UITableViewCell {
     
     /// News Table View Cell UI components
-    @IBOutlet var mediaIcon: UIImageView!
+    @IBOutlet var timeLabel: UILabel!
     @IBOutlet var mediaNameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var featuredImage: UIImageView!
@@ -47,6 +47,28 @@ extension NewsTVC {
         self.titleLabel.text = presenter.title
         if let featuredImagePath = self.presenter.featuredImagePath.value {
             self.featuredImage.image = UIImage(contentsOfFile: featuredImagePath)
+        }
+        if let date = presenter.publishedAt {
+            let components = Calendar.current.dateComponents([.second,.minute,.hour,.day,.weekOfYear,.month], from: date, to: Date())
+            if components.month != nil && components.month! != 0{
+                    timeLabel.text = "\(components.month!) months ago"
+                
+            } else if components.weekOfYear != nil && components.weekOfYear! != 0 {
+                    timeLabel.text = "\(components.weekOfYear!) weeks ago"
+                
+            } else if components.day != nil && components.day! != 0 {
+                    timeLabel.text = "\(components.day!) days "
+                
+            } else if components.hour != nil && components.hour! != 0 {
+                timeLabel.text = "\(components.hour!) days "
+                
+            } else if components.minute != nil && components.minute! != 0 {
+                    timeLabel.text = "\(components.minute!) minutes "
+                
+            } else if components.second != nil && components.second! != 0 {
+                timeLabel.text = "\(components.second!) seconds ago"
+            }
+            
         }
 //        if let mediaIconPath = self.presenter.mediaIconPath.value {
 //            self.mediaIcon.image = UIImage(contentsOfFile: mediaIconPath)

@@ -33,6 +33,7 @@ class TopHeadlineViewController: UIViewController {
     @IBOutlet var featuredNewsMediaName: UILabel!
     @IBOutlet var featuredNewsFeaturedImageView: UIImageView!
     
+    
     @IBOutlet var tableView: UITableView!
     var cellMaker:DependencyRegistry.NewsTVCMaker!
 
