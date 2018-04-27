@@ -16,7 +16,10 @@ class NewsTVC: UITableViewCell {
     @IBOutlet var mediaNameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var featuredImage: UIImageView!
-    var presenter:NewsTVCPresenter!
+    
+    @IBOutlet var activityIndicatorView: UIVisualEffectView!
+    
+    var presenter:NewsTVCPresenter?
     
     fileprivate var disposeBag: DisposeBag = DisposeBag()
     
@@ -43,12 +46,10 @@ extension NewsTVC {
     }
     
     func setupCell() {
-        self.mediaNameLabel.text = presenter.mediaName
-        self.titleLabel.text = presenter.title
-        if let featuredImagePath = self.presenter.featuredImagePath.value {
-            self.featuredImage.image = UIImage(contentsOfFile: featuredImagePath)
-        }
-        if let date = presenter.publishedAt {
+        self.activityIndicatorView.layer.cornerRadius = 5
+        self.mediaNameLabel.text = presenter?.mediaName
+        self.titleLabel.text = presenter?.title
+        if let date = presenter?.publishedAt {
             let components = Calendar.current.dateComponents([.second,.minute,.hour,.day,.weekOfYear,.month], from: date, to: Date())
             if components.month != nil && components.month! != 0{
                     timeLabel.text = "\(components.month!) months ago"
@@ -73,6 +74,8 @@ extension NewsTVC {
 //        if let mediaIconPath = self.presenter.mediaIconPath.value {
 //            self.mediaIcon.image = UIImage(contentsOfFile: mediaIconPath)
 //        }
+        self.featuredImage.image = nil
+        self.activityIndicatorView.isHidden = false
         self.featuredImage.layer.cornerRadius = 5.0
     }
 }
@@ -81,12 +84,17 @@ extension NewsTVC {
 extension NewsTVC {
     
     func setupObservables() {
-        _ = presenter.featuredImage.asObservable().subscribe(onNext: { (image) in
+        _ = presenter?.featuredImage.asObservable()
+            .subscribe(onNext: { [unowned self] (image) in
 
                 
-                self.featuredImage.image = image
             
-        })
+            if image != nil {
+                self.featuredImage.image = image
+                self.activityIndicatorView.isHidden = true
+            }
+            
+        }).disposed(by: disposeBag)
 //        _ = presenter.mediaIcon.asObservable().subscribe(onNext: {(image) in
 //
 //                

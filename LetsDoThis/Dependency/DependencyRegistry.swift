@@ -66,7 +66,7 @@ class DependencyRegistry {
         
         container.register(TopHeadlineVCPresenter.self) { (r) in
             TopHeadlineVCPresenterImplementation(with: r.resolve(NewsAPIClient.self)!)
-        }
+        }.inObjectScope(.transient)
         
         container.register(NewsTVCPresenter.self) { r,article in
             NewsTVCPresenterImplementation(with: article, newsAPIClient: r.resolve(NewsAPIClient.self)!, coreDataContainer: r.resolve(CoreDataContainer.self)!)
@@ -97,6 +97,7 @@ extension DependencyRegistry {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsTVC
+        cell.presenter = nil 
         cell.config(with: presenter!)
         return cell
     }

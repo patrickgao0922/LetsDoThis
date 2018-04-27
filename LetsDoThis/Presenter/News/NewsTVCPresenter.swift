@@ -10,9 +10,9 @@ import UIKit
 import RxSwift
 import CoreData
 
-protocol NewsTVCPresenter {
+protocol NewsTVCPresenter{
     var article:Article{get}
-    var featuredImagePath:Variable<String?> {get}
+//    var featuredImagePath:Variable<String?> {get}
     var title:String? {get}
     var mediaName:String? {get}
     var mediaIconPath:Variable<String?> {get}
@@ -72,17 +72,6 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
             guard let url = sourceMO.url else {
                 return
             }
-            _ = newsAPIClient.obtainSourceFavicon(byURL: url)
-                .subscribe({ (single) in
-                    switch single {
-                    case .success(let imagePath):
-                        self.mediaIconPath.value = imagePath
-                        sourceMO.iconPath = imagePath
-                        try? self.managedObjectContext.save()
-                    case .error (_):
-                        return
-                    }
-                })
         }
         
     }
@@ -94,10 +83,11 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
             return
         }
         _ = newsAPIClient.fetchFeaturedImage(from: featuredImageURL, title: title)
-            .subscribe { (single) in
+            .subscribe { [weak self] (single) in
                 switch single {
                 case .success(let imagePath):
-                    self.featuredImagePath.value = imagePath
+                    self?.featuredImage.value = UIImage(contentsOfFile: imagePath)
+//                    self.featuredImagePath.value = imagePath
                 case .error (_):
                     return
                 }
@@ -105,13 +95,13 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
     }
 }
 
-extension NewsTVCPresenter {
+extension NewsTVCPresenterImplementation {
     fileprivate func setupObservables() {
-        _ = self.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
-            if let imagePath = imagePath {
-                self.featuredImage.value = UIImage(contentsOfFile: imagePath)
-            }
-        })
+//        _ = self.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
+//            if let imagePath = imagePath {
+//
+//            }
+//        })
         
 //        _ = self.mediaIconPath.asObservable().subscribe(onNext: { (imagePath) in
 //            if let imagePath = imagePath {

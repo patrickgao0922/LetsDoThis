@@ -94,7 +94,7 @@ extension TopHeadlineViewController:UITableViewDataSource {
         var cell:NewsTVC
         if presenter.cellPresenters.count < indexPath.row + 1 {
             cell = self.cellMaker(tableView,indexPath,article,nil)
-            presenter.addCellPresenter(cellPresenter:cell.presenter)
+            presenter.addCellPresenter(cellPresenter:cell.presenter!)
         }
         else {
             cell = self.cellMaker(tableView,indexPath,article, presenter.cellPresenters[indexPath.row])
