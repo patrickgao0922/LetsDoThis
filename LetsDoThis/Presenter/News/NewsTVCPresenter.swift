@@ -32,6 +32,9 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
     
     var coreDataContainer:CoreDataContainer
     var featuredImagePath:Variable<String?>
+    
+    
+//    RxSwift Subscribtion
     var title:String? {
         return article.title
     }

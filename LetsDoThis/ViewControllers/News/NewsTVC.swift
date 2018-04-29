@@ -21,6 +21,8 @@ class NewsTVC: UITableViewCell {
     
     var presenter:NewsTVCPresenter?
     
+    var featuredImageSub:Disposable?
+    
     fileprivate var disposeBag: DisposeBag = DisposeBag()
     
     
@@ -41,6 +43,7 @@ class NewsTVC: UITableViewCell {
 extension NewsTVC {
     func config(with presenter:NewsTVCPresenter) {
         self.presenter = presenter
+        featuredImageSub?.dispose()
         setupCell()
         setupObservables()
     }
@@ -84,7 +87,7 @@ extension NewsTVC {
 extension NewsTVC {
     
     func setupObservables() {
-        _ = presenter?.featuredImage.asObservable()
+        featuredImageSub = presenter?.featuredImage.asObservable()
             .subscribe(onNext: { [unowned self] (image) in
 
                 
@@ -94,7 +97,8 @@ extension NewsTVC {
                 self.activityIndicatorView.isHidden = true
             }
             
-        }).disposed(by: disposeBag)
+        })
+        featuredImageSub?.disposed(by: disposeBag)
 //        _ = presenter.mediaIcon.asObservable().subscribe(onNext: {(image) in
 //
 //                
