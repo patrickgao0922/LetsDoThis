@@ -48,6 +48,7 @@
 		965228A72084207F00D8E039 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965228A62084207F00D8E039 /* News.storyboard */; };
 		965228A9208448E700D8E039 /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A8208448E700D8E039 /* NewsTVC.swift */; };
 		965228AB20844D3700D8E039 /* NewsTVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228AA20844D3700D8E039 /* NewsTVCPresenter.swift */; };
+		965EA0EF2096D401006B9583 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA0EE2096D401006B9583 /* UIColorExtension.swift */; };
 		96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
 		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
@@ -160,6 +161,7 @@
 		965228A62084207F00D8E039 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		965228A8208448E700D8E039 /* NewsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		965228AA20844D3700D8E039 /* NewsTVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCPresenter.swift; sourceTree = "<group>"; };
+		965EA0EE2096D401006B9583 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRouter.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				9632A87020968EDD009DEAF9 /* NewsTVBackgroundShap.swift */,
 				96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */,
 				9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */,
+				965EA0EE2096D401006B9583 /* UIColorExtension.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */,
 				9618D727208816AE00EDD5BC /* NewsModel.swift in Sources */,
 				963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */,
+				965EA0EF2096D401006B9583 /* UIColorExtension.swift in Sources */,
 				96A93E48207D7EA4005A9ED8 /* Constants.swift in Sources */,
 				9668FB15205CE208002AA9AA /* UserDTO.swift in Sources */,
 				965228AB20844D3700D8E039 /* NewsTVCPresenter.swift in Sources */,

@@ -19,7 +19,7 @@ PODS:
   - Mockingjay/XCTest (2.0.1):
     - Mockingjay/Core
   - Nimble (7.0.3)
-  - PGModelViewController (0.1.2)
+  - PGModelViewController (1.0.0)
   - Quick (1.2.0)
   - RxAlamofire (4.1.0):
     - RxAlamofire/Core (= 4.1.0)
@@ -79,7 +79,7 @@ SPEC CHECKSUMS:
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  PGModelViewController: 63023044e25849f79f3475b7a13aa78dfea69c35
+  PGModelViewController: a55209d1b8703f507ee64d80aee533edd67eb2a0
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a

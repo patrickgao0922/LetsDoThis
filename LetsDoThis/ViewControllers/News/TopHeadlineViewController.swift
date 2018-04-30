@@ -110,6 +110,10 @@ extension TopHeadlineViewController:UITableViewDataSource {
         
         self.performSegue(withIdentifier: Segue.showWebView.rawValue, sender: self)
     }
+    
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
 }
 
 extension TopHeadlineViewController {
@@ -120,12 +124,14 @@ extension TopHeadlineViewController {
 
 extension TopHeadlineViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 305
     }
+
 }
 
 // MARK: - Setup UI
 extension TopHeadlineViewController{
+    
     func setupUI() {
         drawBackgroundShap()
         setupActivityIndicatorView()
@@ -142,11 +148,14 @@ extension TopHeadlineViewController{
     }
     
     func drawBackgroundShap() {
-        backgroundView = NewsTableBackgroundView(frame: self.view.bounds)
+        let statusBarFrame = UIApplication.shared.statusBarFrame
+        backgroundView = NewsTableBackgroundView(frame: CGRect(x: 0, y: statusBarFrame.size.height, width: statusBarFrame.size.width, height: view.bounds.size.height - statusBarFrame.size.height))
         view.insertSubview(backgroundView, at: 0)
-        NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+        backgroundView.clipsToBounds = true
+//        stat
+        NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: UIApplication.shared.statusBarFrame.size.height).isActive = true
         NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: backgroundView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: backgroundView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: UIApplication.shared.statusBarFrame.size.height).isActive = true
         NSLayoutConstraint(item: backgroundView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
         
     }

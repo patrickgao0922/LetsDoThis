@@ -67,7 +67,7 @@ class SideMenuNavigationController: UINavigationController {
 extension SideMenuNavigationController {
     func setup() {
 //        let menuImage = UIImage(named: )?.withRenderingMode(.alwaysOriginal)
-        sideMenuButtonItem = UIBarButtonItem(with:"icon-side-menu-button",in:.alwaysOriginal, style: .plain, target: self, action: #selector(tapSideMenuButton))
+        sideMenuButtonItem = UIBarButtonItem(with:"icon-side-menu-button",in:.automatic, style: .plain, target: self, action: #selector(tapSideMenuButton))
 //        if self.navigationItem.leftBarButtonItems != nil {
 //            self.navigationItem.leftBarButtonItems?.insert(sideMenuButtonItem, at: 0)
 //        } else {
