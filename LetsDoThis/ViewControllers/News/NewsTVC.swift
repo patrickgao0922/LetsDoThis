@@ -16,6 +16,7 @@ class NewsTVC: UITableViewCell {
     @IBOutlet var mediaNameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var featuredImage: UIImageView!
+    @IBOutlet var featuredImageContainerView: UIView!
     
     @IBOutlet var activityIndicatorView: UIVisualEffectView!
     
@@ -49,7 +50,11 @@ extension NewsTVC {
     }
     
     func setupCell() {
-        self.activityIndicatorView.layer.cornerRadius = 5
+//        self.activityIndicatorView.layer.cornerRadius = 5
+        self.featuredImageContainerView.layer.shadowColor = UIColor.black.cgColor
+        self.featuredImageContainerView.layer.shadowOpacity = 1
+        featuredImageContainerView.layer.shadowOffset = CGSize(width: -5, height: 5)
+        featuredImageContainerView.layer.shadowRadius = 5
         self.mediaNameLabel.text = presenter?.mediaName
         self.titleLabel.text = presenter?.title
         if let date = presenter?.publishedAt {
@@ -79,7 +84,6 @@ extension NewsTVC {
 //        }
         self.featuredImage.image = nil
         self.activityIndicatorView.isHidden = false
-        self.featuredImage.layer.cornerRadius = 5.0
     }
 }
 
