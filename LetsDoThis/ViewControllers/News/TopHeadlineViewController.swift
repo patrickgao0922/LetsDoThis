@@ -24,6 +24,8 @@ class TopHeadlineViewController: UIViewController {
     let blurViewFinalAlpha:CGFloat = 1.0
     var headerLabelFont:CGFloat = 31
     
+    var backgroundView:NewsTableBackgroundView!
+    
     @IBOutlet var activityIndicatorView: UIView!
     // Header Components
     @IBOutlet var headerView: UIView!
@@ -46,6 +48,8 @@ class TopHeadlineViewController: UIViewController {
         self.navigationItem.title = "Today's Headlines"
         setupTableViewHeader()
     }
+    
+    
     
     func config(with presenter:TopHeadlineVCPresenter, cellMaker:@escaping DependencyRegistry.NewsTVCMaker) {
         self.presenter = presenter
@@ -123,6 +127,7 @@ extension TopHeadlineViewController:UITableViewDelegate {
 // MARK: - Setup UI
 extension TopHeadlineViewController{
     func setupUI() {
+        drawBackgroundShap()
         setupActivityIndicatorView()
     }
     func setupActivityIndicatorView() {
@@ -135,6 +140,17 @@ extension TopHeadlineViewController{
         gradientLayer.frame = view.bounds
         self.activityIndicatorView.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    func drawBackgroundShap() {
+        backgroundView = NewsTableBackgroundView(frame: self.view.bounds)
+        view.insertSubview(backgroundView, at: 0)
+        NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: backgroundView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: backgroundView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+        
+    }
+    
 }
 
 // MARK: - Setup Observables

@@ -32,6 +32,8 @@
 		96234EAD206B3C660095BD8A /* activity-type.json in Resources */ = {isa = PBXBuildFile; fileRef = 96234EAC206B3C660095BD8A /* activity-type.json */; };
 		96234EAF206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */; };
 		962E7FE52072F84900F775CC /* ActivityTypeCVFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */; };
+		9632A87120968EDD009DEAF9 /* NewsTVBackgroundShap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632A87020968EDD009DEAF9 /* NewsTVBackgroundShap.swift */; };
+		9632A87320969464009DEAF9 /* NewsTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */; };
 		963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9639713F2069BC3300EFEC65 /* ActivityTypeModel.swift */; };
 		963971422069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */; };
 		963971462069D61600EFEC65 /* ActivityTypeVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */; };
@@ -142,6 +144,8 @@
 		96234EAC206B3C660095BD8A /* activity-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-type.json"; sourceTree = "<group>"; };
 		96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenterImplementationTests.swift; sourceTree = "<group>"; };
 		962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCVFlowLayout.swift; sourceTree = "<group>"; };
+		9632A87020968EDD009DEAF9 /* NewsTVBackgroundShap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTVBackgroundShap.swift; sourceTree = "<group>"; };
+		9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableBackgroundView.swift; sourceTree = "<group>"; };
 		9639713F2069BC3300EFEC65 /* ActivityTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeModel.swift; sourceTree = "<group>"; };
 		963971412069CF0300EFEC65 /* TestActivityTypeModelImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActivityTypeModelImplementation.swift; sourceTree = "<group>"; };
 		963971452069D61600EFEC65 /* ActivityTypeVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenter.swift; sourceTree = "<group>"; };
@@ -521,7 +525,9 @@
 			isa = PBXGroup;
 			children = (
 				96EB0B1B206212E600B0E48F /* ValidationTextField.swift */,
+				9632A87020968EDD009DEAF9 /* NewsTVBackgroundShap.swift */,
 				96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */,
+				9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -957,10 +963,12 @@
 				9640CF59208EC6F0008BF5DC /* NewsWebViewController.swift in Sources */,
 				9639714A2069EB2400EFEC65 /* ActivityTypeTranslationLayer.swift in Sources */,
 				96A93E44207D7CCA005A9ED8 /* APIRouter.swift in Sources */,
+				9632A87120968EDD009DEAF9 /* NewsTVBackgroundShap.swift in Sources */,
 				96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */,
 				966DCE8F2076FD9F00078909 /* LeftSideMenuViewController.swift in Sources */,
 				96DF87BA208EE57000424A63 /* PGActivityIndicator.swift in Sources */,
 				965228A9208448E700D8E039 /* NewsTVC.swift in Sources */,
+				9632A87320969464009DEAF9 /* NewsTableBackgroundView.swift in Sources */,
 				96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */,
 				96C5DA522075DBA600AD8D22 /* SideMenuController.swift in Sources */,
 				96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */,

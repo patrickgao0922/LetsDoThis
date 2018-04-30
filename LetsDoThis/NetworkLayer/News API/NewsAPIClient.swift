@@ -94,28 +94,38 @@ class NewsAPIClientImplementation:NewsAPIClient {
             return Single.error(HTTPError.invalidURL)
         }
         let filename = "\(host)-favicon.ico"
-        return downloadImagesToDestination(from: url.appendingPathComponent("/favicon.ico"), inDirectory: .websiteFaveicons, filename: filename)
+        return downloadImagesToDestination(from: url.appendingPathComponent("/favicon.ico"), inDirectory: .websiteFaveicons, filename: filename, useExistingFile: true)
     }
     
-    func downloadImagesToDestination(from url:URL, inDirectory: Directory, filename:String) -> Single<String>{
+    func downloadImagesToDestination(from url:URL, inDirectory: Directory, filename:String, useExistingFile:Bool) -> Single<String>{
         return Single<String>.create(subscribe: { (single) -> Disposable in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent(inDirectory.rawValue).appendingPathComponent(filename)
+            
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                let fileURL = documentsURL.appendingPathComponent(inDirectory.rawValue).appendingPathComponent(filename)
+                
                 return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
             }
-            download(url, method: .get, to:destination)
-                .responseData(completionHandler: { (response) in
-                    if let error = response.error {
-                        single(.error(error))
-                    }
-                    guard let imagePath = response.destinationURL?.path else {
-                        return single(.error(HTTPError.noResponseData))
-                    }
-                    single(.success(imagePath))
-                })
+            if useExistingFile && self.imageExists(fileURL: fileURL){
+                single(.success(fileURL.absoluteString))
+            }else {
+                download(url, method: .get, to:destination)
+                    .responseData(completionHandler: { (response) in
+                        if let error = response.error {
+                            single(.error(error))
+                        }
+                        guard let imagePath = response.destinationURL?.path else {
+                            return single(.error(HTTPError.noResponseData))
+                        }
+                        single(.success(imagePath))
+                    })
+            }
+            
             return Disposables.create()
         })
+    }
+    func imageExists(fileURL:URL) -> Bool {
+        return FileManager.default.fileExists(atPath: fileURL.absoluteString)
     }
     
     func fetchFeaturedImage(from urlString:String, title:String) -> Single<String>{
@@ -123,6 +133,6 @@ class NewsAPIClientImplementation:NewsAPIClient {
             return Single.error(HTTPError.invalidURL)
         }
         let filename = "\(title.trimmingCharacters(in: CharacterSet.whitespaces))"
-        return downloadImagesToDestination(from: url, inDirectory: .featuredImage, filename: filename)
+        return downloadImagesToDestination(from: url, inDirectory: .featuredImage, filename: filename, useExistingFile: true)
     }
 }

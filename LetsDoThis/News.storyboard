@@ -21,7 +21,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B1B-jW-FBY">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="fwg-AB-eca">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -218,6 +218,7 @@
                                                     <blurEffect style="dark"/>
                                                 </visualEffectView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="gGT-ti-Zbs" firstAttribute="centerY" secondItem="Xn5-su-4zI" secondAttribute="centerY" id="1na-xT-hEv"/>
                                                 <constraint firstItem="3c7-Lh-Nad" firstAttribute="trailing" secondItem="Xn5-su-4zI" secondAttribute="trailingMargin" id="2Ye-i1-syF"/>
@@ -231,6 +232,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="ZTD-G6-hG3" secondAttribute="bottom" constant="8" id="txr-de-ueB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="activityIndicatorView" destination="LJW-qB-5ow" id="4oh-xO-vfu"/>
                                             <outlet property="featuredImage" destination="gGT-ti-Zbs" id="BgW-oY-DRe"/>
@@ -307,6 +309,11 @@
                             <constraint firstItem="B1B-jW-FBY" firstAttribute="bottom" secondItem="xCf-8B-0kG" secondAttribute="bottom" id="s6B-Z9-qZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xCf-8B-0kG"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QSd-Yo-y3j"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="eKW-os-AK1"/>
                     <navigationItem key="navigationItem" title="Today's Headlines" id="1P9-Dq-Lgf"/>
