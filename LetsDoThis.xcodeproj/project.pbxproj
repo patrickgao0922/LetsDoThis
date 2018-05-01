@@ -49,6 +49,7 @@
 		965228A9208448E700D8E039 /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228A8208448E700D8E039 /* NewsTVC.swift */; };
 		965228AB20844D3700D8E039 /* NewsTVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965228AA20844D3700D8E039 /* NewsTVCPresenter.swift */; };
 		965EA0EF2096D401006B9583 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA0EE2096D401006B9583 /* UIColorExtension.swift */; };
+		965EA0F12097FD08006B9583 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965EA0F02097FD08006B9583 /* Category.storyboard */; };
 		96636BB92081E6E5008B1068 /* NewsAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */; };
 		9668FAF8205CCFFE002AA9AA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FAF7205CCFFE002AA9AA /* CoreData.swift */; };
 		9668FB10205CDB62002AA9AA /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */; };
@@ -162,6 +163,7 @@
 		965228A8208448E700D8E039 /* NewsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		965228AA20844D3700D8E039 /* NewsTVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCPresenter.swift; sourceTree = "<group>"; };
 		965EA0EE2096D401006B9583 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		965EA0F02097FD08006B9583 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		96636BB82081E6E5008B1068 /* NewsAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRouter.swift; sourceTree = "<group>"; };
 		9668FAF7205CCFFE002AA9AA /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9668FB0E205CDB62002AA9AA /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				96205DF720588D1100AA9996 /* AppDelegate.swift */,
 				96234EAC206B3C660095BD8A /* activity-type.json */,
 				96205DFB20588D1100AA9996 /* Main.storyboard */,
+				965EA0F02097FD08006B9583 /* Category.storyboard */,
 				965228A62084207F00D8E039 /* News.storyboard */,
 				96C5DA532075E3F200AD8D22 /* Activity.storyboard */,
 				96205E0120588D1100AA9996 /* Assets.xcassets */,
@@ -695,6 +698,7 @@
 				96205E0520588D1100AA9996 /* LaunchScreen.storyboard in Resources */,
 				965228A72084207F00D8E039 /* News.storyboard in Resources */,
 				96205E0220588D1100AA9996 /* Assets.xcassets in Resources */,
+				965EA0F12097FD08006B9583 /* Category.storyboard in Resources */,
 				96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */,
 				96234EAD206B3C660095BD8A /* activity-type.json in Resources */,
 				96205DFD20588D1100AA9996 /* Main.storyboard in Resources */,

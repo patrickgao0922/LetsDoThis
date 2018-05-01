@@ -133,6 +133,10 @@ extension TopHeadlineViewController:UITableViewDelegate {
 extension TopHeadlineViewController{
     
     func setupUI() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.white]
         drawBackgroundShap()
         setupActivityIndicatorView()
     }

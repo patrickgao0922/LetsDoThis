@@ -22,6 +22,7 @@ class NewsWebViewController: UIViewController {
         webView.navigationDelegate = self
         activityIndicatorContainer.layer.cornerRadius = 10
         activityIndicatorContainer.clipsToBounds = true
+        setupUI()
         setupObservables()
         // Do any additional setup after loading the view.
     }
@@ -33,6 +34,7 @@ class NewsWebViewController: UIViewController {
     
     func config(with viewModel:NewsWebViewModel) {
         self.vm = viewModel
+        self.navigationItem.title = vm.sourceName
         if let url = URL(string: vm.url) {
             self.url.value = url
         }
@@ -49,6 +51,13 @@ class NewsWebViewController: UIViewController {
     }
     */
 
+}
+
+// MARK: - Setup UI
+extension NewsWebViewController {
+    func setupUI() {
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+    }
 }
 
 extension NewsWebViewController:WKNavigationDelegate {
