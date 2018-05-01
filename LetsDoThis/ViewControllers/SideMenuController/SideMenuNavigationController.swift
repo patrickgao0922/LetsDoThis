@@ -96,6 +96,8 @@ extension SideMenuNavigationController:LeftSideMenuViewControllerDelegate {
 //            switchedVC = UIStoryboard(name: "Activity", bundle: nil).instantiateViewController(withIdentifier: "ActivityTypeVC")
         case .topHeadline:
             switchedVC = UIStoryboard(name: "News", bundle: nil).instantiateViewController(withIdentifier: "topHeadlineVC")
+        case .interest:
+            switchedVC = UIStoryboard(name: "Category", bundle: nil).instantiateViewController(withIdentifier: "categoryVC")
         }
         self.viewControllers = [switchedVC]
         setup()

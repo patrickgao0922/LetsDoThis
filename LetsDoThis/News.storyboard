@@ -501,6 +501,11 @@
                             <constraint firstItem="B1B-jW-FBY" firstAttribute="bottom" secondItem="xCf-8B-0kG" secondAttribute="bottom" id="s6B-Z9-qZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xCf-8B-0kG"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QSd-Yo-y3j"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="eKW-os-AK1"/>
                     <navigationItem key="navigationItem" title="Today's Headlines" id="1P9-Dq-Lgf"/>

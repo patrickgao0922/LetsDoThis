@@ -15,6 +15,7 @@ protocol LeftSideMenuViewControllerDelegate {
 
 enum MenuOption:String {
     case topHeadline = "Top Headline"
+    case interest = "Interests"
 //    case main = "Main"
 }
 
@@ -73,22 +74,7 @@ extension LeftSideMenuViewController {
     }
     
     func setupBlurEffect() {
-//        // blur
-//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//        blurView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.60];
-//        blurView.clipsToBounds = YES;
-//        blurView.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f].CGColor;
-//        blurView.layer.borderWidth = 1.0;
-//        blurView.layer.cornerRadius = 6.0;
-//
-//        // label
-//        UILabel *label = [[UILabel alloc] init];
-//        label.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
-//        [label sizeToFit];
-//
-//        // add the label to effect view
-//        [blurView.contentView addSubview:label];
+
         // blur
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView.init(effect: blurEffect)
@@ -99,8 +85,7 @@ extension LeftSideMenuViewController {
         blurView.frame = tableView.backgroundView!.bounds
         
         let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
-//        let vibrancyView = UIVisualEffectView(effect: vibrancyEffect)
-//        blurView.contentView.addSubview(vibrancyView)
+
         
         // add the label to effect view
         self.tableView.backgroundView?.addSubview(blurView)
@@ -124,6 +109,8 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
 //            cell.textLabel!.text = MenuOption.main.rawValue
         case 0:
             cell.optionNameLabel!.text = MenuOption.topHeadline.rawValue
+        case 1:
+            cell.optionNameLabel!.text = MenuOption.interest.rawValue
         default:
             break
         }
@@ -138,6 +125,8 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
 //                selectedOption = .main
             case 0:
                 selectedOption = MenuOption.topHeadline
+            case 1:
+                selectedOption = MenuOption.interest
             default:
                 break
             }
