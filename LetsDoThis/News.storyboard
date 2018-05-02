@@ -208,15 +208,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
-                                                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-K7-wCc">
+                                                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-K7-wCc">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="uxp-5L-BTI">
+                                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uxp-5L-BTI">
                                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YAP-zS-3g3" customClass="PGActivityIndicator" customModule="LetsDoThis" customModuleProvider="target">
-                                                                                    <rect key="frame" x="55" y="25" width="50" height="50"/>
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAP-zS-3g3" customClass="PGActivityIndicator" customModule="LetsDoThis" customModuleProvider="target">
+                                                                                    <rect key="frame" x="125" y="50" width="50" height="50"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="50" id="JNq-j8-Ryt"/>
@@ -230,8 +229,8 @@
                                                                                 </view>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstItem="YAP-zS-3g3" firstAttribute="centerY" secondItem="uxp-5L-BTI" secondAttribute="centerY" id="7fu-IE-PFy"/>
-                                                                                <constraint firstItem="YAP-zS-3g3" firstAttribute="centerX" secondItem="uxp-5L-BTI" secondAttribute="centerX" id="c6S-EN-Hhr"/>
+                                                                                <constraint firstItem="YAP-zS-3g3" firstAttribute="centerX" secondItem="uxp-5L-BTI" secondAttribute="centerX" id="4zi-AZ-Xvw"/>
+                                                                                <constraint firstItem="YAP-zS-3g3" firstAttribute="centerY" secondItem="uxp-5L-BTI" secondAttribute="centerY" id="vjb-4Q-1Xa"/>
                                                                             </constraints>
                                                                         </view>
                                                                         <vibrancyEffect>
@@ -239,6 +238,12 @@
                                                                         </vibrancyEffect>
                                                                     </visualEffectView>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="vUQ-K7-wCc" firstAttribute="leading" secondItem="La8-zB-W8M" secondAttribute="leading" id="3wK-tH-gKu"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="vUQ-K7-wCc" secondAttribute="trailing" id="GLh-BO-aOx"/>
+                                                                    <constraint firstItem="vUQ-K7-wCc" firstAttribute="top" secondItem="La8-zB-W8M" secondAttribute="top" id="H0Q-pi-76p"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="vUQ-K7-wCc" secondAttribute="bottom" id="bF8-Qz-C2E"/>
+                                                                </constraints>
                                                             </view>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="300" id="m90-EN-5Ov"/>
@@ -501,11 +506,6 @@
                             <constraint firstItem="B1B-jW-FBY" firstAttribute="bottom" secondItem="xCf-8B-0kG" secondAttribute="bottom" id="s6B-Z9-qZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xCf-8B-0kG"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="QSd-Yo-y3j"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="eKW-os-AK1"/>
                     <navigationItem key="navigationItem" title="Today's Headlines" id="1P9-Dq-Lgf"/>

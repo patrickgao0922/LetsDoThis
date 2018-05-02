@@ -14,7 +14,7 @@ protocol LeftSideMenuViewControllerDelegate {
 }
 
 enum MenuOption:String {
-    case topHeadline = "Top Headline"
+    case topHeadline = "Today's Headlines"
     case interest = "Interests"
 //    case main = "Main"
 }
@@ -97,7 +97,7 @@ extension LeftSideMenuViewController {
 // MARK: - Drag Behavior
 extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -108,9 +108,10 @@ extension LeftSideMenuViewController:UITableViewDataSource,UITableViewDelegate {
 //        case 0 :
 //            cell.textLabel!.text = MenuOption.main.rawValue
         case 0:
-            cell.optionNameLabel!.text = MenuOption.topHeadline.rawValue
+            cell.optionNameLabel!.text = NSLocalizedString(MenuOption.topHeadline.rawValue, comment: "")
+            
         case 1:
-            cell.optionNameLabel!.text = MenuOption.interest.rawValue
+            cell.optionNameLabel!.text = NSLocalizedString(MenuOption.interest.rawValue, comment: "")
         default:
             break
         }

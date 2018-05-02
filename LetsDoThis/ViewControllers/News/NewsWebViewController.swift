@@ -14,6 +14,7 @@ class NewsWebViewController: UIViewController {
     @IBOutlet var activityIndicatorContainer: UIVisualEffectView!
     @IBOutlet var activityIndicator: PGActivityIndicator!
     @IBOutlet var webView: WKWebView!
+    var disposeBag = DisposeBag()
     var vm:NewsWebViewModel!
     var url:Variable<URL?> = Variable<URL?>(nil)
 
@@ -22,7 +23,7 @@ class NewsWebViewController: UIViewController {
         webView.navigationDelegate = self
         activityIndicatorContainer.layer.cornerRadius = 10
         activityIndicatorContainer.clipsToBounds = true
-        setupUI()
+//        setupUI()
         setupObservables()
         // Do any additional setup after loading the view.
     }
@@ -55,14 +56,38 @@ class NewsWebViewController: UIViewController {
 
 // MARK: - Setup UI
 extension NewsWebViewController {
-    func setupUI() {
-        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+    func setupUI() {}
+    
+    func setupEditingMenu() {
+        
     }
 }
 
 extension NewsWebViewController:WKNavigationDelegate {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         activityIndicatorContainer.isHidden = true
+    }
+}
+
+// MARK: - Handle Touches
+extension NewsWebViewController {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.count == 2 && self.becomeFirstResponder() {
+            let menuController = UIMenuController.shared
+            let menuItem = UIMenuItem(title: NSLocalizedString("Translate", comment: ""), action: #selector(menuItemAction))
+            menuController.menuItems?.insert(menuItem, at: 0)
+            menuController.setMenuVisible(true, animated: true)
+        }
+        
+//        super.touchesEnded(touches, with: event)
+    }
+    
+    
+    @objc
+    func menuItemAction() {
+        if let string = webView.copy() as? String {
+            print(string)
+        }
     }
 }
 
@@ -73,7 +98,7 @@ extension NewsWebViewController {
             if let url = url {
                 self.webView.load(URLRequest(url: url))
             }
-        })
+        }).disposed(by: disposeBag)
     }
     
 }
