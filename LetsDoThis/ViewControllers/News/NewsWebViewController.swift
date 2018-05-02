@@ -16,6 +16,7 @@ class NewsWebViewController: UIViewController {
     @IBOutlet var webView: WKWebView!
     var disposeBag = DisposeBag()
     var vm:NewsWebViewModel!
+    var webWrapper:WKWebViewWrapper!
     var url:Variable<URL?> = Variable<URL?>(nil)
 
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class NewsWebViewController: UIViewController {
         activityIndicatorContainer.layer.cornerRadius = 10
         activityIndicatorContainer.clipsToBounds = true
 //        setupUI()
+        setupWebView()
         setupObservables()
         // Do any additional setup after loading the view.
     }
@@ -100,5 +102,11 @@ extension NewsWebViewController {
             }
         }).disposed(by: disposeBag)
     }
-    
+}
+
+// MARK: - Rich Web View
+extension NewsWebViewController {
+    func setupWebView() {
+        self.webWrapper = WKWebViewWrapper(forWebView:webView)
+    }
 }

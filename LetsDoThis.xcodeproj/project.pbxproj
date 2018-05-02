@@ -20,6 +20,7 @@
 		961B19F22086C7F8007C1413 /* SourceMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B19F02086C7F8007C1413 /* SourceMO+CoreDataProperties.swift */; };
 		961F511E20994E0B00ACACFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 961F512020994E0B00ACACFD /* Localizable.strings */; };
 		961F5124209951C400ACACFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 961F5126209951C400ACACFD /* InfoPlist.strings */; };
+		961F512A2099742E00ACACFD /* WKWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F51292099742E00ACACFD /* WKWebViewWrapper.swift */; };
 		96205DF820588D1100AA9996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205DF720588D1100AA9996 /* AppDelegate.swift */; };
 		96205DFD20588D1100AA9996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96205DFB20588D1100AA9996 /* Main.storyboard */; };
 		96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96205DFE20588D1100AA9996 /* LetsDoThis.xcdatamodeld */; };
@@ -137,6 +138,7 @@
 		961F512120994E1200ACACFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		961F5125209951C400ACACFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		961F5127209951C800ACACFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		961F51292099742E00ACACFD /* WKWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewWrapper.swift; sourceTree = "<group>"; };
 		96205DF420588D1100AA9996 /* LetsDoThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsDoThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96205DF720588D1100AA9996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96205DFC20588D1100AA9996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -293,6 +295,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		961F5128209973FE00ACACFD /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				961F51292099742E00ACACFD /* WKWebViewWrapper.swift */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
 		96205DEB20588D1100AA9996 = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +328,7 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				961F5128209973FE00ACACFD /* WKWebView */,
 				9618D7252088168200EDD5BC /* New Group */,
 				9600976520859F9E00EC1D24 /* ApplicationManager */,
 				96A59C232074D340007B6F6E /* Config Files */,
@@ -1052,6 +1063,7 @@
 				96205E0020588D1100AA9996 /* LetsDoThis.xcdatamodeld in Sources */,
 				96E97C622066129E006150EF /* ActivityTypeCVCell.swift in Sources */,
 				9640CF55208EA293008BF5DC /* LeftMenuOptionTableViewCell.swift in Sources */,
+				961F512A2099742E00ACACFD /* WKWebViewWrapper.swift in Sources */,
 				965EA0F420980ED1006B9583 /* CategoryVC.swift in Sources */,
 				965EA0F920982254006B9583 /* CategoryListModelView.swift in Sources */,
 				9668FB11205CDB62002AA9AA /* UserMO+CoreDataProperties.swift in Sources */,
