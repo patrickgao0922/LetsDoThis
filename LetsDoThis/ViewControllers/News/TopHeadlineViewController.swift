@@ -45,7 +45,7 @@ class TopHeadlineViewController: UIViewController {
         tableView.dataSource = self
         setupUI()
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "Today's Headlines"
+        self.navigationItem.title = NSLocalizedString("Today's Headlines", comment: "")
         setupTableViewHeader()
     }
     

@@ -11,6 +11,8 @@ import UIKit
 class CategoryVC: UIViewController {
 
     @IBOutlet var categoryCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
