@@ -71,6 +71,10 @@ class DependencyRegistry {
         container.register(NewsTVCPresenter.self) { r,article in
             NewsTVCPresenterImplementation(with: article, newsAPIClient: r.resolve(NewsAPIClient.self)!, coreDataContainer: r.resolve(CoreDataContainer.self)!)
         }
+        
+        container.register(CategoryListViewModel.self) { (r) in
+            CategoryListViewModelImplementation(wihtNewsClient: r.resolve(NewsAPIClient.self)!)
+        }
     }
     func registerViewControllers() {
     }
@@ -102,8 +106,19 @@ extension DependencyRegistry {
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: cellRight, for: indexPath) as! NewsTVC
         }
-        cell.presenter = nil 
         cell.config(with: presenter!)
+        return cell
+    }
+    
+    typealias NewsCollectionViewCellMaker = (UICollectionView, IndexPath, Article, NewsTVCPresenter) -> NewsCollectionViewCell
+    func makeNewsCollectionViewCell(forCollectionView collectionView:UICollectionView, at indexPath:IndexPath, with article:Article,cellViewModel:NewsTVCPresenter? = nil) -> NewsCollectionViewCell {
+        let cellIdentifier = "newsCollectionViewCell"
+        var vm = cellViewModel
+        if vm == nil {
+            vm = container.resolve(NewsTVCPresenter.self,argument:article)!
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! NewsCollectionViewCell
+        cell.config(with: vm!)
         return cell
     }
 }

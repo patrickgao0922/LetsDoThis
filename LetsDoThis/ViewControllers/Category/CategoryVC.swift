@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class CategoryVC: UIViewController {
 
     @IBOutlet var categoryCollectionView: UICollectionView!
+    var vm:CategoryListViewModel!
     
+    var disposeBag:DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,11 @@ class CategoryVC: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    func config(withViewModel vm: CategoryListViewModel) {
+        self.vm = vm
+        setupObservables()
     }
     
     
@@ -38,6 +46,15 @@ class CategoryVC: UIViewController {
     }
     */
 
+}
+
+// MARK: - Setup Observables
+extension CategoryVC {
+    func setupObservables() {
+        _ = vm.articles.asObservable().subscribe(onNext: { (articles) in
+            self.categoryCollectionView.reloadData()
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension CategoryVC:UICollectionViewDelegate {
@@ -61,18 +78,21 @@ extension CategoryVC:UICollectionViewDataSource {
 
 extension CategoryVC:NewsCollectionViewLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        var cellHeight:CGFloat = 0
         switch indexPath.row % 4 {
         case 0:
-            return 100
+            cellHeight = 100
         case 1:
-            return 150
+            cellHeight = 150
         case 2:
-            return 50
+            cellHeight = 50
         case 3:
-            return 200
+            cellHeight = 200
         default:
-            return 100
+            cellHeight = 100
         }
+        cellHeight += 135
+        return cellHeight
     }
     
     

@@ -25,6 +25,11 @@ extension SwinjectStoryboard {
             vc.config(with: presenter, cellMaker: dependencyRegistry.makeNewsTVC)
         }
         
+        defaultContainer.storyboardInitCompleted(CategoryVC.self) { (r, vc) in
+            let vm  = r.resolve(CategoryListViewModel.self)!
+            vc.config(withViewModel: vm)
+        }
+        
         /// Main entry of the storyboard
         func main() {
 //            dependencyRegistry.container.storyboardInitCompleted(SchedulerTableViewController.self) { (r, vc) in

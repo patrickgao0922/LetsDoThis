@@ -43,7 +43,7 @@ enum NewsAPIRouter:URLRequestConvertible {
     }
     
     case topHeadlines(country:Country?,category:Category?,page:Int?)
-    case everything
+    case everything(language:Language?,page:Int?, from:Date?, to:Date?)
     case sources(country:Country?,category:Category?,language:Language?)
     
     
@@ -79,8 +79,22 @@ enum NewsAPIRouter:URLRequestConvertible {
             if let page = page {
                 parameters["page"] = page
             }
-        case .everything:
-            break
+        case .everything(let language,let page,let from, let to):
+            if let language = language {
+                parameters[NewsAPIHTTPParameterKey.language.rawValue] = language.rawValue
+            }
+            if let page = page {
+                parameters[NewsAPIHTTPParameterKey.page.rawValue] = page
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            if let from = from {
+                parameters[NewsAPIHTTPParameterKey.from.rawValue] = dateFormatter.string(from: from)
+            }
+            if let to = to {
+                parameters[NewsAPIHTTPParameterKey.to.rawValue] = dateFormatter.string(from: to)
+            }
+            
         case .sources(let country, let category, let language):
             if let country = country {
                 parameters[NewsAPIHTTPParameterKey.country.rawValue] = country.rawValue
@@ -116,4 +130,6 @@ enum NewsAPIHTTPParameterKey:String {
     case language = "language"
     case page = "page"
     case pageSize = "pageSize"
+    case from = "from"
+    case to = "to"
 }
