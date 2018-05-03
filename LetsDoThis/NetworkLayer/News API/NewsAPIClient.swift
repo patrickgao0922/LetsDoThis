@@ -20,7 +20,7 @@ protocol NewsAPIClient {
     func getSources(inCountry country:NewsAPIRouter.Country?, onCategory category:NewsAPIRouter.Category?, inLanguage language:NewsAPIRouter.Language?) -> Single<SourceResponse>
     func obtainSourceFavicon(byURL urlString:String) -> Single<String>
     func fetchFeaturedImage(from urlString:String, title:String) -> Single<String>
-    func getEverything(page:Int?,from:Date?, to:Date?) -> Single<NewsResponse>
+    func getEverything(q:String, page:Int?,from:Date?, to:Date?) -> Single<NewsResponse>
 }
 enum HTTPError:Error {
     case noResponseData
@@ -65,9 +65,10 @@ class NewsAPIClientImplementation:NewsAPIClient {
         })
     }
     
-    func getEverything(page:Int? = nil,from:Date? = nil, to:Date? = nil) -> Single<NewsResponse>{
+    func getEverything(q: String, page:Int? = nil,from:Date? = nil, to:Date? = nil) -> Single<NewsResponse>{
         return Single<NewsResponse>.create(subscribe: { (single) -> Disposable in
-            request(NewsAPIRouter.everything(language: .us, page: page, from: from, to: to))
+            
+            request(NewsAPIRouter.everything(q: q, language: .en, page: page, from: from, to: to))
                 .response(completionHandler: { (response) in
                     if let error = response.error {
                         single(.error(error))
@@ -76,7 +77,9 @@ class NewsAPIClientImplementation:NewsAPIClient {
                         return single(.error(HTTPError.noResponseData))
                     }
                     do {
-                        let newsResponse = try JSONDecoder().decode(NewsResponse.self, from: data)
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .iso8601
+                        let newsResponse = try decoder.decode(NewsResponse.self, from: data)
                         single(.success(newsResponse))
                     }
                     catch {

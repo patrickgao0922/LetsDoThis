@@ -27,7 +27,7 @@ extension SwinjectStoryboard {
         
         defaultContainer.storyboardInitCompleted(CategoryVC.self) { (r, vc) in
             let vm  = r.resolve(CategoryListViewModel.self)!
-            vc.config(withViewModel: vm)
+            vc.config(withViewModel: vm, cellMaker: dependencyRegistry.makeNewsCollectionViewCell(forCollectionView:at:with:cellViewModel:))
         }
         
         /// Main entry of the storyboard

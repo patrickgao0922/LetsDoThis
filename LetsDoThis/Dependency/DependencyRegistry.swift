@@ -110,7 +110,7 @@ extension DependencyRegistry {
         return cell
     }
     
-    typealias NewsCollectionViewCellMaker = (UICollectionView, IndexPath, Article, NewsTVCPresenter) -> NewsCollectionViewCell
+    typealias NewsCollectionViewCellMaker = (UICollectionView, IndexPath, Article, NewsTVCPresenter?) -> NewsCollectionViewCell
     func makeNewsCollectionViewCell(forCollectionView collectionView:UICollectionView, at indexPath:IndexPath, with article:Article,cellViewModel:NewsTVCPresenter? = nil) -> NewsCollectionViewCell {
         let cellIdentifier = "newsCollectionViewCell"
         var vm = cellViewModel

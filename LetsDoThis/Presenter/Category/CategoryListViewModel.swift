@@ -43,7 +43,7 @@ class CategoryListViewModelImplementation:CategoryListViewModel {
         dependencyRegistry = AppDelegate.dependencyRegistry!
 //        viewModel = dependencyRegistry.container.resolve(NewsTVCPresenter.self)!
         
-        
+        fetchLatest()
     }
 }
 
@@ -68,14 +68,17 @@ extension CategoryListViewModelImplementation {
     }
     
     func fetchLatest() {
-        _ = newsAPIClient.getEverything(page: page+1, from: from, to: to)
+        _ = newsAPIClient.getEverything(q: currentCategory.value.rawValue, page: page+1, from: from, to: to)
             .subscribe({ (single) in
                 switch single {
                 case .success(let newsResponse):
                     if let articles = newsResponse.articles {
                         self.articles.value = articles+self.articles.value
-                        self.from = self.articles.value[0].publishedAt
-                        self.to = self.articles.value[self.articles.value.count-1].publishedAt
+                        if (articles.count != 0) {
+                            self.from = self.articles.value[0].publishedAt
+                            self.to = self.articles.value[self.articles.value.count-1].publishedAt
+                        }
+                        
                     }
                 case .error(let error):
                     break

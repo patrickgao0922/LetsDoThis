@@ -20,6 +20,9 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     func config(with vm:NewsTVCPresenter) {
         self.vm = vm
+        titleLabel.text = vm.title
+        sourceLabel.text = vm.mediaName
+        timeLabel.text = vm.publishedAt?.getTimeIntervalToNow()
         setupObservables()
     }
 }

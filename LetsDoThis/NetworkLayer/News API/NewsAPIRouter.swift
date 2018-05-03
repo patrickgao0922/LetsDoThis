@@ -29,9 +29,7 @@ enum NewsAPIRouter:URLRequestConvertible {
     }
     
     enum Language:String {
-        case ae, ar, at, au, be, bg, br, ca, ch, cn, co, cu, cz, de, eg, fr, gb, gr, hk, hu, id, ie, il
-        case inu = "in"
-        case it, jp, kr, lt, lv, ma, mx, my, ng, nl, no, nz, ph, pl, pt, ro, rs, ru, sa, se, sg, si, sk, th, tr, tw, ua, us, ve, za
+        case ar, de, en, es, fr, he, it, nl, no, pt, ru, se, ud, zh
     }
     
     fileprivate var baseURL:String{
@@ -43,7 +41,7 @@ enum NewsAPIRouter:URLRequestConvertible {
     }
     
     case topHeadlines(country:Country?,category:Category?,page:Int?)
-    case everything(language:Language?,page:Int?, from:Date?, to:Date?)
+    case everything(q: String, language:Language?,page:Int?, from:Date?, to:Date?)
     case sources(country:Country?,category:Category?,language:Language?)
     
     
@@ -79,7 +77,8 @@ enum NewsAPIRouter:URLRequestConvertible {
             if let page = page {
                 parameters["page"] = page
             }
-        case .everything(let language,let page,let from, let to):
+        case .everything(let q, let language,let page,let from, let to):
+            parameters[NewsAPIHTTPParameterKey.q.rawValue] = q
             if let language = language {
                 parameters[NewsAPIHTTPParameterKey.language.rawValue] = language.rawValue
             }
@@ -132,4 +131,5 @@ enum NewsAPIHTTPParameterKey:String {
     case pageSize = "pageSize"
     case from = "from"
     case to = "to"
+    case q = "q"
 }

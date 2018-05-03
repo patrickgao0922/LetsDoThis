@@ -12,8 +12,9 @@ import RxSwift
 class CategoryVC: UIViewController {
 
     @IBOutlet var categoryCollectionView: UICollectionView!
-    var vm:CategoryListViewModel!
     
+    var vm:CategoryListViewModel!
+    var cellMaker:DependencyRegistry.NewsCollectionViewCellMaker!
     var disposeBag:DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -24,13 +25,16 @@ class CategoryVC: UIViewController {
             layout.delegate = self
         }
         
+        setupObservables()
+        
 
         // Do any additional setup after loading the view.
     }
     
-    func config(withViewModel vm: CategoryListViewModel) {
+    func config(withViewModel vm: CategoryListViewModel, cellMaker:@escaping DependencyRegistry.NewsCollectionViewCellMaker) {
         self.vm = vm
-        setupObservables()
+        self.cellMaker = cellMaker
+        
     }
     
     
@@ -63,8 +67,10 @@ extension CategoryVC:UICollectionViewDelegate {
 
 extension CategoryVC:UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
-        cell.featuredImage.image = UIImage(named: "side-menu-header-background")
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+//        cell.featuredImage.image = UIImage(named: "side-menu-header-background")
+//        return cell
+        let cell = cellMaker(collectionView,indexPath,vm.articles.value[indexPath.row],nil)
         return cell
     }
     
@@ -72,24 +78,26 @@ extension CategoryVC:UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return vm.articles.value.count
     }
 }
 
 extension CategoryVC:NewsCollectionViewLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        let number = arc4random_uniform(4) + 1
         var cellHeight:CGFloat = 0
-        switch indexPath.row % 4 {
-        case 0:
-            cellHeight = 100
+        switch number {
+        
         case 1:
-            cellHeight = 150
-        case 2:
-            cellHeight = 50
-        case 3:
             cellHeight = 200
+        case 2:
+            cellHeight = 250
+        case 3:
+            cellHeight = 300
+        case 4:
+            cellHeight = 350
         default:
-            cellHeight = 100
+            cellHeight = 300
         }
         cellHeight += 135
         return cellHeight
