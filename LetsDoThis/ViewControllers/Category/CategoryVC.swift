@@ -15,6 +15,12 @@ class CategoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        if let layout = categoryCollectionView.collectionViewLayout as? NewsCollectionViewLayout {
+            layout.delegate = self
+        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -32,4 +38,42 @@ class CategoryVC: UIViewController {
     }
     */
 
+}
+
+extension CategoryVC:UICollectionViewDelegate {
+    
+}
+
+extension CategoryVC:UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+        cell.featuredImage.image = UIImage(named: "side-menu-header-background")
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+}
+
+extension CategoryVC:NewsCollectionViewLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row % 4 {
+        case 0:
+            return 100
+        case 1:
+            return 150
+        case 2:
+            return 50
+        case 3:
+            return 200
+        default:
+            return 100
+        }
+    }
+    
+    
 }

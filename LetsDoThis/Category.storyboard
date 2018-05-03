@@ -19,23 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4h-4U-pog">
-                                <rect key="frame" x="0.0" y="44" width="375" height="305"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="305" id="FxY-rt-dBe"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J1U-44-lT6">
-                                    <size key="itemSize" width="300" height="285"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="udg-iU-dNr" customClass="NewsCollectionViewLayout" customModule="LetsDoThis" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCollectionViewCell" id="UcO-0v-czT" customClass="NewsCollectionViewCell" customModule="LetsDoThis" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="10" width="300" height="285"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="285"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t71-8d-jGf">
@@ -120,6 +112,7 @@
                             <constraint firstItem="t4h-4U-pog" firstAttribute="trailing" secondItem="VAX-xY-FUz" secondAttribute="trailing" id="1B3-Cw-W3W"/>
                             <constraint firstItem="t4h-4U-pog" firstAttribute="leading" secondItem="VAX-xY-FUz" secondAttribute="leading" id="QOF-Gx-SCd"/>
                             <constraint firstItem="t4h-4U-pog" firstAttribute="top" secondItem="VAX-xY-FUz" secondAttribute="top" id="lfj-g2-TyV"/>
+                            <constraint firstItem="VAX-xY-FUz" firstAttribute="bottom" secondItem="t4h-4U-pog" secondAttribute="bottom" id="n7q-DE-ygG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VAX-xY-FUz"/>
                     </view>

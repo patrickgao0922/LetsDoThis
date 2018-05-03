@@ -25,7 +25,7 @@ class NewsWebViewController: UIViewController {
         activityIndicatorContainer.layer.cornerRadius = 10
         activityIndicatorContainer.clipsToBounds = true
 //        setupUI()
-        setupWebView()
+//        setupWebView()
         setupObservables()
         // Do any additional setup after loading the view.
     }
