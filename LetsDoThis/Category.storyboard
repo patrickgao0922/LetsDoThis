@@ -18,9 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4h-4U-pog">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egU-cI-KEw" customClass="NewsTableBackgroundView" customModule="LetsDoThis" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4h-4U-pog">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="udg-iU-dNr" customClass="NewsCollectionViewLayout" customModule="LetsDoThis" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCollectionViewCell" id="UcO-0v-czT" customClass="NewsCollectionViewCell" customModule="LetsDoThis" customModuleProvider="target">
@@ -108,10 +112,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="t4h-4U-pog" firstAttribute="trailing" secondItem="VAX-xY-FUz" secondAttribute="trailing" id="1B3-Cw-W3W"/>
-                            <constraint firstItem="t4h-4U-pog" firstAttribute="leading" secondItem="VAX-xY-FUz" secondAttribute="leading" id="QOF-Gx-SCd"/>
-                            <constraint firstItem="t4h-4U-pog" firstAttribute="top" secondItem="VAX-xY-FUz" secondAttribute="top" id="lfj-g2-TyV"/>
-                            <constraint firstItem="VAX-xY-FUz" firstAttribute="bottom" secondItem="t4h-4U-pog" secondAttribute="bottom" id="n7q-DE-ygG"/>
+                            <constraint firstItem="t4h-4U-pog" firstAttribute="trailing" secondItem="P71-gy-R1g" secondAttribute="trailing" id="1B3-Cw-W3W"/>
+                            <constraint firstItem="egU-cI-KEw" firstAttribute="leading" secondItem="P71-gy-R1g" secondAttribute="leading" id="7zP-uf-cNa"/>
+                            <constraint firstItem="egU-cI-KEw" firstAttribute="top" secondItem="P71-gy-R1g" secondAttribute="top" id="IsP-Dq-5MU"/>
+                            <constraint firstItem="t4h-4U-pog" firstAttribute="leading" secondItem="P71-gy-R1g" secondAttribute="leading" id="QOF-Gx-SCd"/>
+                            <constraint firstItem="t4h-4U-pog" firstAttribute="top" secondItem="P71-gy-R1g" secondAttribute="top" id="lfj-g2-TyV"/>
+                            <constraint firstAttribute="bottom" secondItem="egU-cI-KEw" secondAttribute="bottom" id="mZL-Pz-hQ9"/>
+                            <constraint firstItem="egU-cI-KEw" firstAttribute="trailing" secondItem="P71-gy-R1g" secondAttribute="trailing" id="qNG-Fc-rJW"/>
+                            <constraint firstAttribute="bottom" secondItem="t4h-4U-pog" secondAttribute="bottom" id="rGm-70-vFp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VAX-xY-FUz"/>
                     </view>

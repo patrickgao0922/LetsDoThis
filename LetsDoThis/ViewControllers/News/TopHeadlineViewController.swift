@@ -153,9 +153,8 @@ extension TopHeadlineViewController{
     
     func drawBackgroundShap() {
         let statusBarFrame = UIApplication.shared.statusBarFrame
-        backgroundView = NewsTableBackgroundView(frame: CGRect(x: 0, y: statusBarFrame.size.height, width: statusBarFrame.size.width, height: view.bounds.size.height - statusBarFrame.size.height))
+        backgroundView = NewsTableBackgroundView(frame: CGRect(x: 0, y: 0, width: statusBarFrame.size.width, height: view.bounds.size.height))
         view.insertSubview(backgroundView, at: 0)
-        backgroundView.clipsToBounds = true
 //        stat
         NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: UIApplication.shared.statusBarFrame.size.height).isActive = true
         NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
