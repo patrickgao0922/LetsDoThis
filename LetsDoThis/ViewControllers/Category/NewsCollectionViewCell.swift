@@ -15,6 +15,8 @@ class NewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
+    
+    var featuredImageSub:Disposable?
     var disposeBag = DisposeBag()
     var vm:NewsTVCPresenter!
     
@@ -23,16 +25,19 @@ class NewsCollectionViewCell: UICollectionViewCell {
         titleLabel.text = vm.title
         sourceLabel.text = vm.mediaName
         timeLabel.text = vm.publishedAt?.getTimeIntervalToNow()
+        featuredImage.image = nil
+        featuredImageSub?.dispose()
         setupObservables()
     }
 }
 
 extension NewsCollectionViewCell {
     func setupObservables() {
-        _ = vm.featuredImage.asObservable().subscribe(onNext: { (image) in
+        featuredImageSub = vm.featuredImage.asObservable().subscribe(onNext: { (image) in
             if let image = image {
                 self.featuredImage.image = image
             }
-        }).disposed(by: disposeBag)
+        })
+        featuredImageSub?.disposed(by: disposeBag)
     }
 }

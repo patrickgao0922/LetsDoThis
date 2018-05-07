@@ -74,7 +74,7 @@ class DependencyRegistry {
         
         container.register(CategoryListViewModel.self) { (r) in
             CategoryListViewModelImplementation(wihtNewsClient: r.resolve(NewsAPIClient.self)!)
-        }
+        }.inObjectScope(.container)
     }
     func registerViewControllers() {
     }
@@ -119,6 +119,7 @@ extension DependencyRegistry {
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! NewsCollectionViewCell
         cell.config(with: vm!)
+        
         return cell
     }
 }

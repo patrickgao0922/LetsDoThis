@@ -70,7 +70,15 @@ extension CategoryVC:UICollectionViewDataSource {
 //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
 //        cell.featuredImage.image = UIImage(named: "side-menu-header-background")
 //        return cell
-        let cell = cellMaker(collectionView,indexPath,vm.articles.value[indexPath.row],nil)
+        var cell:NewsCollectionViewCell! = nil
+        if vm.cellViewModels.count < indexPath.row + 1 {
+            cell = cellMaker(collectionView,indexPath,vm.articles.value[indexPath.row],nil)
+            vm.addViewModel(viewModel: cell.vm)
+        } else{
+            let cellVM = vm.cellViewModels[indexPath.row]
+            cell = cellMaker(collectionView,indexPath,vm.articles.value[indexPath.row],cellVM)
+        }
+        
         return cell
     }
     

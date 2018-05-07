@@ -16,15 +16,16 @@ enum Category:String {
 
 protocol CategoryListViewModel {
     var currentCategory:Variable<Category> { get set }
-    var cellViewModels:[NewsTVCPresenter]! { get }
+    var cellViewModels:[NewsTVCPresenter] { get }
     var articles:Variable<[Article]>! {get}
+    func addViewModel(viewModel:NewsTVCPresenter)
 }
 
 class CategoryListViewModelImplementation:CategoryListViewModel {
     
     var currentCategory:Variable<Category>
     var articles:Variable<[Article]>!
-    var cellViewModels:[NewsTVCPresenter]!
+    var cellViewModels:[NewsTVCPresenter]
     var newsCellViewModels:[Category:[NewsTVCPresenter]]
     var page = 0
     var from:Date? = nil
@@ -41,6 +42,7 @@ class CategoryListViewModelImplementation:CategoryListViewModel {
         self.newsAPIClient = newsAPIClient
         newsCellViewModels = [Category:[NewsTVCPresenter]]()
         dependencyRegistry = AppDelegate.dependencyRegistry!
+        cellViewModels = [NewsTVCPresenter]()
 //        viewModel = dependencyRegistry.container.resolve(NewsTVCPresenter.self)!
         
         fetchLatest()
@@ -68,7 +70,9 @@ extension CategoryListViewModelImplementation {
     }
     
     func fetchLatest() {
-        _ = newsAPIClient.getEverything(q: currentCategory.value.rawValue, page: page+1, from: from, to: to)
+        _ = newsAPIClient
+//            .getEverything(q: currentCategory.value.rawValue, page: page+1, from: from, to: to)
+            .getTopHeadlines(for: .us, on: .technology, of: 1)
             .subscribe({ (single) in
                 switch single {
                 case .success(let newsResponse):
@@ -85,4 +89,9 @@ extension CategoryListViewModelImplementation {
                 }
             }).disposed(by: disposeBag)
     }
+    
+    func addViewModel(viewModel:NewsTVCPresenter) {
+        self.cellViewModels.append(viewModel)
+    }
 }
+
