@@ -73,24 +73,6 @@ extension NewsWebViewController:WKNavigationDelegate {
 
 // MARK: - Handle Touches
 extension NewsWebViewController {
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if touches.count == 2 && self.becomeFirstResponder() {
-            let menuController = UIMenuController.shared
-            let menuItem = UIMenuItem(title: NSLocalizedString("Translate", comment: ""), action: #selector(menuItemAction))
-            menuController.menuItems?.insert(menuItem, at: 0)
-            menuController.setMenuVisible(true, animated: true)
-        }
-        
-//        super.touchesEnded(touches, with: event)
-    }
-    
-    
-    @objc
-    func menuItemAction() {
-        if let string = webView.copy() as? String {
-            print(string)
-        }
-    }
 }
 
 // MARK: - Setup Observable

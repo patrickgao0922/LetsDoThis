@@ -6,7 +6,7 @@
 //  Copyright © 2018 Patrick Gao. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Date {
     func getTimeIntervalToNow() -> String {
@@ -22,7 +22,7 @@ extension Date {
             string = "\(components.day!) days ago"
             
         } else if components.hour != nil && components.hour! != 0 {
-            string = "\(components.hour!) days ago"
+            string = "\(components.hour!) hours ago"
             
         } else if components.minute != nil && components.minute! != 0 {
             string = "\(components.minute!) minutes ago"
@@ -31,5 +31,10 @@ extension Date {
             string = "\(components.second!) seconds ago"
         }
         return string
+    }
+}
+extension UIViewController {
+    func sizeClass() -> (horizontalSizeClass:UIUserInterfaceSizeClass, verticalSizeClass:UIUserInterfaceSizeClass) {
+        return (self.traitCollection.horizontalSizeClass, self.traitCollection.verticalSizeClass)
     }
 }

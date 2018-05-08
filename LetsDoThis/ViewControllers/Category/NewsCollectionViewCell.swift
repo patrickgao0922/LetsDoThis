@@ -22,8 +22,10 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     func config(with vm:NewsTVCPresenter) {
         self.vm = vm
-        self.featuredImage.layer.cornerRadius = 5.0
-        self.featuredImage.clipsToBounds = true
+//        self.featuredImage.layer.co/rnerRadius = 5.0
+//        self.featuredImage.clipsToBounds = true
+        self.layer.cornerRadius = 5.0
+        self.clipsToBounds = true
         titleLabel.text = vm.title
         sourceLabel.text = vm.mediaName
         timeLabel.text = vm.publishedAt?.getTimeIntervalToNow()

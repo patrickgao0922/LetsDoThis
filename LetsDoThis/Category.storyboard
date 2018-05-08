@@ -54,19 +54,16 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="d9J-jz-nft">
-                                                                <rect key="frame" x="8" y="101" width="168" height="24.666666666666671"/>
+                                                                <rect key="frame" x="8" y="101" width="168" height="26"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cnn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-Pm-VKp">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="11"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="11" id="3Sx-82-UMQ"/>
-                                                                        </constraints>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="11.666666666666666"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.52549019610000003" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3n-Pb-SXj">
-                                                                        <rect key="frame" x="0.0" y="15" width="168" height="9.6666666666666643"/>
+                                                                        <rect key="frame" x="0.0" y="15.666666666666686" width="168" height="10.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.52549019610000003" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -75,6 +72,7 @@
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="d9J-jz-nft" secondAttribute="bottom" constant="8" id="EHZ-c4-fDq"/>
                                                             <constraint firstItem="9W7-um-UxU" firstAttribute="leading" secondItem="rB6-8L-bqX" secondAttribute="leading" constant="8" id="GsW-6r-wrA"/>
                                                             <constraint firstAttribute="trailing" secondItem="d9J-jz-nft" secondAttribute="trailing" constant="8" id="HRq-aF-8Nw"/>
                                                             <constraint firstAttribute="trailing" secondItem="9W7-um-UxU" secondAttribute="trailing" constant="8" id="Xx3-qx-zs6"/>

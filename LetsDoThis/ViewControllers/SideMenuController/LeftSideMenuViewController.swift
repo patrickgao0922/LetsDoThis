@@ -92,6 +92,23 @@ extension LeftSideMenuViewController {
         self.tableView.separatorEffect = vibrancyEffect
 
     }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        let bgLayer = self.tableView.backgroundView?.layer.sublayers?[0]
+        coordinator.animate(alongsideTransition: { (_) in
+            if self.sizeClass().verticalSizeClass == .regular {
+                bgLayer?.frame = CGRect(origin: .zero, size: size)
+            }
+        }, completion: {(_) in
+            if self.sizeClass().verticalSizeClass == .compact {
+                bgLayer?.frame = CGRect(origin: .zero, size: size)
+            }
+            
+        })
+        
+//        bgLayer?.removeFromSuperlayer()
+        
+//        self.table
+    }
 }
 
 // MARK: - Drag Behavior

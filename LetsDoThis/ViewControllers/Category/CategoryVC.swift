@@ -107,7 +107,7 @@ extension CategoryVC:NewsCollectionViewLayoutDelegate {
         default:
             cellHeight = 300
         }
-        cellHeight += 135
+        cellHeight += 150
         return cellHeight
     }
     

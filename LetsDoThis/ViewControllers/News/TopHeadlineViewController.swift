@@ -110,10 +110,6 @@ extension TopHeadlineViewController:UITableViewDataSource {
         
         self.performSegue(withIdentifier: Segue.showWebView.rawValue, sender: self)
     }
-    
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
 }
 
 extension TopHeadlineViewController {
@@ -124,7 +120,7 @@ extension TopHeadlineViewController {
 
 extension TopHeadlineViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 305
+        return 310
     }
 
 }
@@ -137,7 +133,7 @@ extension TopHeadlineViewController{
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.largeTitleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.white]
-        drawBackgroundShap()
+//        drawBackgroundShap()
         setupActivityIndicatorView()
     }
     func setupActivityIndicatorView() {
@@ -151,18 +147,6 @@ extension TopHeadlineViewController{
         self.activityIndicatorView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func drawBackgroundShap() {
-        let statusBarFrame = UIApplication.shared.statusBarFrame
-        backgroundView = NewsTableBackgroundView(frame: CGRect(x: 0, y: 0, width: statusBarFrame.size.width, height: view.bounds.size.height))
-        view.insertSubview(backgroundView, at: 0)
-//        stat
-        NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: UIApplication.shared.statusBarFrame.size.height).isActive = true
-        NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: backgroundView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: UIApplication.shared.statusBarFrame.size.height).isActive = true
-        NSLayoutConstraint(item: backgroundView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
-        
-    }
-    
 }
 
 // MARK: - Setup Observables
@@ -170,7 +154,7 @@ extension TopHeadlineViewController {
     func setUpObservables() {
         _ = presenter.news.asObservable().subscribe(onNext: { (articles) in
             self.news.value = articles
-        })
+        }).disposed(by: disposeBag)
         
         _ = presenter.loadLatestTopHeadline()
             .subscribe({ (single) in
@@ -180,7 +164,7 @@ extension TopHeadlineViewController {
                 default:break
                 }
                 self.activityIndicatorView.isHidden = true
-            })
+            }).disposed(by: disposeBag)
         
         _ = presenter.featuredNewsPresenter.asObservable().subscribe(onNext: { (featuredNewsPresenter) in
             if let featuredNewsPresenter = featuredNewsPresenter {
@@ -190,7 +174,7 @@ extension TopHeadlineViewController {
                     self.featuredNewsFeaturedImageView.image = image
                 })
             }
-        })
+        }).disposed(by: disposeBag)
     }
 }
 
