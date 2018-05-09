@@ -15,12 +15,15 @@ class CategoryVC: UIViewController {
     
     var vm:CategoryListViewModel!
     var cellMaker:DependencyRegistry.NewsCollectionViewCellMaker!
+    var articles:Variable<[Article]>!
     var disposeBag:DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
+        
+        articles = Variable<[Article]>([])
         if let layout = categoryCollectionView.collectionViewLayout as? NewsCollectionViewLayout {
             layout.delegate = self
         }
@@ -55,10 +58,18 @@ class CategoryVC: UIViewController {
 // MARK: - Setup Observables
 extension CategoryVC {
     func setupObservables() {
-        _ = vm.articles.asObservable().subscribe(onNext: { (articles) in
+//        _ = vm.articles.asObservable().subscribe(onNext: { (articles) in
+//            self.categoryCollectionView.reloadData()
+//        }).disposed(by: disposeBag)
+        vm.articles.drive(self.articles).disposed(by: disposeBag)
+        
+        articles.asObservable().subscribe(onNext: { (_) in
             self.categoryCollectionView.reloadData()
         }).disposed(by: disposeBag)
+        
+        
     }
+    
 }
 
 extension CategoryVC:UICollectionViewDelegate {
@@ -72,11 +83,11 @@ extension CategoryVC:UICollectionViewDataSource {
 //        return cell
         var cell:NewsCollectionViewCell! = nil
         if vm.cellViewModels.count < indexPath.row + 1 {
-            cell = cellMaker(collectionView,indexPath,vm.articles.value[indexPath.row],nil)
+            cell = cellMaker(collectionView,indexPath,articles.value[indexPath.row],nil)
             vm.addViewModel(viewModel: cell.vm)
         } else{
             let cellVM = vm.cellViewModels[indexPath.row]
-            cell = cellMaker(collectionView,indexPath,vm.articles.value[indexPath.row],cellVM)
+            cell = cellMaker(collectionView,indexPath,articles.value[indexPath.row],cellVM)
         }
         
         return cell
@@ -86,7 +97,7 @@ extension CategoryVC:UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return vm.articles.value.count
+        return articles.value.count
     }
 }
 

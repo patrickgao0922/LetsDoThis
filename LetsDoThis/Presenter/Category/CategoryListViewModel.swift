@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 enum Category:String {
     case technology
@@ -17,14 +18,14 @@ enum Category:String {
 protocol CategoryListViewModel {
     var currentCategory:Variable<Category> { get set }
     var cellViewModels:[NewsTVCPresenter] { get }
-    var articles:Variable<[Article]>! {get}
+    var articles:Driver<[Article]>! {get}
     func addViewModel(viewModel:NewsTVCPresenter)
 }
 
 class CategoryListViewModelImplementation:CategoryListViewModel {
     
     var currentCategory:Variable<Category>
-    var articles:Variable<[Article]>!
+    var articles:Driver<[Article]>!
     var cellViewModels:[NewsTVCPresenter]
     var newsCellViewModels:[Category:[NewsTVCPresenter]]
     var page = 0
@@ -38,7 +39,7 @@ class CategoryListViewModelImplementation:CategoryListViewModel {
     init(wihtNewsClient newsAPIClient:NewsAPIClient) {
         currentCategory = Variable<Category>(.technology)
         disposeBag = DisposeBag()
-        articles = Variable<[Article]>([])
+//        articles = Variable<[Article]>([])
         self.newsAPIClient = newsAPIClient
         newsCellViewModels = [Category:[NewsTVCPresenter]]()
         dependencyRegistry = AppDelegate.dependencyRegistry!
@@ -70,24 +71,36 @@ extension CategoryListViewModelImplementation {
     }
     
     func fetchLatest() {
-        _ = newsAPIClient
+        articles = newsAPIClient
 //            .getEverything(q: currentCategory.value.rawValue, page: page+1, from: from, to: to)
             .getTopHeadlines(for: .us, on: .technology, of: 1)
-            .subscribe({ (single) in
-                switch single {
-                case .success(let newsResponse):
-                    if let articles = newsResponse.articles {
-                        self.articles.value = articles+self.articles.value
-                        if (articles.count != 0) {
-                            self.from = self.articles.value[0].publishedAt
-                            self.to = self.articles.value[self.articles.value.count-1].publishedAt
-                        }
-                        
+            .map({ (newsResponse) -> [Article] in
+                if let articles = newsResponse.articles {
+//                    self.articles.value = articles+self.articles.value
+                    if (articles.count != 0) {
+                        self.from = articles[0].publishedAt
+                        self.to = articles[articles.count-1].publishedAt
                     }
-                case .error(let error):
-                    break
+                    return articles
+                } else {
+                    return []
                 }
-            }).disposed(by: disposeBag)
+            }).asDriver(onErrorJustReturn: [])
+//            .subscribe({ (single) in
+//                switch single {
+//                case .success(let newsResponse):
+//                    if let articles = newsResponse.articles {
+//                        self.articles.value = articles+self.articles.value
+//                        if (articles.count != 0) {
+//                            self.from = self.articles.value[0].publishedAt
+//                            self.to = self.articles.value[self.articles.value.count-1].publishedAt
+//                        }
+//
+//                    }
+//                case .error(let error):
+//                    break
+//                }
+//            }).disposed(by: disposeBag)
     }
     
     func addViewModel(viewModel:NewsTVCPresenter) {
