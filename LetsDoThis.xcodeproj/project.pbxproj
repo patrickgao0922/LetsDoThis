@@ -82,6 +82,7 @@
 		96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */; };
 		96DF87BA208EE57000424A63 /* PGActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */; };
 		96E0026320A3BE9600505324 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E0026220A3BE9600505324 /* Search.storyboard */; };
+		96E0026520A3DBF900505324 /* PGSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0026420A3DBF900505324 /* PGSegmentedControl.swift */; };
 		96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C5E2065FC41006150EF /* SwinjectStoryboard+Extension.swift */; };
 		96E97C622066129E006150EF /* ActivityTypeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C612066129E006150EF /* ActivityTypeCVCell.swift */; };
 		96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C6320661BEF006150EF /* ActivityTypeVC.swift */; };
@@ -211,6 +212,7 @@
 		96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
 		96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGActivityIndicator.swift; sourceTree = "<group>"; };
 		96E0026220A3BE9600505324 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		96E0026420A3DBF900505324 /* PGSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGSegmentedControl.swift; sourceTree = "<group>"; };
 		96E97C5E2065FC41006150EF /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		96E97C612066129E006150EF /* ActivityTypeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTypeCVCell.swift; path = LetsDoThis/ViewControllers/ActivityTypeCVCell.swift; sourceTree = "<group>"; };
 		96E97C6320661BEF006150EF /* ActivityTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTypeVC.swift; path = LetsDoThis/ViewControllers/ActivityTypeVC.swift; sourceTree = "<group>"; };
@@ -597,6 +599,7 @@
 				96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */,
 				9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */,
 				965EA0EE2096D401006B9583 /* UIColorExtension.swift */,
+				96E0026420A3DBF900505324 /* PGSegmentedControl.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				96B9BA08205A3058007A1027 /* UserModel.swift in Sources */,
 				963971402069BC3300EFEC65 /* ActivityTypeModel.swift in Sources */,
 				965228A5208414F800D8E039 /* TopHeadlineViewController.swift in Sources */,
+				96E0026520A3DBF900505324 /* PGSegmentedControl.swift in Sources */,
 				96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */,
 				966DCE872076DFB300078909 /* UIViewControllerExtensions.swift in Sources */,
 				96EB0B1C206212E600B0E48F /* ValidationTextField.swift in Sources */,

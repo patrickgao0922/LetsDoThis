@@ -23,9 +23,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4h-4U-pog">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewLayout key="collectionViewLayout" id="udg-iU-dNr" customClass="NewsCollectionViewLayout" customModule="LetsDoThis" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="i5L-ra-PXS" customClass="NewsCollectionViewLayout" customModule="LetsDoThis" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCollectionViewCell" id="UcO-0v-czT" customClass="NewsCollectionViewCell" customModule="LetsDoThis" customModuleProvider="target">
                                         <rect key="frame" x="95.666666666666671" y="0.0" width="184" height="511"/>
@@ -169,21 +169,79 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIp-ma-fmV">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XC-Li-PuM">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cvD-kR-kHl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-rx-vua">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="2PF-Me-sHE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rgn-r9-Rcp" customClass="PGActivityIndicator" customModule="LetsDoThis" customModuleProvider="target">
+                                                                <rect key="frame" x="147" y="283" width="80" height="80"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="GbA-bO-x6m"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="hCT-D1-SxU"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Rgn-r9-Rcp" firstAttribute="centerX" secondItem="2PF-Me-sHE" secondAttribute="centerX" id="GLe-4R-hrS"/>
+                                                            <constraint firstItem="Rgn-r9-Rcp" firstAttribute="centerY" secondItem="2PF-Me-sHE" secondAttribute="centerY" id="VzD-YH-bu1"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="dark"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7XC-Li-PuM" firstAttribute="top" secondItem="OIp-ma-fmV" secondAttribute="top" id="3ZI-NR-g5A"/>
+                                    <constraint firstItem="7XC-Li-PuM" firstAttribute="leading" secondItem="OIp-ma-fmV" secondAttribute="leading" id="Cxa-ac-KPV"/>
+                                    <constraint firstAttribute="bottom" secondItem="7XC-Li-PuM" secondAttribute="bottom" id="ELV-nI-tO8"/>
+                                    <constraint firstAttribute="trailing" secondItem="7XC-Li-PuM" secondAttribute="trailing" id="h38-dK-xMs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="t4h-4U-pog" firstAttribute="trailing" secondItem="P71-gy-R1g" secondAttribute="trailing" id="1B3-Cw-W3W"/>
                             <constraint firstItem="egU-cI-KEw" firstAttribute="leading" secondItem="P71-gy-R1g" secondAttribute="leading" id="7zP-uf-cNa"/>
+                            <constraint firstAttribute="bottom" secondItem="OIp-ma-fmV" secondAttribute="bottom" id="9fu-2D-0XV"/>
                             <constraint firstItem="egU-cI-KEw" firstAttribute="top" secondItem="P71-gy-R1g" secondAttribute="top" id="IsP-Dq-5MU"/>
                             <constraint firstItem="t4h-4U-pog" firstAttribute="leading" secondItem="P71-gy-R1g" secondAttribute="leading" id="QOF-Gx-SCd"/>
-                            <constraint firstItem="t4h-4U-pog" firstAttribute="top" secondItem="P71-gy-R1g" secondAttribute="top" id="lfj-g2-TyV"/>
                             <constraint firstAttribute="bottom" secondItem="egU-cI-KEw" secondAttribute="bottom" id="mZL-Pz-hQ9"/>
+                            <constraint firstItem="OIp-ma-fmV" firstAttribute="top" secondItem="VAX-xY-FUz" secondAttribute="top" id="nAw-1b-oVu"/>
+                            <constraint firstItem="OIp-ma-fmV" firstAttribute="leading" secondItem="VAX-xY-FUz" secondAttribute="leading" id="ohM-d2-fdl"/>
                             <constraint firstItem="egU-cI-KEw" firstAttribute="trailing" secondItem="P71-gy-R1g" secondAttribute="trailing" id="qNG-Fc-rJW"/>
                             <constraint firstAttribute="bottom" secondItem="t4h-4U-pog" secondAttribute="bottom" id="rGm-70-vFp"/>
+                            <constraint firstItem="OIp-ma-fmV" firstAttribute="trailing" secondItem="VAX-xY-FUz" secondAttribute="trailing" id="uIl-Mj-bzk"/>
+                            <constraint firstItem="t4h-4U-pog" firstAttribute="top" secondItem="VAX-xY-FUz" secondAttribute="top" id="vzN-Ca-jFu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VAX-xY-FUz"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="OIp-ma-fmV" id="hSm-Kz-QPe"/>
                         <outlet property="categoryCollectionView" destination="t4h-4U-pog" id="Pe2-AH-Qwe"/>
                     </connections>
                 </viewController>

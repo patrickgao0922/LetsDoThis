@@ -27,6 +27,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
 //        self.featuredImage.clipsToBounds = true
         self.layer.cornerRadius = 5.0
         self.clipsToBounds = true
+        self.activityIndicatorView.isHidden = false
         titleLabel.text = vm.title
         sourceLabel.text = vm.mediaName
         timeLabel.text = vm.publishedAt?.getTimeIntervalToNow()
