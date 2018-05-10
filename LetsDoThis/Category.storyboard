@@ -34,9 +34,70 @@
                                             <rect key="frame" x="0.0" y="0.0" width="184" height="511"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t71-8d-jGf">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OoQ-mq-8Jx">
                                                     <rect key="frame" x="0.0" y="0.0" width="184" height="376"/>
-                                                </imageView>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t71-8d-jGf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="184" height="376"/>
+                                                        </imageView>
+                                                        <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJj-FQ-lJl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="184" height="376"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RG3-4P-C1t">
+                                                                <rect key="frame" x="0.0" y="0.0" width="184" height="376"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lu8-oo-7wy">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="184" height="376"/>
+                                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QOD-8Q-rmG">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="184" height="376"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxw-Qb-Lzc" customClass="PGActivityIndicator" customModule="LetsDoThis" customModuleProvider="target">
+                                                                                    <rect key="frame" x="67" y="163" width="50" height="50"/>
+                                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="50" id="9T3-oD-pId"/>
+                                                                                        <constraint firstAttribute="width" constant="50" id="l8Q-Zb-Gtc"/>
+                                                                                    </constraints>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
+                                                                                </view>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstItem="uxw-Qb-Lzc" firstAttribute="centerY" secondItem="QOD-8Q-rmG" secondAttribute="centerY" id="Y4I-2B-Vod"/>
+                                                                                <constraint firstItem="uxw-Qb-Lzc" firstAttribute="centerX" secondItem="QOD-8Q-rmG" secondAttribute="centerX" id="krd-lI-ysR"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                        <vibrancyEffect>
+                                                                            <blurEffect style="dark"/>
+                                                                        </vibrancyEffect>
+                                                                    </visualEffectView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="Lu8-oo-7wy" secondAttribute="trailing" id="Bn3-Fy-Z4q"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Lu8-oo-7wy" secondAttribute="bottom" id="caV-hL-Z9E"/>
+                                                                    <constraint firstItem="Lu8-oo-7wy" firstAttribute="top" secondItem="RG3-4P-C1t" secondAttribute="top" id="d4b-Sq-ERk"/>
+                                                                    <constraint firstItem="Lu8-oo-7wy" firstAttribute="leading" secondItem="RG3-4P-C1t" secondAttribute="leading" id="q8c-he-pRa"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <blurEffect style="dark"/>
+                                                        </visualEffectView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="t71-8d-jGf" secondAttribute="bottom" id="B81-3V-95P"/>
+                                                        <constraint firstItem="t71-8d-jGf" firstAttribute="top" secondItem="OoQ-mq-8Jx" secondAttribute="top" id="K2m-Eg-PRe"/>
+                                                        <constraint firstItem="CJj-FQ-lJl" firstAttribute="leading" secondItem="OoQ-mq-8Jx" secondAttribute="leading" id="LXf-Ew-IPt"/>
+                                                        <constraint firstItem="CJj-FQ-lJl" firstAttribute="top" secondItem="OoQ-mq-8Jx" secondAttribute="top" id="Yns-tn-tzT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CJj-FQ-lJl" secondAttribute="bottom" id="b9S-Jq-m88"/>
+                                                        <constraint firstAttribute="trailing" secondItem="t71-8d-jGf" secondAttribute="trailing" id="bMh-Lg-DmE"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CJj-FQ-lJl" secondAttribute="trailing" id="nH2-Vc-DSY"/>
+                                                        <constraint firstItem="t71-8d-jGf" firstAttribute="leading" secondItem="OoQ-mq-8Jx" secondAttribute="leading" id="yKJ-mm-h5D"/>
+                                                    </constraints>
+                                                </view>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ex-aI-zf8">
                                                     <rect key="frame" x="0.0" y="376" width="184" height="135"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rB6-8L-bqX">
@@ -90,15 +151,16 @@
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5ex-aI-zf8" secondAttribute="trailing" id="6Wo-Nj-0C2"/>
-                                            <constraint firstItem="t71-8d-jGf" firstAttribute="top" secondItem="UcO-0v-czT" secondAttribute="top" id="Onk-oN-mZU"/>
                                             <constraint firstAttribute="bottom" secondItem="5ex-aI-zf8" secondAttribute="bottom" id="PJP-GB-7s2"/>
-                                            <constraint firstItem="5ex-aI-zf8" firstAttribute="top" secondItem="t71-8d-jGf" secondAttribute="bottom" id="QQe-vP-7Mu"/>
-                                            <constraint firstAttribute="trailing" secondItem="t71-8d-jGf" secondAttribute="trailing" id="egm-sU-85x"/>
-                                            <constraint firstItem="t71-8d-jGf" firstAttribute="leading" secondItem="UcO-0v-czT" secondAttribute="leading" id="iO8-ak-aOY"/>
+                                            <constraint firstItem="5ex-aI-zf8" firstAttribute="top" secondItem="OoQ-mq-8Jx" secondAttribute="bottom" id="Pns-Pp-NNl"/>
+                                            <constraint firstAttribute="trailing" secondItem="OoQ-mq-8Jx" secondAttribute="trailing" id="qsb-fS-ulq"/>
+                                            <constraint firstItem="OoQ-mq-8Jx" firstAttribute="leading" secondItem="UcO-0v-czT" secondAttribute="leading" id="rRF-i2-h4d"/>
+                                            <constraint firstItem="OoQ-mq-8Jx" firstAttribute="top" secondItem="UcO-0v-czT" secondAttribute="top" id="vnl-4M-4IN"/>
                                             <constraint firstItem="5ex-aI-zf8" firstAttribute="leading" secondItem="UcO-0v-czT" secondAttribute="leading" id="wbV-cJ-ZIo"/>
                                         </constraints>
                                         <size key="customSize" width="184" height="511"/>
                                         <connections>
+                                            <outlet property="activityIndicatorView" destination="CJj-FQ-lJl" id="DMN-Pu-fUS"/>
                                             <outlet property="featuredImage" destination="t71-8d-jGf" id="IPg-VC-Gim"/>
                                             <outlet property="sourceLabel" destination="oiG-Pm-VKp" id="khP-Pj-udl"/>
                                             <outlet property="timeLabel" destination="h3n-Pb-SXj" id="ZwE-x4-9CL"/>

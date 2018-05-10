@@ -81,6 +81,7 @@
 		96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C5DA532075E3F200AD8D22 /* Activity.storyboard */; };
 		96C5DA562075EE6000AD8D22 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */; };
 		96DF87BA208EE57000424A63 /* PGActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */; };
+		96E0026320A3BE9600505324 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E0026220A3BE9600505324 /* Search.storyboard */; };
 		96E97C5F2065FC41006150EF /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C5E2065FC41006150EF /* SwinjectStoryboard+Extension.swift */; };
 		96E97C622066129E006150EF /* ActivityTypeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C612066129E006150EF /* ActivityTypeCVCell.swift */; };
 		96E97C6420661BEF006150EF /* ActivityTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E97C6320661BEF006150EF /* ActivityTypeVC.swift */; };
@@ -209,6 +210,7 @@
 		96C5DA532075E3F200AD8D22 /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		96C5DA552075EE6000AD8D22 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
 		96DF87B9208EE57000424A63 /* PGActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGActivityIndicator.swift; sourceTree = "<group>"; };
+		96E0026220A3BE9600505324 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		96E97C5E2065FC41006150EF /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		96E97C612066129E006150EF /* ActivityTypeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTypeCVCell.swift; path = LetsDoThis/ViewControllers/ActivityTypeCVCell.swift; sourceTree = "<group>"; };
 		96E97C6320661BEF006150EF /* ActivityTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTypeVC.swift; path = LetsDoThis/ViewControllers/ActivityTypeVC.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				96205DFB20588D1100AA9996 /* Main.storyboard */,
 				965EA0F02097FD08006B9583 /* Category.storyboard */,
 				965228A62084207F00D8E039 /* News.storyboard */,
+				96E0026220A3BE9600505324 /* Search.storyboard */,
 				96C5DA532075E3F200AD8D22 /* Activity.storyboard */,
 				96205E0120588D1100AA9996 /* Assets.xcassets */,
 				96205E0320588D1100AA9996 /* LaunchScreen.storyboard */,
@@ -760,6 +763,7 @@
 				965228A72084207F00D8E039 /* News.storyboard in Resources */,
 				96205E0220588D1100AA9996 /* Assets.xcassets in Resources */,
 				965EA0F12097FD08006B9583 /* Category.storyboard in Resources */,
+				96E0026320A3BE9600505324 /* Search.storyboard in Resources */,
 				96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */,
 				961F511E20994E0B00ACACFD /* Localizable.strings in Resources */,
 				96234EAD206B3C660095BD8A /* activity-type.json in Resources */,

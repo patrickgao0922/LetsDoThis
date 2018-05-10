@@ -80,6 +80,7 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
     }
     func loadFeaturedImage() {
         guard let featuredImageURL = article.urlToImage else {
+            self.featuredImage.value = UIImage(named: "featured-image-placeholder")
             return
         }
         guard let title = self.title else{
@@ -92,6 +93,7 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
                     self?.featuredImage.value = UIImage(contentsOfFile: imagePath)
 //                    self.featuredImagePath.value = imagePath
                 case .error (_):
+                    self?.featuredImage.value = UIImage(named: "featured-image-placeholder")
                     return
                 }
         }
@@ -100,18 +102,7 @@ class NewsTVCPresenterImplementation:NewsTVCPresenter{
 
 extension NewsTVCPresenterImplementation {
     fileprivate func setupObservables() {
-//        _ = self.featuredImagePath.asObservable().subscribe(onNext: { (imagePath) in
-//            if let imagePath = imagePath {
-//
-//            }
-//        })
-        
-//        _ = self.mediaIconPath.asObservable().subscribe(onNext: { (imagePath) in
-//            if let imagePath = imagePath {
-//                self.featuredImage.value = UIImage(contentsOfFile: imagePath)
-//
-//            }
-//        })
+
     }
     
     fileprivate func startDownloading() {

@@ -15,6 +15,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var activityIndicatorView: UIVisualEffectView!
     
     var featuredImageSub:Disposable?
     var disposeBag = DisposeBag()
@@ -40,6 +41,7 @@ extension NewsCollectionViewCell {
         featuredImageSub = vm.featuredImage.asObservable().subscribe(onNext: { (image) in
             if let image = image {
                 self.featuredImage.image = image
+                self.activityIndicatorView.isHidden = true
             }
         })
         featuredImageSub?.disposed(by: disposeBag)
