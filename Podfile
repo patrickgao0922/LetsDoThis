@@ -9,6 +9,7 @@ target 'LetsDoThis' do
     pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+  pod 'Firebase/Core'
   end
 
   # Pods for LetsDoThis
@@ -21,7 +22,6 @@ target 'LetsDoThis' do
   pod 'RxAlamofire'
   pod 'PGModelViewController'
   pod 'CryptoSwift'
-  pod 'Instabug'
   google_pods
   
 def testing_pods

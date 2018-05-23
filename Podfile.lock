@@ -11,6 +11,12 @@ PODS:
     - GooglePlaces (= 2.5.0)
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
+  - Instabug (7.12.5):
+    - Instabug/Instabug (= 7.12.5)
+    - Instabug/InstabugCore (= 7.12.5)
+  - Instabug/Instabug (7.12.5):
+    - Instabug/InstabugCore
+  - Instabug/InstabugCore (7.12.5)
   - Mockingjay (2.0.1):
     - Mockingjay/Core (= 2.0.1)
     - Mockingjay/XCTest (= 2.0.1)
@@ -41,6 +47,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - Instabug
   - Mockingjay
   - Nimble
   - PGModelViewController
@@ -59,6 +66,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlacePicker
     - GooglePlaces
+    - Instabug
     - Mockingjay
     - Nimble
     - PGModelViewController
@@ -77,6 +85,7 @@ SPEC CHECKSUMS:
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  Instabug: 7a3c51631266f2a9e901fd9e6ccd51541baf1dd4
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   PGModelViewController: a55209d1b8703f507ee64d80aee533edd67eb2a0
@@ -89,6 +98,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: bf32742b34a37e2bafaaaaab536c13f5342689fa
+PODFILE CHECKSUM: f01000d9580c8796b5bac6efef3a0f34eca04f5e
 
 COCOAPODS: 1.5.0

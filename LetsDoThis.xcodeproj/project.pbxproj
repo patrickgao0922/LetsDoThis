@@ -34,6 +34,7 @@
 		96205E312058AF9600AA9996 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96205E302058AF9600AA9996 /* LoginManager.swift */; };
 		96234EAD206B3C660095BD8A /* activity-type.json in Resources */ = {isa = PBXBuildFile; fileRef = 96234EAC206B3C660095BD8A /* activity-type.json */; };
 		96234EAF206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */; };
+		9627479D20B63303008829CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9627479C20B63303008829CB /* GoogleService-Info.plist */; };
 		962E7FE52072F84900F775CC /* ActivityTypeCVFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */; };
 		9632A87120968EDD009DEAF9 /* NewsTVBackgroundShap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632A87020968EDD009DEAF9 /* NewsTVBackgroundShap.swift */; };
 		9632A87320969464009DEAF9 /* NewsTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */; };
@@ -162,6 +163,7 @@
 		96205E302058AF9600AA9996 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		96234EAC206B3C660095BD8A /* activity-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-type.json"; sourceTree = "<group>"; };
 		96234EAE206B3F5D0095BD8A /* ActivityTypeVCPresenterImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeVCPresenterImplementationTests.swift; sourceTree = "<group>"; };
+		9627479C20B63303008829CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		962E7FE42072F84900F775CC /* ActivityTypeCVFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCVFlowLayout.swift; sourceTree = "<group>"; };
 		9632A87020968EDD009DEAF9 /* NewsTVBackgroundShap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTVBackgroundShap.swift; sourceTree = "<group>"; };
 		9632A87220969464009DEAF9 /* NewsTableBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableBackgroundView.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 		96205DF620588D1100AA9996 /* LetsDoThis */ = {
 			isa = PBXGroup;
 			children = (
+				9627479C20B63303008829CB /* GoogleService-Info.plist */,
 				96AB3260209ABDBF006B50C9 /* Utility Extension */,
 				961F5128209973FE00ACACFD /* WKWebView */,
 				9618D7252088168200EDD5BC /* New Group */,
@@ -770,6 +773,7 @@
 				96C5DA542075E3F200AD8D22 /* Activity.storyboard in Resources */,
 				961F511E20994E0B00ACACFD /* Localizable.strings in Resources */,
 				96234EAD206B3C660095BD8A /* activity-type.json in Resources */,
+				9627479D20B63303008829CB /* GoogleService-Info.plist in Resources */,
 				961F5124209951C400ACACFD /* InfoPlist.strings in Resources */,
 				96205DFD20588D1100AA9996 /* Main.storyboard in Resources */,
 			);
@@ -859,6 +863,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis/Pods-LetsDoThis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -871,6 +879,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -893,6 +905,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisTests/Pods-LetsDoThis-LetsDoThisTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -909,6 +925,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -975,6 +995,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LetsDoThis-LetsDoThisUITests/Pods-LetsDoThis-LetsDoThisUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/PGModelViewController/PGModelViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -991,6 +1015,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGModelViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",

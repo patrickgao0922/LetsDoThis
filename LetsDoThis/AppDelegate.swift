@@ -12,6 +12,7 @@ import Swinject
 import GooglePlaces
 import RxSwift
 import SwinjectStoryboard
+import Instabug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationManager = AppDelegate.dependencyRegistry?.container.resolve(ApplicationManger.self)
         
         _ = applicationManager.updateSources().subscribe().disposed(by: disposeBag)
+        
+        Instabug.start(withToken: "8572db5f01a407e103665d45cfad21ae", invocationEvent: .shake)
         return true
     }
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1074075029304-gqbbcq0aj6tolg5olfoi36cac9a9vn12.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1074075029304-gqbbcq0aj6tolg5olfoi36cac9a9vn12</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBDiudqvazqoKQXIZprvl9rmN9K685fudA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1074075029304</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>au.com.patrickgao.LetsDoThis</string>
+	<key>PROJECT_ID</key>
+	<string>letsdothis-1520985599605</string>
+	<key>STORAGE_BUCKET</key>
+	<string>letsdothis-1520985599605.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1074075029304:ios:dc2e83e567afb261</string>
+	<key>DATABASE_URL</key>
+	<string>https://letsdothis-1520985599605.firebaseio.com</string>
+</dict>
+</plist>
